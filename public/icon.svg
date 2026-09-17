@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="128" fill="#14332A"/>
+  <circle cx="256" cy="256" r="190" fill="#1F4D3D" stroke="#C9A24B" stroke-width="6"/>
+  <!-- Open Quran Emblem -->
+  <path d="M256 160 C230 140 180 135 130 145 C120 147 115 155 115 165 L115 340 C165 330 215 335 256 360 C297 335 347 330 397 340 L397 165 C397 155 392 147 382 145 C332 135 282 140 256 160 Z" fill="#FAF6EC" stroke="#C9A24B" stroke-width="8" stroke-linejoin="round"/>
+  <!-- Spine center line -->
+  <line x1="256" y1="160" x2="256" y2="360" stroke="#C9A24B" stroke-width="6"/>
+  <!-- Decorative calligraphy curve -->
+  <path d="M160 210 Q210 200 240 220" stroke="#1F4D3D" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M160 240 Q210 230 240 250" stroke="#1F4D3D" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M160 270 Q210 260 240 280" stroke="#1F4D3D" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M352 210 Q302 200 272 220" stroke="#1F4D3D" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M352 240 Q302 230 272 250" stroke="#1F4D3D" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M352 270 Q302 260 272 280" stroke="#1F4D3D" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <!-- Crescent moon at top -->
+  <path d="M256 95 A 25 25 0 0 0 275 135 A 30 30 0 1 1 256 95 Z" fill="#C9A24B"/>
+  <!-- Star -->
+  <polygon points="278,105 281,114 290,114 283,120 286,128 278,123 270,128 273,120 266,114 275,114" fill="#C9A24B"/>
+</svg>

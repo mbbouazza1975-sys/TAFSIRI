@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <title>Juz 'Amma Warsh - Mémorisation du Coran</title>
+    <meta name="description" content="Application PWA complète de mémorisation du Coran (Hifz) pour le Juz 'Amma (sourates 78 à 114) selon la récitation Warsh 'an Nâfi', avec audio hors-ligne, tajwîd et quiz." />
+    <meta property="og:title" content="Juz 'Amma Warsh - Mémorisation du Coran" />
+    <meta property="og:description" content="Application PWA complète de mémorisation du Coran (Hifz) pour le Juz 'Amma (sourates 78 à 114) selon la récitation Warsh 'an Nâfi', avec audio hors-ligne, tajwîd et quiz." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#14332A" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Hifz Warsh" />
+
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Google Fonts: Amiri Quran, Amiri, Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-[#FAF6EC] dark:bg-[#121A16] text-[#14332A] dark:text-[#EAE6DB] antialiased selection:bg-[#C9A24B]/30 min-h-screen">
+    <div id="root" class="min-h-screen flex flex-col"></div>
+    <script>
+      if ('serviceWorker' in navigator) {
+        var isReloading = false;
+        navigator.serviceWorker.addEventListener('controllerchange', function() {
+          if (!isReloading) {
+            isReloading = true;
+            window.location.reload();
+          }
+        });
+        navigator.serviceWorker.register('/app-cache/sw.js', { scope: '/' })
+          .then(function(reg) {
+            if (reg) reg.update();
+          })
+          .catch(function() {
+            navigator.serviceWorker.register('/app-cache/sw.js')
+              .then(function(r) { if (r) r.update(); })
+              .catch(function() {});
+          });
+      }
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

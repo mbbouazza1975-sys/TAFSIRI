@@ -1,0 +1,8 @@
+{
+  "name": "Juz 'Amma Warsh - Mémorisation du Coran",
+  "description": "Application PWA complète de mémorisation du Coran (Hifz) pour le Juz 'Amma (sourates 78 à 114) selon la récitation Warsh 'an Nâfi', avec audio hors-ligne, tajwîd et quiz.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
