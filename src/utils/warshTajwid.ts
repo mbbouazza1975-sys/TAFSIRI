@@ -3,19 +3,22 @@
  * Accurately highlights Madd, Ghunna, Qalqala, Tafkhîm, and Naql (Transfert Warsh).
  */
 
-const DIACRITICS = "ً-ْٰٕٓٔ۟-ۭ";
+// Inclut les signes propres au Mushaf Warsh KFGQPC (tanwîn, imâla, hamzat wasl, pauses…)
+const DIACRITICS = "\\u064B-\\u065F\\u0670\\u06D6-\\u06ED";
 const isDiacritic = (char: string) => RegExp(`[${DIACRITICS}]`).test(char);
 const QALQALA = "قطبجد";
 const TAFKHIM = "خصضطظغق";
 const SUKUN = "ْ";
 const SHADDAH = "ّ";
 const MADD_SIGN = "ٓ";
-const TANWIN = "ًٌٍ";
+const TANWIN = "ًٌٍٖٗٞ";
 const FATHA = "َ";
 const DAMMA = "ُ";
 const KASRA = "ِ";
 const HAMZAS = "أإؤئءآ";
-const HARF_MADD = "اويى";
+const HARF_MADD = "اويىے";
+const SHORT_VOWELS = "َُِ";
+const DROPPED_HAMZA = "۟";
 
 function escapeHtml(text: string): string {
   return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -23,6 +26,9 @@ function escapeHtml(text: string): string {
 
 function hasNaql(currentWord: string, nextWord: string): boolean {
   if (!currentWord || !nextWord) return false;
+  // Mushaf Warsh KFGQPC : le naql est déjà écrit (ex. « مَنُ ا۟وتِيَ ») — alif initial portant ۟
+  const nextChars = [...nextWord];
+  if (nextChars[0] === "ا" && nextChars[1] === DROPPED_HAMZA) return true;
   const charsWithoutDiacritics = [...currentWord].filter(c => !isDiacritic(c));
   const lastBase = charsWithoutDiacritics.pop() ?? "";
   if (!currentWord.endsWith(SUKUN) || HARF_MADD.includes(lastBase)) return false;
@@ -57,8 +63,21 @@ export function formatWarshWord(word: string, opts: { naqlStart?: boolean; naqlE
     if (base === "ا" && !diacs && prevDiacs.includes(FATHA)) rules[idx] = "madd";
     if (base === "و" && !diacs && prevDiacs.includes(DAMMA)) rules[idx] = "madd";
     if (base === "ى" && !diacs && prevDiacs.includes(KASRA)) rules[idx] = "madd";
-    if (base === "ي" && !diacs && prevDiacs.includes(KASRA)) rules[idx] = "madd";
+    if ((base === "ي" || base === "ے") && !diacs && prevDiacs.includes(KASRA)) rules[idx] = "madd";
     if (base === "ٰ") rules[idx] = "madd";
+  });
+
+  // Naql à l'intérieur de l'article (Mushaf Warsh KFGQPC : « اَ۬لَارْضَ », « اَ۬لِانسَٰنُ », « وَالَارْضِ »)
+  clusters.forEach((cluster, idx) => {
+    const next = clusters[idx + 1];
+    const prev = clusters[idx - 1];
+    if (
+      cluster[0] === "ل" && !cluster.includes(SHADDAH) && [...SHORT_VOWELS].some(v => cluster.includes(v)) &&
+      next === "ا" && prev && prev[0] === "ا"
+    ) {
+      rules[idx] = "naql";
+      rules[idx + 1] = "naql";
+    }
   });
 
   if (opts.naqlEnd && rules.length > 0) rules[rules.length - 1] = "naql";
@@ -100,4 +119,18 @@ export function formatWarshVerseHtml(
       return `<span class="w-word qw${isHl ? ' hl' : ''}" data-word-idx="${idx}" data-raw="${escapeHtml(cleanWord)}" data-verse="${verseNumber || ''}">${formatted}</span>`;
     })
     .join(" ");
+}
+
+
+/** HTML de chaque mot d'un verset (avec contexte de naql entre mots) — utilisé par la vue Mushaf continu. */
+export function formatWarshWordsHtml(verseText: string, tajwidEnabled: boolean = true): string[] {
+  const words = verseText.replace(/<[^>]*>/g, "").trim().split(/\s+/);
+  return words.map((word, idx) =>
+    tajwidEnabled
+      ? formatWarshWord(word, {
+          naqlEnd: hasNaql(word, words[idx + 1] ?? ""),
+          naqlStart: hasNaql(words[idx - 1] ?? "", word)
+        })
+      : escapeHtml(word)
+  );
 }

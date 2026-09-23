@@ -514,7 +514,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
           </strong>{' '}
           sourate{filteredAndSortedSurahs.length > 1 ? 's' : ''} affichée{filteredAndSortedSurahs.length > 1 ? 's' : ''} sous forme de lignes
         </span>
-        <span className="hidden sm:inline">Juz 30 • 564 versets au total</span>
+        <span className="hidden sm:inline">Juz 30 • 566 versets (comptage Warsh)</span>
       </div>
 
       {/* 5. LINEAR VERTICAL LIST: SOURATES ALIGNÉES EN LIGNES LES UNES SOUS LES AUTRES */}

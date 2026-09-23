@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useRef, useEffect, useCallback } from 'react';
 import { Surah, Reciter } from '../types';
-import { WARSH_RECITERS, getSurahAudioUrl, getVerseAudioUrl } from '../data/reciters';
+import { WARSH_RECITERS, getSurahAudioUrl, getVerseAudioSegments, VerseAudioSegment } from '../data/reciters';
 import { ALL_SURAHS, getSurahById } from '../data/surahs';
 import { getVerse1BismillahOffset } from '../data/bismillahTimings';
 import { getCachedAudioUrl, isSurahAudioCached, cacheSurahAudio } from '../services/storage';
@@ -76,6 +76,33 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const isPlayingRef = useRef<boolean>(false);
   const isTransitioningRef = useRef<boolean>(false);
   const highlightIntervalRef = useRef<any>(null);
+  // Lecture par segments (comptage madanî de Warsh vs fichiers everyayah en numérotation Hafs)
+  const segmentsRef = useRef<VerseAudioSegment[]>([]);
+  const segmentIdxRef = useRef<number>(0);
+  const segmentEndHandledRef = useRef<boolean>(false);
+  const segmentEndHandlerRef = useRef<(() => void) | null>(null);
+
+  const currentSegment = (): VerseAudioSegment =>
+    segmentsRef.current[segmentIdxRef.current] || { url: '', from: 0, to: 1, vFrom: 0, vTo: 1 };
+
+  /** Charge le segment i dans l'élément audio et se place au début de sa portion. */
+  const loadSegment = (audio: HTMLAudioElement, i: number) => {
+    const seg = segmentsRef.current[i];
+    segmentIdxRef.current = i;
+    segmentEndHandledRef.current = false;
+    audio.src = seg.url;
+    audio.load();
+    audio.defaultPlaybackRate = playbackSpeedRef.current;
+    audio.playbackRate = playbackSpeedRef.current;
+    if (seg.from > 0) {
+      const setStart = () => {
+        if (audio.duration && Number.isFinite(audio.duration)) {
+          audio.currentTime = seg.from * audio.duration;
+        }
+      };
+      audio.addEventListener('loadedmetadata', setStart, { once: true });
+    }
+  };
 
   const currentSurah = currentSurahId ? getSurahById(currentSurahId) || null : null;
   const currentReciter = WARSH_RECITERS.find(r => r.id === reciterId) || WARSH_RECITERS[0];
@@ -95,7 +122,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       // Madd: ٓ or آ (4-6 beats elongation)
       if (w.includes('ٓ') || w.includes('آ')) weight += 4.5;
       // Ghunna: Shaddah on Noon / Meem or Tanwin
-      if (/(?:نّ|مّ|[ًٌٍ])/.test(w)) weight += 2.8;
+      if (/(?:نّ|مّ|[ًٌٍٖٗٞ])/.test(w)) weight += 2.8;
       // Qalqala: قطبجد with Sukun
       if (/[قطبجد]ْ/.test(w) || /[قطبجد]$/.test(w)) weight += 1.4;
       return weight;
@@ -153,11 +180,19 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
       // Check if this verse is verse 1 and reciter includes Bismillah
       let bismillahOffset = 0;
-      if (verseNum === 1 && surah.bismillah) {
+      if (verseNum === 1 && surah.bismillah && segmentIdxRef.current === 0 && currentSegment().from === 0) {
         bismillahOffset = getVerse1BismillahOffset(reciterIdRef.current, surahId);
       }
 
       const cTime = audio.currentTime;
+
+      // Fin d'un segment partiel (verset Warsh issu d'un verset Hafs scindé) : détection fine (30 ms)
+      const activeSeg = segmentsRef.current[segmentIdxRef.current];
+      if (activeSeg && activeSeg.to < 1 && !segmentEndHandledRef.current && cTime >= activeSeg.to * dur) {
+        segmentEndHandledRef.current = true;
+        segmentEndHandlerRef.current?.();
+        return;
+      }
 
       // During Bismillah recitation, do not highlight any verse words
       if (bismillahOffset > 0 && cTime < bismillahOffset) {
@@ -186,10 +221,12 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       const thresholds = computeVerseWordThresholds(weights);
 
       // Effective duration and elapsed time of verse words (excluding introductory Bismillah)
-      const effectiveDuration = Math.max(0.1, dur - bismillahOffset);
-      const effectiveCurrentTime = Math.max(0, cTime - bismillahOffset);
-
-      const progress = Math.max(0, Math.min(0.999, effectiveCurrentTime / effectiveDuration));
+      // Progression dans le verset Warsh, segment par segment
+      const seg = currentSegment();
+      const segStart = seg.from * dur + bismillahOffset;
+      const segEnd = seg.to * dur;
+      const local = Math.max(0, Math.min(1, (cTime - segStart) / Math.max(0.1, segEnd - segStart)));
+      const progress = Math.max(0, Math.min(0.999, seg.vFrom + local * (seg.vTo - seg.vFrom)));
       let idx = thresholds.findIndex(t => progress <= t);
       if (idx === -1) idx = weights.length - 1;
 
@@ -240,6 +277,14 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
     const onTimeUpdate = () => {
       setCurrentTime(audio.currentTime);
+      const seg = segmentsRef.current[segmentIdxRef.current];
+      if (
+        isVerseModeRef.current && seg && seg.to < 1 && audio.duration &&
+        !segmentEndHandledRef.current && audio.currentTime >= seg.to * audio.duration
+      ) {
+        segmentEndHandledRef.current = true;
+        handleSegmentEnd();
+      }
     };
 
     const onLoadedMetadata = () => {
@@ -266,12 +311,34 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       clearWordHighlight();
     };
 
-    const onEnded = () => {
+    const handleSegmentEnd = () => {
+      // Segment suivant du même verset Warsh (verset Hafs suivant ou suite du fichier)
+      if (isVerseModeRef.current && segmentIdxRef.current < segmentsRef.current.length - 1) {
+        isTransitioningRef.current = true;
+        loadSegment(audio, segmentIdxRef.current + 1);
+        audio.play().then(() => {
+          isTransitioningRef.current = false;
+          if (currentVerseNumberRef.current !== null) {
+            startHighlightTracker(currentVerseNumberRef.current);
+          }
+        }).catch(console.warn);
+        return;
+      }
+
       const mode = repeatModeRef.current;
       const targetRepeats = parseInt(mode, 10) || 1;
 
       if (mode === 'loop' || repeatCounterRef.current < targetRepeats) {
-        audio.currentTime = 0;
+        const needsReload =
+          isVerseModeRef.current &&
+          (segmentsRef.current.length > 1 || segmentIdxRef.current !== 0 || (segmentsRef.current[0]?.from ?? 0) > 0);
+        if (needsReload) {
+          isTransitioningRef.current = true;
+          loadSegment(audio, 0);
+        } else {
+          audio.currentTime = 0;
+          segmentEndHandledRef.current = false;
+        }
         audio.playbackRate = playbackSpeedRef.current;
         repeatCounterRef.current += 1;
         setRepeatCounter(repeatCounterRef.current);
@@ -295,11 +362,19 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         }
       }
 
+      if (!audio.paused) audio.pause(); // segment partiel : arrêter à la fin de la portion
       setIsPlaying(false);
       isPlayingRef.current = false;
       repeatCounterRef.current = 1;
       setRepeatCounter(1);
       clearWordHighlight();
+    };
+    segmentEndHandlerRef.current = handleSegmentEnd;
+
+    const onEnded = () => {
+      if (segmentEndHandledRef.current) return;
+      segmentEndHandledRef.current = true;
+      handleSegmentEnd();
     };
 
     const onError = (e: Event) => {
@@ -375,11 +450,8 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       currentWordIndexRef.current = null;
       setCurrentWordIndex(null);
 
-      const verseAudioUrl = getVerseAudioUrl(activeReciterId, surahId, verseNumber);
-      audioRef.current.src = verseAudioUrl;
-      audioRef.current.load();
-      audioRef.current.defaultPlaybackRate = playbackSpeedRef.current;
-      audioRef.current.playbackRate = playbackSpeedRef.current;
+      segmentsRef.current = getVerseAudioSegments(activeReciterId, surahId, verseNumber);
+      loadSegment(audioRef.current, 0);
 
       await audioRef.current.play();
       isTransitioningRef.current = false;
@@ -468,18 +540,37 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const surah = getSurahById(surahId);
     const verse = surah?.verses[verseNumber - 1];
     if (verse) {
-      let bismillahOffset = 0;
-      if (verseNumber === 1 && surah.bismillah) {
-        bismillahOffset = getVerse1BismillahOffset(reciterIdRef.current, surahId);
-      }
-
       const weights = computeVerseWordWeights(verse.text);
       const thresholds = computeVerseWordThresholds(weights);
       const prevT = wordIdx === 0 ? 0 : thresholds[wordIdx - 1];
+      const target = Math.min(0.999, prevT + 0.005);
+
+      // Segment (fichier) qui contient ce mot
+      const segs = segmentsRef.current;
+      let si = segs.findIndex(sg => target >= sg.vFrom && target < sg.vTo);
+      if (si < 0) si = Math.max(0, segs.length - 1);
+      if (segs.length > 1 && si !== segmentIdxRef.current) {
+        isTransitioningRef.current = true;
+        loadSegment(audio, si);
+        await new Promise<void>(resolve => {
+          if (audio.readyState >= 1) resolve();
+          else audio.addEventListener('loadedmetadata', () => resolve(), { once: true });
+        });
+        isTransitioningRef.current = false;
+      }
+      const seg = currentSegment();
+
+      let bismillahOffset = 0;
+      if (verseNumber === 1 && surah.bismillah && segmentIdxRef.current === 0 && seg.from === 0) {
+        bismillahOffset = getVerse1BismillahOffset(reciterIdRef.current, surahId);
+      }
 
       if (audio.duration && Number.isFinite(audio.duration)) {
-        const effectiveDur = Math.max(0.1, audio.duration - bismillahOffset);
-        audio.currentTime = Math.max(0, bismillahOffset + (prevT + 0.005) * effectiveDur);
+        const segStart = seg.from * audio.duration + bismillahOffset;
+        const segEnd = seg.to * audio.duration;
+        const local = (target - seg.vFrom) / Math.max(0.001, seg.vTo - seg.vFrom);
+        audio.currentTime = Math.max(0, segStart + local * (segEnd - segStart));
+        segmentEndHandledRef.current = false;
         setCurrentTime(audio.currentTime);
       }
     }
@@ -547,18 +638,16 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       audioRef.current.pause();
       clearWordHighlight();
 
-      let audioSrc = '';
       if (isVerseModeRef.current && currentVerseNumberRef.current !== null) {
-        audioSrc = getVerseAudioUrl(newReciterId, surahId, currentVerseNumberRef.current);
+        segmentsRef.current = getVerseAudioSegments(newReciterId, surahId, currentVerseNumberRef.current);
+        loadSegment(audioRef.current, 0);
       } else {
         const cachedUrl = await getCachedAudioUrl(newReciterId, surahId);
-        audioSrc = cachedUrl || getSurahAudioUrl(newReciterId, surahId);
+        audioRef.current.src = cachedUrl || getSurahAudioUrl(newReciterId, surahId);
+        audioRef.current.load();
+        audioRef.current.defaultPlaybackRate = playbackSpeedRef.current;
+        audioRef.current.playbackRate = playbackSpeedRef.current;
       }
-
-      audioRef.current.src = audioSrc;
-      audioRef.current.load();
-      audioRef.current.defaultPlaybackRate = playbackSpeedRef.current;
-      audioRef.current.playbackRate = playbackSpeedRef.current;
 
       if (!isVerseModeRef.current && previousTime > 0 && Number.isFinite(previousTime)) {
         audioRef.current.currentTime = previousTime;

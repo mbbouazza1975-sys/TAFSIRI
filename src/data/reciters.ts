@@ -25,7 +25,7 @@ export const WARSH_RECITERS: Reciter[] = [
     badge: 'École du Hifz',
     emoji: '',
     serverUrl: 'https://server13.mp3quran.net/husr/Rewayat-Warsh-A-n-Nafi/',
-    everyAyahBase: 'https://everyayah.com/data/warsh/warsh_yassin_al_jazaery_64kbps/'
+    verseAudioNote: "Verset par verset : voix de Yâsîn Al-Jazâ'irî (aucun enregistrement verset par verset de ce récitateur n'est disponible)."
   },
   {
     id: 'dosari',
@@ -45,7 +45,7 @@ export const WARSH_RECITERS: Reciter[] = [
     badge: 'Mosquée Hassan II',
     emoji: '',
     serverUrl: 'https://server9.mp3quran.net/omr/',
-    everyAyahBase: 'https://everyayah.com/data/warsh/warsh_yassin_al_jazaery_64kbps/'
+    verseAudioNote: "Verset par verset : voix de Yâsîn Al-Jazâ'irî (aucun enregistrement verset par verset de ce récitateur n'est disponible)."
   },
   {
     id: 'hudhaify',
@@ -55,7 +55,7 @@ export const WARSH_RECITERS: Reciter[] = [
     badge: 'Enregistrement Médine',
     emoji: '',
     serverUrl: 'https://server9.mp3quran.net/hthfi/Rewayat-Warsh-A-n-Nafi/',
-    everyAyahBase: 'https://everyayah.com/data/warsh/warsh_yassin_al_jazaery_64kbps/'
+    verseAudioNote: "Verset par verset : voix de Yâsîn Al-Jazâ'irî (aucun enregistrement verset par verset de ce récitateur n'est disponible)."
   },
   {
     id: 'kouchi',
@@ -65,7 +65,7 @@ export const WARSH_RECITERS: Reciter[] = [
     badge: 'Voix émouvante',
     emoji: '',
     serverUrl: 'https://server11.mp3quran.net/koshi/',
-    everyAyahBase: 'https://everyayah.com/data/warsh/warsh_yassin_al_jazaery_64kbps/'
+    verseAudioNote: "Verset par verset : voix de Yâsîn Al-Jazâ'irî (aucun enregistrement verset par verset de ce récitateur n'est disponible)."
   },
   {
     id: 'belalya',
@@ -75,7 +75,7 @@ export const WARSH_RECITERS: Reciter[] = [
     badge: 'Voix chaleureuse',
     emoji: '',
     serverUrl: 'https://server6.mp3quran.net/bl3/Rewayat-Warsh-A-n-Nafi/',
-    everyAyahBase: 'https://everyayah.com/data/warsh/warsh_yassin_al_jazaery_64kbps/'
+    verseAudioNote: "Verset par verset : voix de Yâsîn Al-Jazâ'irî (aucun enregistrement verset par verset de ce récitateur n'est disponible)."
   },
   {
     id: 'gharbi',
@@ -85,7 +85,7 @@ export const WARSH_RECITERS: Reciter[] = [
     badge: 'Tradition marocaine',
     emoji: '',
     serverUrl: 'https://server8.mp3quran.net/gharbi/',
-    everyAyahBase: 'https://everyayah.com/data/warsh/warsh_yassin_al_jazaery_64kbps/'
+    verseAudioNote: "Verset par verset : voix de Yâsîn Al-Jazâ'irî (aucun enregistrement verset par verset de ce récitateur n'est disponible)."
   },
   {
     id: 'kantaoui',
@@ -95,7 +95,7 @@ export const WARSH_RECITERS: Reciter[] = [
     badge: 'Maître Tajwîd',
     emoji: '',
     serverUrl: 'https://server11.mp3quran.net/ktawi/',
-    everyAyahBase: 'https://everyayah.com/data/warsh/warsh_yassin_al_jazaery_64kbps/'
+    verseAudioNote: "Verset par verset : voix de Yâsîn Al-Jazâ'irî (aucun enregistrement verset par verset de ce récitateur n'est disponible)."
   }
 ];
 
@@ -106,45 +106,99 @@ export function getSurahAudioUrl(reciterId: string, surahId: number): string {
 }
 
 /**
- * EveryAyah provides segmented ayah mp3s according to Hafs/Kufi verse divisions.
- * In Warsh (Madani Akhir), 5 surahs have differing verse count/boundaries (106, 99, 101, 103, 107).
- * This mapping ensures that playing or downloading verse audio in Warsh never 404s.
+ * Les fichiers verset par verset d'everyayah.com (dossiers Warsh) suivent la numérotation Hafs (koufie).
+ * Le texte de l'app suit le comptage madanî de Warsh : 8 sourates ont des coupures différentes.
+ * Chaque verset Warsh est donc joué comme une suite de « segments » :
+ *  - ayah : numéro du fichier (numérotation Hafs)
+ *  - from / to : portion du fichier à jouer (fraction de sa durée) — pour un verset Warsh né d'un verset Hafs scindé
+ *  - vFrom / vTo : part du verset Warsh couverte par ce segment (pour le surlignage mot à mot)
+ * Les coupes internes (from/to < 1) sont estimées au prorata des lettres : approximation de quelques dixièmes de seconde.
  */
-function mapWarshToEveryAyahVerse(surahId: number, verseNumber: number): number {
-  if (surahId === 106) {
-    // 5 verses in Warsh vs 4 in EveryAyah (V4 & V5 combined in file 004)
-    return verseNumber > 4 ? 4 : verseNumber;
+export interface VerseAudioSegment {
+  url: string;
+  from: number;
+  to: number;
+  vFrom: number;
+  vTo: number;
+}
+
+type SegSpec = { ayah: number; from?: number; to?: number; vFrom?: number; vTo?: number };
+
+function whole(ayah: number): SegSpec[] {
+  return [{ ayah }];
+}
+function part(ayah: number, from: number, to: number): SegSpec[] {
+  return [{ ayah, from, to }];
+}
+function merged(a: number, b: number, share: number): SegSpec[] {
+  return [
+    { ayah: a, vFrom: 0, vTo: share },
+    { ayah: b, vFrom: share, vTo: 1 }
+  ];
+}
+
+function getWarshSegmentSpecs(surahId: number, v: number): SegSpec[] {
+  switch (surahId) {
+    case 79: // Warsh 37 = Hafs 37 + 38
+      if (v < 37) return whole(v);
+      if (v === 37) return merged(37, 38, 0.4);
+      return whole(v + 1);
+    case 89: // Warsh coupe Hafs 15, 16, 23 et réunit Hafs 29 + 30
+      if (v <= 14) return whole(v);
+      if (v === 15) return part(15, 0, 0.73);
+      if (v === 16) return part(15, 0.73, 1);
+      if (v === 17) return part(16, 0, 0.69);
+      if (v === 18) return part(16, 0.69, 1);
+      if (v <= 24) return whole(v - 2);
+      if (v === 25) return part(23, 0, 0.33);
+      if (v === 26) return part(23, 0.33, 1);
+      if (v <= 31) return whole(v - 4);
+      return merged(29, 30, 0.57);
+    case 96: // Warsh coupe Hafs 15
+      if (v <= 14) return whole(v);
+      if (v === 15) return part(15, 0, 0.46);
+      if (v === 16) return part(15, 0.46, 1);
+      return whole(v - 1);
+    case 99: // Warsh coupe Hafs 6
+      if (v <= 5) return whole(v);
+      if (v === 6) return part(6, 0, 0.65);
+      if (v === 7) return part(6, 0.65, 1);
+      return whole(v - 1);
+    case 101: // Warsh 1 = Hafs 1 + 2
+      if (v === 1) return merged(1, 2, 0.44);
+      return whole(v + 1);
+    case 103: // Warsh 1 = Hafs 1 + 2 ; Warsh 2 et 3 = Hafs 3 coupé
+      if (v === 1) return merged(1, 2, 0.3);
+      if (v === 2) return part(3, 0, 0.75);
+      return part(3, 0.75, 1);
+    case 106: // Warsh coupe Hafs 4
+      if (v <= 3) return whole(v);
+      if (v === 4) return part(4, 0, 0.56);
+      return part(4, 0.56, 1);
+    case 107: // Warsh 6 = Hafs 6 + 7
+      if (v <= 5) return whole(v);
+      return merged(6, 7, 0.48);
+    default:
+      return whole(v);
   }
-  if (surahId === 99) {
-    // 9 verses in Warsh vs 8 in EveryAyah (V6 & V7 combined in file 006)
-    if (verseNumber <= 5) return verseNumber;
-    if (verseNumber === 6 || verseNumber === 7) return 6;
-    if (verseNumber === 8) return 7;
-    if (verseNumber === 9) return 8;
-  }
-  if (surahId === 101) {
-    // 10 verses in Warsh vs 11 in EveryAyah (Warsh V1 combines Hafs 1+2)
-    if (verseNumber === 1) return 1;
-    return verseNumber + 1;
-  }
-  if (surahId === 103) {
-    // 3 verses in Warsh vs 3 in EveryAyah with different boundaries
-    if (verseNumber === 1) return 1;
-    return 3;
-  }
-  if (surahId === 107) {
-    // 6 verses in Warsh vs 7 in EveryAyah (Warsh V6 combines Hafs 6+7)
-    if (verseNumber >= 6) return 6;
-    return verseNumber;
-  }
-  return verseNumber;
+}
+
+const YASSIN_EVERYAYAH = 'https://everyayah.com/data/warsh/warsh_yassin_al_jazaery_64kbps/';
+
+export function getVerseAudioSegments(reciterId: string, surahId: number, verseNumber: number): VerseAudioSegment[] {
+  const reciter = WARSH_RECITERS.find(r => r.id === reciterId) || WARSH_RECITERS[0];
+  const base = reciter.everyAyahBase || YASSIN_EVERYAYAH;
+  const padSurah = String(surahId).padStart(3, '0');
+  return getWarshSegmentSpecs(surahId, verseNumber).map(spec => ({
+    url: `${base}${padSurah}${String(spec.ayah).padStart(3, '0')}.mp3`,
+    from: spec.from ?? 0,
+    to: spec.to ?? 1,
+    vFrom: spec.vFrom ?? 0,
+    vTo: spec.vTo ?? 1
+  }));
 }
 
 export function getVerseAudioUrl(reciterId: string, surahId: number, verseNumber: number): string {
-  const reciter = WARSH_RECITERS.find(r => r.id === reciterId) || WARSH_RECITERS[0];
-  const audioAyah = mapWarshToEveryAyahVerse(surahId, verseNumber);
-  const padSurah = String(surahId).padStart(3, '0');
-  const padVerse = String(audioAyah).padStart(3, '0');
-  const base = reciter.everyAyahBase || 'https://everyayah.com/data/warsh/warsh_yassin_al_jazaery_64kbps/';
-  return `${base}${padSurah}${padVerse}.mp3`;
+  // Premier fichier du verset (utilisé par les quiz audio)
+  return getVerseAudioSegments(reciterId, surahId, verseNumber)[0].url;
 }

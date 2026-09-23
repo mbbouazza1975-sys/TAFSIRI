@@ -149,6 +149,15 @@ export const ReciterSelectModal: React.FC<ReciterSelectModalProps> = ({
                   >
                     {reciter.description}
                   </p>
+                  {reciter.verseAudioNote && (
+                    <p
+                      className={`mt-1 text-[10px] leading-snug font-semibold ${
+                        isSelected ? 'text-amber-300' : 'text-amber-700 dark:text-amber-400'
+                      }`}
+                    >
+                      {reciter.verseAudioNote}
+                    </p>
+                  )}
                 </div>
 
                 <div className="shrink-0 pt-0.5">

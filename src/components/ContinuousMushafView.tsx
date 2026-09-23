@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Surah, Verse } from '../types';
 import { QuranicRosette } from './QuranicRosette';
 import { Volume2, Play, Eye, EyeOff, BookOpen } from 'lucide-react';
+import { formatWarshWordsHtml } from '../utils/warshTajwid';
 
 interface ContinuousMushafViewProps {
   surah: Surah;
@@ -10,9 +11,10 @@ interface ContinuousMushafViewProps {
   isPlaying: boolean;
   isRecitingBismillah?: boolean;
   arabicFontSize: number;
-  onSelectVerse: (verseNumber: number) => void;
+  tajwidEnabled?: boolean;
+  onSelectVerse?: (verseNumber: number) => void;
   onPlayVerse: (verseNumber: number) => void;
-  renderTajwidWord: (word: string, verseNum: number, wordIdx: number, isActiveWord: boolean) => React.ReactNode;
+  onSeekToWord?: (verseNumber: number, wordIdx: number) => void;
 }
 
 /**
@@ -27,9 +29,10 @@ export const ContinuousMushafView: React.FC<ContinuousMushafViewProps> = ({
   isPlaying,
   isRecitingBismillah = false,
   arabicFontSize,
+  tajwidEnabled = true,
   onSelectVerse,
   onPlayVerse,
-  renderTajwidWord
+  onSeekToWord
 }) => {
   const [showTranslation, setShowTranslation] = useState(false);
 
@@ -77,13 +80,13 @@ export const ContinuousMushafView: React.FC<ContinuousMushafViewProps> = ({
         >
           {surah.verses.map(verse => {
             const isCurrentVerse = currentVerseNumber === verse.number;
-            const words = verse.text.trim().split(/\s+/);
+            const wordsHtml = formatWarshWordsHtml(verse.text, tajwidEnabled);
 
             return (
               <span
                 key={verse.number}
                 id={`continuous-verse-${verse.number}`}
-                onClick={() => onSelectVerse(verse.number)}
+                onClick={() => (onSelectVerse ? onSelectVerse(verse.number) : onPlayVerse(verse.number))}
                 className={`transition-all duration-200 rounded-xl px-1 py-0.5 cursor-pointer inline ${
                   isCurrentVerse
                     ? 'bg-[#C9A24B]/20 dark:bg-[#C9A24B]/30 ring-1 ring-[#C9A24B]/50'
@@ -91,11 +94,21 @@ export const ContinuousMushafView: React.FC<ContinuousMushafViewProps> = ({
                 }`}
               >
                 {/* Words with Tajwid & active word highlight */}
-                {words.map((word, wordIdx) => {
+                {wordsHtml.map((html, wordIdx) => {
                   const isActiveWord = isCurrentVerse && isPlaying && (!isRecitingBismillah || verse.number !== 1) && currentWordIndex === wordIdx;
                   return (
                     <React.Fragment key={wordIdx}>
-                      {renderTajwidWord(word, verse.number, wordIdx, isActiveWord)}{' '}
+                      <span
+                        className={`w-word qw${isActiveWord ? ' hl' : ''}`}
+                        data-word-idx={wordIdx}
+                        onClick={e => {
+                          if (onSeekToWord) {
+                            e.stopPropagation();
+                            onSeekToWord(verse.number, wordIdx);
+                          }
+                        }}
+                        dangerouslySetInnerHTML={{ __html: html }}
+                      />{' '}
                     </React.Fragment>
                   );
                 })}

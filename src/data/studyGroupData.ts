@@ -106,10 +106,45 @@ export const WARSH_TRIPLE_CERTIFICATION: WarshCertification = {
   title: "Vérification Philologique & Variantes Canoniques Warsh",
   date: "Édition 2026",
   edition: "Juz 'Amma (Sourates 78 An-Naba à 114 An-Nâs)",
-  scope: "564 versets selon la lecture de Warsh 'an Nâfi'",
+  scope: "566 versets (comptage madanî) — texte du Mushaf Warsh du Complexe Roi Fahd (KFGQPC)",
   conformanceReference: "Mushaf al-Madînah an-Nabawiyyah (Warsh 'an Nâfi' min Tarîq al-Azraq) & Rasm Al-Maghribi al-Atharî",
-  verdict: "Texte relu selon la lecture de Warsh 'an Nâfi' et documentation des 8 variantes canoniques face à Hafs. Une erreur ? Signalez-la pour correction.",
+  verdict: "Texte coranique repris du Mushaf Warsh officiel du Complexe Roi Fahd (KFGQPC). Ci-dessous, une sélection de différences de lecture avec Hafs. Une erreur ? Signalez-la pour correction.",
   correctedVariants: [
+    {
+      surah: "An-Naba' (78)",
+      verse: 19,
+      warshReading: "وَفُتِّحَتِ ٱلسَّمَآءُ",
+      hafsContrast: "وَفُتِحَتِ ٱلسَّمَآءُ",
+      grammaticalNote: "Chadda sur le tâ' chez Nâfi' (forme intensive : « ouvert de toutes parts ») ; Hafs lit sans chadda."
+    },
+    {
+      surah: "An-Naba' (78)",
+      verse: 37,
+      warshReading: "رَّبُّ ٱلسَّمَٰوَٰتِ … ٱلرَّحْمَٰنُ",
+      hafsContrast: "رَّبِّ ٱلسَّمَٰوَٰتِ … ٱلرَّحْمَٰنِ",
+      grammaticalNote: "Nominatif (raf') des deux mots chez Nâfi' ; génitif chez Hafs, en apposition au verset précédent."
+    },
+    {
+      surah: "Al-Infitâr (82)",
+      verse: 7,
+      warshReading: "فَعَدَّلَكَ",
+      hafsContrast: "فَعَدَلَكَ",
+      grammaticalNote: "Chadda sur le dâl chez Nâfi' (« t'a harmonieusement proportionné ») ; Hafs lit sans chadda."
+    },
+    {
+      surah: "Al-Ghâshiya (88)",
+      verse: 11,
+      warshReading: "لَّا تُسْمَعُ فِيهَا لَٰغِيَةٌ",
+      hafsContrast: "لَّا تَسْمَعُ فِيهَا لَٰغِيَةً",
+      grammaticalNote: "Verbe au passif avec sujet au nominatif chez Nâfi' (« on n'y entend aucune futilité ») ; Hafs : « tu n'y entends… »."
+    },
+    {
+      surah: "Al-Humaza (104)",
+      verse: 3,
+      warshReading: "يَحْسِبُ",
+      hafsContrast: "يَحْسَبُ",
+      grammaticalNote: "Kasra sur le sîn chez Nâfi' ; fatha chez Hafs. Même sens : « il pense »."
+    },
     {
       surah: "Al-Burûj (85)",
       verse: 22,
@@ -126,7 +161,7 @@ export const WARSH_TRIPLE_CERTIFICATION: WarshCertification = {
     },
     {
       surah: "Al-Fajr (89)",
-      verse: 15,
+      verse: 16,
       warshReading: "فَيَقُولُ رَبِّىَ أَكْرَمَنِ",
       hafsContrast: "فَيَقُولُ رَبِّىٓ أَكْرَمَنِ",
       grammaticalNote: "Fathah sur le Yâ' d'annexion (Yâ' al-Idhâfah) chez Warsh : 'Rabbî-ya akraman'."
@@ -174,7 +209,7 @@ export const METHODOLOGICAL_PILLARS: MethodologicalPillar[] = [
     category: "Fidélité & Récitation Warsh 'an Nâfi'",
     level: "Rigueur Canonique",
     verdict: "Voie d'Al-Azraq respectée",
-    details: "Respect rigoureux du Rasm et de la voie d'Al-Azraq. Les 8 variantes canoniques face à Hafs (dont 85:22, 91:15, 98:6-7, 112:4) sont documentées avec leurs justifications grammaticales."
+    details: "Respect rigoureux du Rasm et de la voie d'Al-Azraq. Texte du Mushaf Warsh du Complexe Roi Fahd (KFGQPC), découpage des versets selon le comptage madanî. Une sélection de différences de lecture avec Hafs (78:19, 78:37, 82:7, 85:22, 88:11, 91:15, 98:6-7, 104:3, 112:4) est expliquée."
   },
   {
     category: "Contexte Historique & Asbâb an-Nuzûl",
@@ -200,8 +235,8 @@ export const STUDY_GROUP_IMPROVEMENTS: AppliedImprovement[] = [
   {
     id: "imp-audit-warsh",
     source: "Relecture Philologique Warsh",
-    title: "Vérification Complète & Correction des 8 Variantes Canoniques Warsh",
-    description: "Revue minutieuse de chaque verset de Juz 'Amma (Sourates 78 à 114) par rapport au Mushaf de Médine Warsh. Correction et documentation des variantes historiques (85:22, 87:16, 89:15-16, 91:15, 98:6-7, 112:4).",
+    title: "Texte Warsh officiel (KFGQPC) & comptage madanî des versets",
+    description: "Remplacement du texte arabe par celui du Mushaf Warsh officiel du Complexe Roi Fahd (KFGQPC v10) et découpage des versets selon le comptage madanî (566 versets, dont 79 : 45, 89 : 32 et 96 : 20 versets).",
     impact: "Garantit une fidélité textuelle conforme à la tradition maghrébine et médinoise.",
     status: "verified",
     tag: "Texte Warsh"

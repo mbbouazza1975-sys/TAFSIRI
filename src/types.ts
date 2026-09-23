@@ -89,6 +89,8 @@ export interface Reciter {
   badge: string;
   serverUrl: string;
   everyAyahBase?: string;
+  /** Précise quelle voix est utilisée en lecture verset par verset, si ce n'est pas celle du récitateur */
+  verseAudioNote?: string;
   emoji?: string;
 }
 

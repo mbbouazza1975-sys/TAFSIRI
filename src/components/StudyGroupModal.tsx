@@ -120,7 +120,7 @@ export const StudyGroupModal: React.FC<StudyGroupModalProps> = ({
             }`}
           >
             <ShieldCheck className="w-4 h-4 text-[#C9A24B]" />
-            <span>Variantes Warsh (9)</span>
+            <span>Variantes Warsh ({WARSH_TRIPLE_CERTIFICATION.correctedVariants.length})</span>
           </button>
 
           <button
@@ -228,7 +228,7 @@ export const StudyGroupModal: React.FC<StudyGroupModalProps> = ({
             </div>
           )}
 
-          {/* TAB 2: Variantes Warsh (8 variantes canoniques) */}
+          {/* TAB 2: Variantes Warsh (sélection) */}
           {activeTab === 'warsh' && (
             <div className="space-y-4">
               <div className="p-4 rounded-2xl bg-emerald-50/80 dark:bg-emerald-950/20 border border-emerald-300 dark:border-emerald-800/40 text-xs space-y-1.5">
@@ -246,7 +246,7 @@ export const StudyGroupModal: React.FC<StudyGroupModalProps> = ({
 
               <div className="space-y-3">
                 <h4 className="text-xs font-black uppercase tracking-wider text-stone-500 dark:text-stone-400">
-                  Les 8 Variantes Canoniques Documentées (Warsh vs Hafs)
+                  Différences de lecture Warsh / Hafs ({WARSH_TRIPLE_CERTIFICATION.correctedVariants.length} exemples)
                 </h4>
 
                 {WARSH_TRIPLE_CERTIFICATION.correctedVariants.map((item, idx) => (
