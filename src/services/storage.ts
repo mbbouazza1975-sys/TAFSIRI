@@ -227,7 +227,7 @@ export function mapHafsToWarshVerse(surahId: number, n: number): number[] {
       if (n === 16) return [17, 18];
       if (n <= 22) return [n + 2];
       if (n === 23) return [25, 26];
-      if (n <= 28) return [n + 4];
+      if (n <= 28) return [n + 3];
       return [32];
     case 96: // Hafs 15 coupé
       if (n <= 14) return [n];

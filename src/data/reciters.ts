@@ -152,7 +152,7 @@ function getWarshSegmentSpecs(surahId: number, v: number): SegSpec[] {
       if (v <= 24) return whole(v - 2);
       if (v === 25) return part(23, 0, 0.33);
       if (v === 26) return part(23, 0.33, 1);
-      if (v <= 31) return whole(v - 4);
+      if (v <= 31) return whole(v - 3);
       return merged(29, 30, 0.57);
     case 96: // Warsh coupe Hafs 15
       if (v <= 14) return whole(v);
