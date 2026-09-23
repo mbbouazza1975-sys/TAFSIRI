@@ -19,7 +19,12 @@ import {
   CheckCheck,
   Flame,
   Scroll,
-  Info
+  Info,
+  Headphones,
+  Shuffle,
+  PenTool,
+  Lightbulb,
+  Target
 } from 'lucide-react';
 import { Surah, Verse } from '../types';
 import { ALL_SURAHS } from '../data/surahs';
@@ -194,7 +199,7 @@ export const SurahQuizTab: React.FC<SurahQuizTabProps> = ({
         pool.push({
           id: `missing-${v.number}-${idx}`,
           type: 'missing_word',
-          badgeLabel: '✏️ Mot manquant',
+          badgeLabel: 'Mot manquant',
           prompt: `Complétez le mot manquant du verset ${v.number} :`,
           subPrompt: `Sens français du verset : « ${v.translation} »`,
           arabicSnippet: blanked,
@@ -217,7 +222,7 @@ export const SurahQuizTab: React.FC<SurahQuizTabProps> = ({
       pool.push({
         id: `meaning-${v.number}-${idx}`,
         type: 'verse_to_meaning',
-        badgeLabel: '📖 Sens & Traduction',
+        badgeLabel: 'Sens & Traduction',
         prompt: `Quel est le sens français exact du verset ${v.number} ?`,
         subPrompt: `Sourate ${surah.nameTranslit} · Verset ${v.number}`,
         arabicSnippet: v.text,
@@ -239,7 +244,7 @@ export const SurahQuizTab: React.FC<SurahQuizTabProps> = ({
       pool.push({
         id: `audio-${v.number}-${idx}`,
         type: 'audio_test',
-        badgeLabel: '🎧 Reconnaissance audio',
+        badgeLabel: 'Reconnaissance audio',
         prompt: `Écoutez l'extrait audio en Riwâya Warsh et identifiez le verset correspondant :`,
         subPrompt: `Cliquez sur « Écouter l'extrait » puis choisissez la bonne proposition`,
         audioVerseNumber: v.number,
@@ -265,7 +270,7 @@ export const SurahQuizTab: React.FC<SurahQuizTabProps> = ({
         pool.push({
           id: `next-${currentV.number}`,
           type: 'next_verse',
-          badgeLabel: '🔗 Verset suivant',
+          badgeLabel: 'Verset suivant',
           prompt: `Quel verset suit immédiatement le verset ${currentV.number} ?`,
           subPrompt: `Verset ${currentV.number} : « ${currentV.text} » (${currentV.translation})`,
           arabicSnippet: currentV.text,
@@ -299,7 +304,7 @@ export const SurahQuizTab: React.FC<SurahQuizTabProps> = ({
       pool.push({
         id: `reorder-${startIdx}`,
         type: 'reorder',
-        badgeLabel: '🔀 Remettre dans l’ordre',
+        badgeLabel: 'Remettre dans l’ordre',
         prompt: `Remettez ces ${reorderSubset.length} versets dans l'ordre chronologique de récitation :`,
         subPrompt: `Utilisez les flèches ↑ et ↓ pour déplacer chaque verset à sa juste place.`,
         options: [],
@@ -324,7 +329,7 @@ export const SurahQuizTab: React.FC<SurahQuizTabProps> = ({
       pool.push({
         id: `comp-theme`,
         type: 'comprehension',
-        badgeLabel: '🎯 Enseignement & Sagesse',
+        badgeLabel: 'Enseignement & Sagesse',
         prompt: `Quel est le message spirituel central de la sourate ${surah.nameTranslit} ?`,
         subPrompt: `Sourate ${surah.nameArabic} (${surah.versesCount} versets, ${surah.type})`,
         options,
@@ -340,7 +345,7 @@ export const SurahQuizTab: React.FC<SurahQuizTabProps> = ({
       pool.push({
         id: eq.id,
         type: 'history_asbab',
-        badgeLabel: eq.category === 'histoire' ? '📜 Contexte Historique' : '💡 Sens & Sagesse',
+        badgeLabel: eq.category === 'histoire' ? 'Contexte Historique' : 'Sens & Sagesse',
         prompt: eq.question,
         subPrompt: eq.contextBanner,
         contextBanner: eq.contextBanner,
@@ -548,7 +553,7 @@ export const SurahQuizTab: React.FC<SurahQuizTabProps> = ({
             }`}
           >
             <Sparkles className="w-3.5 h-3.5 text-[#C9A24B]" />
-            <span>🌟 Mini-Quiz Complet (5 à 8 Q.)</span>
+            <span>Mini-Quiz Complet (5 à 8 Q.)</span>
           </button>
 
           <button
@@ -560,7 +565,7 @@ export const SurahQuizTab: React.FC<SurahQuizTabProps> = ({
             }`}
           >
             <Scroll className="w-3.5 h-3.5 text-[#C9A24B]" />
-            <span>📜 Contexte & Histoire</span>
+            <span>Contexte & Histoire</span>
           </button>
 
           <button
@@ -571,7 +576,8 @@ export const SurahQuizTab: React.FC<SurahQuizTabProps> = ({
                 : 'text-stone-600 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-stone-800'
             }`}
           >
-            <span>✏️ Mot manquant</span>
+            <PenTool className="w-3.5 h-3.5 text-[#C9A24B]" />
+            <span>Mot manquant</span>
           </button>
 
           <button
@@ -582,7 +588,8 @@ export const SurahQuizTab: React.FC<SurahQuizTabProps> = ({
                 : 'text-stone-600 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-stone-800'
             }`}
           >
-            <span>📖 Sens & QCM</span>
+            <BookOpen className="w-3.5 h-3.5 text-[#C9A24B]" />
+            <span>Sens & QCM</span>
           </button>
 
           <button
@@ -593,7 +600,8 @@ export const SurahQuizTab: React.FC<SurahQuizTabProps> = ({
                 : 'text-stone-600 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-stone-800'
             }`}
           >
-            <span>🎧 Audio</span>
+            <Headphones className="w-3.5 h-3.5 text-[#C9A24B]" />
+            <span>Audio</span>
           </button>
 
           <button
@@ -604,7 +612,8 @@ export const SurahQuizTab: React.FC<SurahQuizTabProps> = ({
                 : 'text-stone-600 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-stone-800'
             }`}
           >
-            <span>🔀 Remettre en ordre</span>
+            <Shuffle className="w-3.5 h-3.5 text-[#C9A24B]" />
+            <span>Remettre en ordre</span>
           </button>
         </div>
 
@@ -702,8 +711,9 @@ export const SurahQuizTab: React.FC<SurahQuizTabProps> = ({
                   </div>
                 </div>
 
-                <span className="text-[10px] font-mono px-2 py-1 rounded-md bg-[#C9A24B]/20 text-[#14332A] dark:text-[#C9A24B] font-bold">
-                  🎧 Warsh
+                <span className="text-[10px] font-mono px-2.5 py-1 rounded-md bg-[#C9A24B]/20 text-[#14332A] dark:text-[#C9A24B] font-bold flex items-center gap-1">
+                  <Headphones className="w-3 h-3 text-[#C9A24B]" />
+                  <span>Warsh</span>
                 </span>
               </div>
             )}
@@ -855,7 +865,7 @@ export const SurahQuizTab: React.FC<SurahQuizTabProps> = ({
                     selectedOption === currentQ.correctIndex ? (
                       <>
                         <Check className="w-4 h-4 text-emerald-600" />
-                        <span>Exact ! Macha'Allah 🌟</span>
+                        <span>Exact ! Macha'Allah</span>
                       </>
                     ) : (
                       <>
@@ -922,10 +932,10 @@ export const SurahQuizTab: React.FC<SurahQuizTabProps> = ({
             </span>
             <h3 className="text-2xl sm:text-3xl font-extrabold text-[#14332A] dark:text-[#FAF6EC]">
               {score === questions.length
-                ? '🏆 Score Parfait ! Macha’Allah'
+                ? 'Score Parfait ! Macha’Allah'
                 : score >= Math.ceil(questions.length * 0.7)
-                ? '✨ Très Belle Performance de Hifz !'
-                : '📖 Bilan du Mini-Quiz'}
+                ? 'Très Belle Performance de Hifz !'
+                : 'Bilan du Mini-Quiz'}
             </h3>
             <p className="text-sm sm:text-base text-stone-600 dark:text-stone-300 font-medium max-w-md mx-auto">
               Vous avez obtenu <strong className="text-[#C9A24B] text-lg">{score}</strong> sur{' '}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Search, BookOpen, Sparkles, ExternalLink, ShieldCheck, Compass } from 'lucide-react';
+import { X, Search, BookOpen, Sparkles, ExternalLink, ShieldCheck, Compass, Lightbulb } from 'lucide-react';
 import { CAMEL_LEXICON_DATABASE, CamelLexiconEntry } from '../data/camelLexicon';
 
 interface CamelLexiconModalProps {
@@ -41,14 +41,16 @@ export const CamelLexiconModal: React.FC<CamelLexiconModalProps> = ({
         {/* Header */}
         <div className="px-5 py-4 sm:px-6 sm:py-5 border-b border-[#C9A24B]/20 bg-white/80 dark:bg-[#16261E]/90 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <span className="text-2xl sm:text-3xl">🐪</span>
+            <div className="w-10 h-10 rounded-xl bg-[#C9A24B]/20 text-[#C9A24B] flex items-center justify-center shrink-0 border border-[#C9A24B]/40">
+              <BookOpen className="w-5 h-5 text-[#C9A24B]" />
+            </div>
             <div>
               <div className="flex items-center gap-2">
                 <h2 className="text-base sm:text-lg font-extrabold tracking-tight text-[#14332A] dark:text-[#FAF6EC]">
                   Le Dictionnaire du Chamelier
                 </h2>
                 <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#C9A24B]/20 text-[#8a5a22] dark:text-[#E6BE65] border border-[#C9A24B]/40">
-                  Sources Classiques Vérifiées
+                  Sources classiques
                 </span>
               </div>
               <p className="text-xs text-stone-500 dark:text-stone-400">
@@ -135,13 +137,15 @@ export const CamelLexiconModal: React.FC<CamelLexiconModalProps> = ({
                     </div>
                   </div>
 
-                  <span className="text-xl">🏜️</span>
+                  <span className="w-8 h-8 rounded-lg bg-stone-100 dark:bg-stone-800 flex items-center justify-center text-stone-600 dark:text-stone-300">
+                    <Compass className="w-4 h-4 text-[#C9A24B]" />
+                  </span>
                 </div>
 
                 {/* 1. Original Desert Meaning (Chamelier) */}
                 <div className="space-y-1">
                   <div className="flex items-center gap-1.5 text-xs font-bold text-amber-800 dark:text-amber-300">
-                    <Compass className="w-3.5 h-3.5" />
+                    <Compass className="w-3.5 h-3.5 text-[#C9A24B]" />
                     <span>Chez le chamelier & dans le désert préislamique :</span>
                   </div>
                   <p className="text-xs sm:text-sm text-stone-700 dark:text-stone-300 leading-relaxed pl-5">
@@ -152,7 +156,7 @@ export const CamelLexiconModal: React.FC<CamelLexiconModalProps> = ({
                 {/* 2. Quranic Spiritual Elevation */}
                 <div className="space-y-1">
                   <div className="flex items-center gap-1.5 text-xs font-bold text-emerald-800 dark:text-emerald-300">
-                    <Sparkles className="w-3.5 h-3.5" />
+                    <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
                     <span>Élévation coranique & sens spirituel :</span>
                   </div>
                   <p className="text-xs sm:text-sm text-stone-700 dark:text-stone-300 leading-relaxed pl-5">
@@ -161,8 +165,8 @@ export const CamelLexiconModal: React.FC<CamelLexiconModalProps> = ({
                 </div>
 
                 {/* 3. Pedagogical Mental Image */}
-                <div className="p-3 rounded-xl bg-amber-50/80 dark:bg-amber-950/20 border border-amber-200/70 dark:border-amber-900/30 text-xs text-amber-950 dark:text-amber-200 flex items-start gap-2">
-                  <span className="text-base shrink-0">💡</span>
+                <div className="p-3 rounded-xl bg-amber-50/80 dark:bg-amber-950/20 border border-amber-200/70 dark:border-amber-900/30 text-xs text-amber-950 dark:text-amber-200 flex items-start gap-2.5">
+                  <Lightbulb className="w-4 h-4 text-[#C9A24B] shrink-0 mt-0.5" />
                   <div>
                     <span className="font-bold">Image mentale pour mémoriser : </span>
                     <span>{entry.mentalImage}</span>
@@ -175,7 +179,7 @@ export const CamelLexiconModal: React.FC<CamelLexiconModalProps> = ({
                     <ShieldCheck className="w-3 h-3 text-emerald-600" />
                     Source : {entry.verifiedSource}
                   </span>
-                  <span className="italic">Vérifié par le Comité Philologique</span>
+                  <span className="italic">Synthèse rédigée avec l'aide de l'IA</span>
                 </div>
               </div>
             ))
@@ -185,7 +189,7 @@ export const CamelLexiconModal: React.FC<CamelLexiconModalProps> = ({
         {/* Footer */}
         <div className="p-4 border-t border-stone-200 dark:border-stone-800 bg-white/50 dark:bg-[#16261E]/50 flex items-center justify-between">
           <span className="text-[11px] text-stone-500 dark:text-stone-400">
-            {filteredEntries.length} terme(s) certifié(s) dans le corpus
+            {filteredEntries.length} terme(s) dans le lexique
           </span>
           <button
             onClick={onClose}

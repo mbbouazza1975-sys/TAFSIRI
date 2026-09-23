@@ -128,7 +128,7 @@ export const MemorizeView: React.FC<MemorizeViewProps> = ({
             {words[0]}
           </span>
           <span className="inline-block px-3 py-1 text-xs font-semibold rounded-lg bg-amber-200 dark:bg-amber-900 text-amber-900 dark:text-amber-200 group-hover:scale-105 transition-transform">
-            👁️ Toucher pour révéler
+            Toucher pour révéler
           </span>
         </div>
       );
@@ -222,9 +222,9 @@ export const MemorizeView: React.FC<MemorizeViewProps> = ({
       <div className="p-3.5 rounded-2xl bg-white/80 dark:bg-[#16221C] border border-[#14332A]/10 dark:border-stone-800 text-xs text-stone-700 dark:text-stone-300 flex items-center justify-between w-full shadow-sm">
         <div>
           <span className="font-bold text-[#14332A] dark:text-[#C9A24B]">
-            {routinePhase === 'sabaq' && '📌 Phase Sabaq : '}
-            {routinePhase === 'sabqi' && '🔄 Phase Sabqi : '}
-            {routinePhase === 'manzil' && '🏰 Phase Manzil : '}
+            {routinePhase === 'sabaq' && 'Phase Sabaq : '}
+            {routinePhase === 'sabqi' && 'Phase Sabqi : '}
+            {routinePhase === 'manzil' && 'Phase Manzil : '}
           </span>
           <span>
             {routinePhase === 'sabaq' && 'Apprentissage minutieux de votre nouvelle sourate, verset après verset.'}

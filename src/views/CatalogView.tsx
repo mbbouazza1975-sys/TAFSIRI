@@ -12,7 +12,11 @@ import {
   LayoutList,
   Rows,
   Layers,
-  BookOpen
+  BookOpen,
+  Scroll,
+  LayoutGrid,
+  List,
+  Check
 } from 'lucide-react';
 import { Surah, SurahCategory, UserProgress } from '../types';
 import { ALL_SURAHS, CATEGORIES_INFO } from '../data/surahs';
@@ -40,8 +44,24 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
   const [sortOrder, setSortOrder] = useState<SortOrder>('mushaf');
   const [searchQuery, setSearchQuery] = useState('');
   const [isCompact, setIsCompact] = useState<boolean>(false);
+  const [categoryLayout, setCategoryLayout] = useState<'vertical' | 'grid'>('vertical');
 
-  const { currentSurah, isPlaying, playSurah } = useAudio();
+  const getCategoryIcon = (id: string) => {
+    switch (id) {
+      case 'indispensables':
+        return BookOpen;
+      case 'coeur':
+        return Sparkles;
+      case 'recits':
+        return Scroll;
+      case 'grandes':
+        return Award;
+      default:
+        return Layers;
+    }
+  };
+
+  const { currentSurah, isPlaying, playSurah, pause, resume } = useAudio();
 
   const memorizedCount = progress.memorizedSurahIds.length;
   const inProgressCount = progress.inProgressSurahIds.length;
@@ -108,9 +128,9 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
 
         <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
           <div className="space-y-1.5 max-w-xl">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#C9A24B] text-[#14332A] text-xs font-bold uppercase tracking-wider shadow-sm">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Juz 'Amma • Récitation Warsh 'an Nâfi'</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#C9A24B] text-[#14332A] text-xs font-black uppercase tracking-wider shadow-sm">
+              <Sparkles className="w-4 h-4 text-[#14332A]" />
+              <span>JUZ 'AMMA (JUZ 30) • LECTURE WARSH AUTHENTIQUE</span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight font-sans">
               Index des 37 Sourates
@@ -163,76 +183,245 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
           )}
         </div>
 
-        {/* Categories Section - Aligned clearly with progress and counts ("aligne les un dessous de l'autre") */}
-        <div className="surface p-3 sm:p-4 rounded-2xl border border-stone-200 dark:border-stone-800/80 space-y-2.5">
-          <div className="flex items-center justify-between">
+        {/* Categories Section - Aligned vertically one below the other with layout toggle */}
+        <div className="surface p-3 sm:p-4 rounded-2xl border border-stone-200 dark:border-stone-800/80 space-y-3">
+          <div className="flex items-center justify-between flex-wrap gap-2">
             <div className="flex items-center gap-2">
               <Layers className="w-4 h-4 text-[#C9A24B]" />
               <h2 className="text-xs font-black uppercase tracking-wider text-stone-700 dark:text-stone-300">
                 Périmètres de Mémorisation
               </h2>
             </div>
-            {selectedCategory !== 'all' && (
+
+            <div className="flex items-center gap-2">
+              {selectedCategory !== 'all' && (
+                <button
+                  onClick={() => setSelectedCategory('all')}
+                  className="text-[11px] font-bold text-[#C9A24B] hover:underline mr-2"
+                >
+                  Afficher tout le Juz (37)
+                </button>
+              )}
+
+              {/* View Layout Switch: Aligné verticalement vs Grille */}
+              <div className="inline-flex items-center p-0.5 rounded-lg bg-stone-100 dark:bg-stone-800/80 border border-stone-200 dark:border-stone-700/60 text-[11px]">
+                <button
+                  type="button"
+                  onClick={() => setCategoryLayout('vertical')}
+                  className={`px-2.5 py-1 rounded-md font-bold transition-all flex items-center gap-1.5 ${
+                    categoryLayout === 'vertical'
+                      ? 'bg-white dark:bg-[#14332A] text-[#14332A] dark:text-[#FAF6EC] shadow-xs'
+                      : 'text-stone-500 hover:text-stone-800 dark:hover:text-stone-200'
+                  }`}
+                  title="Aligner les catégories l'une sous l'autre"
+                >
+                  <List className="w-3.5 h-3.5 text-[#C9A24B]" />
+                  <span className="hidden sm:inline">Aligné</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setCategoryLayout('grid')}
+                  className={`px-2.5 py-1 rounded-md font-bold transition-all flex items-center gap-1.5 ${
+                    categoryLayout === 'grid'
+                      ? 'bg-white dark:bg-[#14332A] text-[#14332A] dark:text-[#FAF6EC] shadow-xs'
+                      : 'text-stone-500 hover:text-stone-800 dark:hover:text-stone-200'
+                  }`}
+                  title="Afficher sous forme de grille compacte"
+                >
+                  <LayoutGrid className="w-3.5 h-3.5 text-[#C9A24B]" />
+                  <span className="hidden sm:inline">Grille</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* MODE 1: VERTICAL STACK ("aligné les un dessous de l'autre") */}
+          {categoryLayout === 'vertical' ? (
+            <div className="flex flex-col space-y-2">
+              {/* All surahs row */}
               <button
                 onClick={() => setSelectedCategory('all')}
-                className="text-[11px] font-bold text-[#C9A24B] hover:underline"
+                className={`w-full p-3 rounded-xl text-left transition-all border flex items-center justify-between gap-3 ${
+                  selectedCategory === 'all'
+                    ? 'bg-[#14332A] text-[#FAF6EC] border-[#C9A24B] shadow-sm ring-1 ring-[#C9A24B]/50'
+                    : 'bg-white dark:bg-[#16221C] text-stone-700 dark:text-stone-300 border-stone-200 dark:border-stone-800 hover:border-[#C9A24B]/40'
+                }`}
               >
-                Afficher tout le Juz (37)
-              </button>
-            )}
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2">
-            <button
-              onClick={() => setSelectedCategory('all')}
-              className={`p-2.5 rounded-xl text-left transition-all border flex items-center justify-between ${
-                selectedCategory === 'all'
-                  ? 'bg-[#14332A] text-[#FAF6EC] border-[#C9A24B] shadow-sm ring-1 ring-[#C9A24B]/40'
-                  : 'bg-white dark:bg-[#16221C] text-stone-700 dark:text-stone-300 border-stone-200 dark:border-stone-800 hover:border-[#C9A24B]/40'
-              }`}
-            >
-              <div className="min-w-0 flex-1">
-                <div className="flex items-center gap-1.5">
-                  <Filter className="w-3.5 h-3.5 text-[#C9A24B] shrink-0" />
-                  <span className="text-xs font-extrabold truncate">Toutes</span>
-                </div>
-                <p className="text-[10px] opacity-70 mt-0.5 font-medium">Sourates 78 à 114</p>
-              </div>
-              <span className="ml-2 px-2 py-0.5 rounded-full text-[10px] font-bold bg-black/10 dark:bg-white/10 shrink-0 font-mono">
-                {memorizedCount}/37
-              </span>
-            </button>
-
-            {CATEGORIES_INFO.map(cat => {
-              const isSelected = selectedCategory === cat.id;
-              const catStat = categoryStats[cat.id] || { total: 0, memorized: 0 };
-              return (
-                <button
-                  key={cat.id}
-                  onClick={() => setSelectedCategory(isSelected ? 'all' : cat.id)}
-                  className={`p-2.5 rounded-xl text-left transition-all border flex items-center justify-between ${
-                    isSelected
-                      ? 'bg-[#14332A] text-[#FAF6EC] border-[#C9A24B] shadow-sm ring-1 ring-[#C9A24B]/40'
-                      : 'bg-white dark:bg-[#16221C] text-stone-700 dark:text-stone-300 border-stone-200 dark:border-stone-800 hover:border-[#C9A24B]/40'
-                  }`}
-                >
+                <div className="flex items-center gap-3 min-w-0 flex-1">
+                  <div className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 ${
+                    selectedCategory === 'all'
+                      ? 'bg-[#C9A24B]/20 text-[#C9A24B]'
+                      : 'bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400'
+                  }`}>
+                    <Layers className="w-4 h-4 text-[#C9A24B]" />
+                  </div>
                   <div className="min-w-0 flex-1">
-                    <span className="text-xs font-extrabold truncate block">{cat.title}</span>
-                    <p className="text-[10px] opacity-70 mt-0.5 font-medium truncate">
-                      {cat.countText} · {cat.range}
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <span className="text-xs sm:text-sm font-extrabold">Ensemble du Juz 'Amma</span>
+                      <span className={`text-[10px] px-2 py-0.5 rounded-full font-bold font-mono ${
+                        selectedCategory === 'all'
+                          ? 'bg-[#C9A24B]/20 text-[#C9A24B]'
+                          : 'bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400'
+                      }`}>
+                        Sourates 78 à 114 · 37 sourates
+                      </span>
+                    </div>
+                    <p className={`text-[11px] mt-0.5 truncate hidden sm:block ${
+                      selectedCategory === 'all' ? 'text-[#FAF6EC]/80' : 'text-stone-500 dark:text-stone-400'
+                    }`}>
+                      Vue intégrale sur les 37 sourates du 30ème Juz pour un apprentissage libre ou global.
                     </p>
                   </div>
-                  <span className={`ml-2 px-2 py-0.5 rounded-full text-[10px] font-bold shrink-0 font-mono ${
-                    catStat.memorized === catStat.total && catStat.total > 0
-                      ? 'bg-emerald-500/20 text-emerald-400 font-black'
-                      : 'bg-black/10 dark:bg-white/10'
+                </div>
+
+                <div className="flex items-center gap-3 shrink-0">
+                  <div className="text-right">
+                    <span className="text-xs font-mono font-bold block">
+                      {memorizedCount} / 37
+                    </span>
+                    <span className="text-[10px] opacity-70 block hidden sm:block">mémorisées</span>
+                  </div>
+                  <div className={`w-5 h-5 rounded-full flex items-center justify-center border ${
+                    selectedCategory === 'all'
+                      ? 'border-[#C9A24B] bg-[#C9A24B] text-[#14332A]'
+                      : 'border-stone-300 dark:border-stone-700'
                   }`}>
-                    {catStat.memorized}/{catStat.total}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
+                    {selectedCategory === 'all' && <Check className="w-3 h-3 stroke-[3]" />}
+                  </div>
+                </div>
+              </button>
+
+              {/* Individual Category Rows */}
+              {CATEGORIES_INFO.map(cat => {
+                const isSelected = selectedCategory === cat.id;
+                const catStat = categoryStats[cat.id] || { total: 0, memorized: 0 };
+                const Icon = getCategoryIcon(cat.id);
+                const isAllMemorized = catStat.memorized === catStat.total && catStat.total > 0;
+                const percentage = catStat.total > 0 ? Math.round((catStat.memorized / catStat.total) * 100) : 0;
+
+                return (
+                  <button
+                    key={cat.id}
+                    onClick={() => setSelectedCategory(isSelected ? 'all' : cat.id)}
+                    className={`w-full p-3 rounded-xl text-left transition-all border flex items-center justify-between gap-3 ${
+                      isSelected
+                        ? 'bg-[#14332A] text-[#FAF6EC] border-[#C9A24B] shadow-sm ring-1 ring-[#C9A24B]/50'
+                        : 'bg-white dark:bg-[#16221C] text-stone-700 dark:text-stone-300 border-stone-200 dark:border-stone-800 hover:border-[#C9A24B]/40'
+                    }`}
+                  >
+                    <div className="flex items-center gap-3 min-w-0 flex-1">
+                      <div className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 ${
+                        isSelected
+                          ? 'bg-[#C9A24B]/20 text-[#C9A24B]'
+                          : 'bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400'
+                      }`}>
+                        <Icon className="w-4 h-4 text-[#C9A24B]" />
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <span className="text-xs sm:text-sm font-extrabold">{cat.title}</span>
+                          <span className={`text-[10px] px-2 py-0.5 rounded-full font-bold font-mono ${
+                            isSelected
+                              ? 'bg-[#C9A24B]/20 text-[#C9A24B]'
+                              : 'bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400'
+                          }`}>
+                            Sourates {cat.range} · {cat.countText}
+                          </span>
+                        </div>
+                        <p className={`text-[11px] mt-0.5 truncate hidden sm:block ${
+                          isSelected ? 'text-[#FAF6EC]/80' : 'text-stone-500 dark:text-stone-400'
+                        }`}>
+                          {cat.description}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-3 shrink-0">
+                      <div className="text-right">
+                        <span className={`text-xs font-mono font-bold block ${
+                          isAllMemorized ? 'text-emerald-500' : ''
+                        }`}>
+                          {catStat.memorized} / {catStat.total}
+                        </span>
+                        <div className="w-16 h-1.5 rounded-full bg-stone-200 dark:bg-stone-800 overflow-hidden mt-1 hidden sm:block">
+                          <div
+                            className={`h-full transition-all ${
+                              isAllMemorized ? 'bg-emerald-500' : 'bg-[#C9A24B]'
+                            }`}
+                            style={{ width: `${percentage}%` }}
+                          />
+                        </div>
+                      </div>
+                      <div className={`w-5 h-5 rounded-full flex items-center justify-center border ${
+                        isSelected
+                          ? 'border-[#C9A24B] bg-[#C9A24B] text-[#14332A]'
+                          : 'border-stone-300 dark:border-stone-700'
+                      }`}>
+                        {isSelected && <Check className="w-3 h-3 stroke-[3]" />}
+                      </div>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          ) : (
+            /* MODE 2: GRID COMPACTE */
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2">
+              <button
+                onClick={() => setSelectedCategory('all')}
+                className={`p-2.5 rounded-xl text-left transition-all border flex items-center justify-between ${
+                  selectedCategory === 'all'
+                    ? 'bg-[#14332A] text-[#FAF6EC] border-[#C9A24B] shadow-sm ring-1 ring-[#C9A24B]/40'
+                    : 'bg-white dark:bg-[#16221C] text-stone-700 dark:text-stone-300 border-stone-200 dark:border-stone-800 hover:border-[#C9A24B]/40'
+                }`}
+              >
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-center gap-1.5">
+                    <Layers className="w-3.5 h-3.5 text-[#C9A24B] shrink-0" />
+                    <span className="text-xs font-extrabold truncate">Toutes</span>
+                  </div>
+                  <p className="text-[10px] opacity-70 mt-0.5 font-medium">Sourates 78 à 114</p>
+                </div>
+                <span className="ml-2 px-2 py-0.5 rounded-full text-[10px] font-bold bg-black/10 dark:bg-white/10 shrink-0 font-mono">
+                  {memorizedCount}/37
+                </span>
+              </button>
+
+              {CATEGORIES_INFO.map(cat => {
+                const isSelected = selectedCategory === cat.id;
+                const catStat = categoryStats[cat.id] || { total: 0, memorized: 0 };
+                const Icon = getCategoryIcon(cat.id);
+                return (
+                  <button
+                    key={cat.id}
+                    onClick={() => setSelectedCategory(isSelected ? 'all' : cat.id)}
+                    className={`p-2.5 rounded-xl text-left transition-all border flex items-center justify-between ${
+                      isSelected
+                        ? 'bg-[#14332A] text-[#FAF6EC] border-[#C9A24B] shadow-sm ring-1 ring-[#C9A24B]/40'
+                        : 'bg-white dark:bg-[#16221C] text-stone-700 dark:text-stone-300 border-stone-200 dark:border-stone-800 hover:border-[#C9A24B]/40'
+                    }`}
+                  >
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-1.5">
+                        <Icon className="w-3.5 h-3.5 text-[#C9A24B] shrink-0" />
+                        <span className="text-xs font-extrabold truncate">{cat.title}</span>
+                      </div>
+                      <p className="text-[10px] opacity-70 mt-0.5 font-medium truncate">
+                        {cat.countText} · {cat.range}
+                      </p>
+                    </div>
+                    <span className={`ml-2 px-2 py-0.5 rounded-full text-[10px] font-bold shrink-0 font-mono ${
+                      catStat.memorized === catStat.total && catStat.total > 0
+                        ? 'bg-emerald-500/20 text-emerald-400 font-black'
+                        : 'bg-black/10 dark:bg-white/10'
+                    }`}>
+                      {catStat.memorized}/{catStat.total}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          )}
         </div>
 
         {/* Sub-bar: Status filters + Sort selector + Density toggle */}
@@ -347,7 +536,15 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
                 isInProgress={isInProgress}
                 isCurrentlyPlaying={isCurrentlyPlaying}
                 onOpenSurah={onSelectSurah}
-                onPlayAudio={s => playSurah(s.id)}
+                onPlayAudio={s => {
+                  if (isCurrentlyPlaying) {
+                    pause();
+                  } else if (currentSurah?.id === s.id) {
+                    resume();
+                  } else {
+                    playSurah(s.id);
+                  }
+                }}
                 onMemorize={onMemorizeSurah}
                 onOpenQuiz={onOpenQuiz || (s => onSelectSurah(s, 'test'))}
                 compact={isCompact}

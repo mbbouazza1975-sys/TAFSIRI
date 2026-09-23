@@ -58,6 +58,7 @@ export function registerAppServiceWorker() {
  */
 export async function forcePurgeCacheAndReload(): Promise<void> {
   try {
+    // 1. Delete all non-audio caches
     if ('caches' in window) {
       const keys = await caches.keys();
       await Promise.all(
@@ -66,13 +67,23 @@ export async function forcePurgeCacheAndReload(): Promise<void> {
           .map(k => caches.delete(k))
       );
     }
-    if (navigator.serviceWorker && navigator.serviceWorker.controller) {
-      navigator.serviceWorker.controller.postMessage({ type: 'PURGE_CACHE' });
+
+    // 2. Unregister all service workers
+    if ('serviceWorker' in navigator) {
+      const regs = await navigator.serviceWorker.getRegistrations();
+      for (const reg of regs) {
+        await reg.unregister();
+      }
     }
+
+    // 3. Clear storage version flag
+    localStorage.removeItem("warsh_build_ver");
   } catch (err) {
     console.warn('Could not clear caches manually:', err);
   } finally {
-    window.location.reload();
+    // 4. Force browser to fetch fresh by appending timestamp parameter
+    const cleanUrl = window.location.origin + window.location.pathname;
+    window.location.href = `${cleanUrl}?nocache=${Date.now()}`;
   }
 }
 

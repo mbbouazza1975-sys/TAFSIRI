@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Settings, Download, Trash2, Smartphone, HardDrive, Volume2, Type, Check, RefreshCw, Upload, Sparkles, Palette } from 'lucide-react';
+import { Settings, Download, Trash2, Smartphone, HardDrive, Volume2, Type, Check, RefreshCw, Upload, Sparkles, Palette, ExternalLink, Copy, Globe } from 'lucide-react';
 import { UserSettings, UserProgress } from '../types';
 import { WARSH_RECITERS, getSurahAudioUrl } from '../data/reciters';
 import { clearAudioCache, getAllCachedAudios, exportUserData, importUserData } from '../services/storage';
@@ -25,6 +25,16 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
   const [cachedSizeBytes, setCachedSizeBytes] = useState(0);
   const [isExporting, setIsExporting] = useState(false);
   const [importMessage, setImportMessage] = useState<string | null>(null);
+  const [copiedKey, setCopiedKey] = useState<string | null>(null);
+
+  const sharedAppUrl = "https://ais-pre-ob5ypvtzkwap543nvzuhdm-298830929278.europe-west2.run.app";
+  const devAppUrl = "https://ais-dev-ob5ypvtzkwap543nvzuhdm-298830929278.europe-west2.run.app";
+
+  const handleCopyUrl = (url: string, key: string) => {
+    navigator.clipboard.writeText(url);
+    setCopiedKey(key);
+    setTimeout(() => setCopiedKey(null), 2500);
+  };
 
   useEffect(() => {
     const unsub = subscribeToInstallPrompt(can => setCanInstallPwa(can));
@@ -134,41 +144,118 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
         )}
       </div>
 
-      {/* 2. App Update & Cache Purge */}
-      <div className="w-full rounded-3xl p-6 bg-white dark:bg-[#16221C] border border-[#14332A]/10 dark:border-stone-800 shadow-md space-y-4">
+      {/* 2. App Update & URLs Section */}
+      <div className="w-full rounded-3xl p-6 bg-white dark:bg-[#16221C] border border-[#14332A]/10 dark:border-stone-800 shadow-md space-y-5">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-2xl bg-[#14332A] text-[#C9A24B] flex items-center justify-center">
-            <RefreshCw className="w-5 h-5" />
+          <div className="w-10 h-10 rounded-2xl bg-[#14332A] text-[#C9A24B] flex items-center justify-center shadow-xs">
+            <Globe className="w-5 h-5" />
           </div>
           <div>
             <h2 className="text-base font-extrabold text-[#14332A] dark:text-[#FAF6EC]">
-              Mise à Jour & Cache de l'Application
+              Adresses URL & Mise à Jour de l'Application
             </h2>
             <p className="text-xs text-stone-500 dark:text-stone-400">
-              Assurez-vous de disposer de la dernière version avec l'alignement des sourates en lignes les unes sous les autres.
+              Retrouvez les liens officiels de votre application et forcez la mise à jour si le cache de votre navigateur affiche une ancienne version.
             </p>
           </div>
         </div>
 
-        <div className="p-4 rounded-2xl bg-stone-50 dark:bg-stone-900/60 border border-stone-200 dark:border-stone-800 space-y-3">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
-            <div>
-              <div className="flex items-center gap-2">
+        {/* URLs Box */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          {/* Card 1: Shared Published App */}
+          <div className="p-4 rounded-2xl bg-gradient-to-br from-[#14332A]/5 to-[#C9A24B]/10 dark:from-[#1F4D3D]/30 dark:to-[#14332A]/20 border-2 border-[#C9A24B]/40 space-y-2.5">
+            <div className="flex items-center justify-between">
+              <span className="text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md bg-[#C9A24B] text-[#14332A]">
+                URL Publiée (Partagée)
+              </span>
+              <span className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 flex items-center gap-1">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                <span className="font-bold text-xs text-[#14332A] dark:text-[#FAF6EC]">
-                  Version publiée : v5.0 (Sourates en lignes verticales)
+                En ligne
+              </span>
+            </div>
+            <p className="text-xs font-bold text-[#14332A] dark:text-[#FAF6EC]">
+              Lien public pour vos utilisateurs et votre mobile :
+            </p>
+            <div className="p-2.5 rounded-xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-700 font-mono text-[11px] text-stone-700 dark:text-stone-300 break-all select-all">
+              {sharedAppUrl}
+            </div>
+            <div className="flex items-center gap-2 pt-1">
+              <button
+                onClick={() => handleCopyUrl(sharedAppUrl, 'shared')}
+                className="flex-1 py-1.5 px-3 rounded-xl bg-[#C9A24B] text-[#14332A] text-xs font-bold hover:bg-[#d8b056] transition-all flex items-center justify-center gap-1.5 shadow-xs"
+              >
+                {copiedKey === 'shared' ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
+                <span>{copiedKey === 'shared' ? 'Lien copié !' : 'Copier l\'adresse'}</span>
+              </button>
+              <a
+                href={sharedAppUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="py-1.5 px-3 rounded-xl bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 text-xs font-bold hover:bg-stone-200 flex items-center gap-1"
+              >
+                <ExternalLink className="w-3.5 h-3.5" />
+                <span>Ouvrir</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Card 2: Development Preview App */}
+          <div className="p-4 rounded-2xl bg-stone-50 dark:bg-stone-900/60 border border-stone-200 dark:border-stone-800 space-y-2.5">
+            <div className="flex items-center justify-between">
+              <span className="text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md bg-stone-200 dark:bg-stone-700 text-stone-700 dark:text-stone-200">
+                URL Preview (Développement)
+              </span>
+              <span className="text-xs font-semibold text-blue-500 dark:text-blue-400">
+                Mises à jour instantanées
+              </span>
+            </div>
+            <p className="text-xs font-bold text-[#14332A] dark:text-[#FAF6EC]">
+              Lien direct de prévisualisation de travail :
+            </p>
+            <div className="p-2.5 rounded-xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-700 font-mono text-[11px] text-stone-700 dark:text-stone-300 break-all select-all">
+              {devAppUrl}
+            </div>
+            <div className="flex items-center gap-2 pt-1">
+              <button
+                onClick={() => handleCopyUrl(devAppUrl, 'dev')}
+                className="flex-1 py-1.5 px-3 rounded-xl bg-stone-200 dark:bg-stone-700 text-stone-800 dark:text-stone-200 text-xs font-bold hover:bg-stone-300 transition-all flex items-center justify-center gap-1.5"
+              >
+                {copiedKey === 'dev' ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
+                <span>{copiedKey === 'dev' ? 'Lien copié !' : 'Copier l\'adresse'}</span>
+              </button>
+              <a
+                href={devAppUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="py-1.5 px-3 rounded-xl bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 text-xs font-bold hover:bg-stone-200 flex items-center gap-1"
+              >
+                <ExternalLink className="w-3.5 h-3.5" />
+                <span>Ouvrir</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Cache Invalidation & Force Update Box */}
+        <div className="p-4 rounded-2xl bg-amber-50/70 dark:bg-amber-950/20 border border-amber-300/70 dark:border-amber-900/50 space-y-3">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+            <div className="space-y-1">
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#C9A24B] animate-ping"></span>
+                <span className="font-extrabold text-xs text-[#14332A] dark:text-[#FAF6EC]">
+                  Pourquoi l'ancienne version s'affiche-t-elle après un « Publish » ?
                 </span>
               </div>
-              <p className="text-[11px] text-stone-500 dark:text-stone-400 mt-1">
-                Si après avoir cliqué sur « Publier », votre navigateur affiche encore l'ancien design ou des cartes côte à côte, cliquez ci-dessous pour forcer le chargement immédiat.
+              <p className="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+                Votre navigateur (surtout Chrome ou Safari sur smartphone) garde en cache les fichiers pour le mode hors-ligne PWA. Si vous venez de publier une mise à jour, cliquez sur le bouton ci-contre pour effacer l'ancien cache et charger immédiatement la dernière version.
               </p>
             </div>
 
             <button
               onClick={() => forcePurgeCacheAndReload()}
-              className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-[#14332A] text-[#FAF6EC] hover:bg-[#1F4D3D] text-xs font-bold transition-all shadow-sm flex items-center justify-center gap-2 shrink-0 border border-[#C9A24B]/30"
+              className="w-full sm:w-auto px-5 py-3 rounded-xl bg-[#14332A] text-[#FAF6EC] hover:bg-[#1F4D3D] text-xs font-extrabold transition-all shadow-md flex items-center justify-center gap-2 shrink-0 border border-[#C9A24B]"
             >
-              <RefreshCw className="w-3.5 h-3.5 text-[#C9A24B]" />
+              <RefreshCw className="w-4 h-4 text-[#C9A24B]" />
               <span>Forcer l'actualisation (Vider le cache)</span>
             </button>
           </div>

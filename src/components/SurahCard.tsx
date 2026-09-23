@@ -100,13 +100,13 @@ export const SurahCard: React.FC<SurahCardProps> = ({
         <button
           onClick={() => onPlayAudio(surah)}
           title={`Écouter ${surah.nameTranslit}`}
-          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
+          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all shadow-xs ${
             isCurrentlyPlaying
-              ? 'bg-[#C9A24B] text-[#14332A] shadow-sm'
-              : 'bg-[#1F4D3D]/5 dark:bg-white/5 text-[#14332A] dark:text-[#FAF6EC] hover:bg-[#C9A24B]/20'
+              ? 'bg-[#C9A24B] text-[#14332A] ring-2 ring-[#C9A24B]'
+              : 'bg-[#14332A] text-[#FAF6EC] hover:bg-[#C9A24B] hover:text-[#14332A] dark:bg-[#C9A24B] dark:text-[#14332A]'
           }`}
         >
-          <Play className={`w-3.5 h-3.5 ${isCurrentlyPlaying ? 'fill-current' : ''}`} />
+          <Play className="w-3.5 h-3.5 fill-current" />
           <span>{isCurrentlyPlaying ? 'En lecture' : 'Écouter'}</span>
         </button>
 

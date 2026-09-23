@@ -1,4 +1,4 @@
-export interface ExpertMember {
+export interface ReferenceSource {
   id: string;
   name: string;
   role: string;
@@ -9,16 +9,16 @@ export interface ExpertMember {
   bio: string;
 }
 
-export interface AuditCriterion {
+export interface MethodologicalPillar {
   category: string;
-  score: number;
+  level: string;
   verdict: string;
   details: string;
 }
 
 export interface AppliedImprovement {
   id: string;
-  requestedBy: string;
+  source: string;
   title: string;
   description: string;
   impact: string;
@@ -36,10 +36,8 @@ export interface SurahExpertAdvice {
 export interface WarshCertification {
   title: string;
   date: string;
-  leadAuditor: string;
-  examiners: string[];
+  edition: string;
   scope: string;
-  verificationPasses: number;
   conformanceReference: string;
   correctedVariants: {
     surah: string;
@@ -51,76 +49,67 @@ export interface WarshCertification {
   verdict: string;
 }
 
-export const STUDY_GROUP_EXPERTS: ExpertMember[] = [
+export const CANONICAL_SOURCES: ReferenceSource[] = [
   {
-    id: "dr-tariq",
-    name: "Dr. Tariq Al-Maghribi",
-    role: "Maître en Qirâ'ât & Spécialiste du Rasm Warsh",
-    specialty: "Lecture Warsh 'an Nâfi' selon la voie d'Al-Azraq, Rasm 'Uthmani maghrébin & règles de Naql",
-    avatar: "🕌",
-    badge: "Excellence Warsh",
-    quote: "La lecture selon Warsh est un joyau du patrimoine spirituel maghrébin et ouest-africain : sa fluidité, son Naql et ses particularités de vocalisation exigent une exactitude philologique absolue.",
-    bio: "Docteur en Sciences du Hadith et des Qirâ'ât (Université Al-Qarawiyyin, Fès), réviseur agréé de Mushaf Warsh depuis plus de 25 ans et membre du comité international de révision coranique."
+    id: "warsh-azraq",
+    name: "Lecture Warsh 'an Nâfi' (Voie d'Al-Azraq)",
+    role: "Corpus Phonétique & Règles Canoniques de Tajwîd",
+    specialty: "Rasm maghrébin, règles du Naql (transport de voyelle), amincissement des Râ' et des Lâm, allongements (Badal, Lîn)",
+    avatar: "WA",
+    badge: "Récitation Warsh",
+    quote: "La lecture selon Warsh d'après Nâfi' al-Madanî est le joyau traditionnel du Maghreb et de l'Afrique de l'Ouest : sa mélodie, ses liaisons fluides et ses particularités de vocalisation exigent une fidélité philologique scrupuleuse.",
+    bio: "Source de référence : Mushaf al-Madînah an-Nabawiyyah (bi-Riwâyat Warsh 'an Nâfi' min Tarîq al-Azraq) et Mushaf al-Jamahiriyyah / Al-Maghribi al-Atharî."
   },
   {
-    id: "cheikh-youssef",
-    name: "Cheikh Youssef Al-Qâdî",
-    role: "Historien des Asbâb an-Nuzûl & Exégète Classique",
-    specialty: "Causes de la révélation (Ibn Kathir, Al-Wahidi, As-Suyuti), biographie prophétique mecquoise & médinoise",
-    avatar: "📜",
-    badge: "Asbâb an-Nuzûl & Histoire",
-    quote: "On ne peut saisir la grandeur d'une sourate sans connaître la douleur, la persécution ou le défi historique qui a précédé sa descente du ciel.",
-    bio: "Professeur d'histoire coranique et d'exégèse comparative (Al-Azhar / Médine), spécialiste des circonstances de révélation de la période mecquoise et des relations entre clans de Quraysh."
+    id: "tafsir-classique",
+    name: "Tafsîr Ibn Kathîr & Tafsîr As-Sa'dî",
+    role: "Grandes Exégèses Canoniques Sunnites",
+    specialty: "Exégèse du Coran par le Coran et les Ahâdîth authentiques, morale et compréhension spirituelle limpide",
+    avatar: "IK",
+    badge: "Exégèse Canonique",
+    quote: "L'exégèse classique pose le socle inébranlable du sens voulu par la Révélation, protégeant le texte contre toute déformation tout en nourrissant la foi.",
+    bio: "Tafsîr al-Qur'ân al-'Adhîm d'Ibn Kathîr (m. 774 H) et Taysîr al-Karîm ar-Rahmân fî Tafsîr Kalâm al-Mannân du Cheikh 'Abd ar-Rahmân As-Sa'dî (m. 1376 H)."
   },
   {
-    id: "ustadh-nouman",
-    name: "Ustadh Nouman A. K.",
-    role: "Spécialiste de la Rhétorique & du Sens Contemporain",
-    specialty: "Analyse linguistique coranique, psychologie des jeunes & Tafsir moderne (style Bayyinah)",
-    avatar: "🎓",
-    badge: "Tafsir Vivant & Ados",
-    quote: "Le Coran ne s'adresse pas à des musées : il parle aux cœurs vivants de notre époque. Un adolescent d'aujourd'hui confronté au cyber-harcèlement ou au vide du scroll infini doit pouvoir ressentir que la parole divine s'adresse directement à lui.",
-    bio: "Inspiré de l'école d'analyse sémantique moderne de Nouman Ali Khan, enseignant international reconnu pour sa capacité à rendre le texte coranique vibrant, limpide et directement applicable pour les jeunes."
+    id: "asbab-nuzul",
+    name: "Asbâb an-Nuzûl (Al-Wâhidî & As-Suyûtî)",
+    role: "Causes & Contexte Historique de la Révélation",
+    specialty: "Événements historiques de la période mecquoise et médinoise, persécutions de Quraysh, défis prophétiques",
+    avatar: "AN",
+    badge: "Histoire & Contexte",
+    quote: "Connaître la cause et le contexte historique de la révélation d'une sourate est la clé essentielle pour en saisir la portée émotionnelle et vivante.",
+    bio: "Kitâb Asbâb an-Nuzûl d'Al-Wâhidî an-Naysâbûrî (m. 468 H) et Lubâb an-Nuqûl fî Asbâb an-Nuzûl de l'Imâm Jalâl ad-Dîn As-Suyûtî (m. 911 H)."
   },
   {
-    id: "pr-amine-sarah",
-    name: "Pr. Amine & Dr. Sarah Benali",
-    role: "Chercheurs en Neuro-pédagogie de l'Apprentissage & Hifz",
-    specialty: "Mémorisation active par paliers, répétition espacée & ergonomie cognitive pour jeunes apprenants",
-    avatar: "🧠",
-    badge: "Neuro-Pédagogie Hifz",
-    quote: "La mémorisation coranique réussie chez l'adolescent repose sur trois piliers : la charge cognitive allégée, le feedback visuel instantané (mot à mot) et la gamification vertueuse qui célèbre l'effort sans créer d'addiction vide.",
-    bio: "Docteurs en neurosciences cognitives et fondateurs d'ateliers de mémorisation coranique accélérée pour adolescents en France, Belgique et au Canada."
+    id: "lisan-arab",
+    name: "Lisân al-'Arab & Maqâyîs al-Lugha",
+    role: "Lexicographie Arabe & Racines du Désert",
+    specialty: "Étymologie sémitique, métaphores pastorales bédouines et sémantique originelle du désert",
+    avatar: "LA",
+    badge: "Dictionnaire du Bédouin",
+    quote: "Le Coran a été révélé dans la langue vivante des nomades et commerçants d'Arabie : chaque racine puise son intensité dans les réalités du désert avant d'être élevée à la grandeur céleste.",
+    bio: "Lisân al-'Arab d'Ibn Manzûr (m. 711 H) et Mu'jam Maqâyîs al-Lugha d'Ibn Fâris (m. 395 H)."
   },
   {
-    id: "dr-youssef",
-    name: "Dr. Youssef El-Hadj",
-    role: "Sociologue de la Jeunesse & Éthique Numérique",
-    specialty: "Défis numériques des ados, bien-être mental, gestion du stress et identité positive",
-    avatar: "📱",
-    badge: "Sociologie & Éthique Jeunesse",
-    quote: "Les jeunes d'aujourd'hui subissent une surcharge de stimuli sans précédent. Leur offrir des clés de lecture coranique pour déconstruire le FOMO, la jalousie en ligne et l'anxiété est une urgence éducative absolue.",
-    bio: "Éducateur de jeunesse, auteur et conférencier spécialisé dans la prévention du mal-être numérique et l'accompagnement des familles musulmanes modernes."
+    id: "pedagogie-hifz",
+    name: "Méthode Traditionnelle Sabaq / Sabqi / Manzil",
+    role: "Pédagogie de Mémorisation Coranique Structurée",
+    specialty: "Ancrage mnésique progressif, répétition espacée, masquage progressif des mots et écoute attentive",
+    avatar: "PZ",
+    badge: "Méthode Hifz",
+    quote: "La mémorisation durable repose sur l'alternance rythmée : la leçon du jour (Sabaq), la consolidation récente (Sabqi) et la révision globale permanente (Manzil).",
+    bio: "Pédagogie séculaire des écoles coraniques maghrébines et moyen-orientales, augmentée par les principes modernes de désencombrement cognitif."
   }
 ];
 
 export const WARSH_TRIPLE_CERTIFICATION: WarshCertification = {
-  title: "Certificat d'Audit et de Conformité Rasm & Qirâ'ah Warsh 'an Nâfi'",
-  date: "Septembre 2026",
-  leadAuditor: "Dr. Tariq Al-Maghribi (Qirâ'ât Al-Azraq)",
-  examiners: ["Dr. Tariq Al-Maghribi", "Cheikh Youssef Al-Qâdî", "Pr. Amine Benali"],
-  scope: "Intégralité des 37 sourates de Juz 'Amma (Sourate 78 An-Naba à Sourate 114 An-Nâs)",
-  verificationPasses: 3,
-  conformanceReference: "Mushaf al-Madînah an-Nabawiyyah (Warsh 'an Nâfi' min Tarîq al-Azraq) & Rasm al-Mushaf al-Maghribi al-Atharî",
-  verdict: "CONFORME À 100% — Validation formelle des 37 sourates et certification des 9 variantes canoniques après 3 passes de relecture intégrale.",
+  title: "Vérification Philologique & Variantes Canoniques Warsh",
+  date: "Édition 2026",
+  edition: "Juz 'Amma (Sourates 78 An-Naba à 114 An-Nâs)",
+  scope: "564 versets selon la lecture de Warsh 'an Nâfi'",
+  conformanceReference: "Mushaf al-Madînah an-Nabawiyyah (Warsh 'an Nâfi' min Tarîq al-Azraq) & Rasm Al-Maghribi al-Atharî",
+  verdict: "Texte relu selon la lecture de Warsh 'an Nâfi' et documentation des 8 variantes canoniques face à Hafs. Une erreur ? Signalez-la pour correction.",
   correctedVariants: [
-    {
-      surah: "Al-Mutaffifîn (83)",
-      verse: 24,
-      warshReading: "تُعْرَفُ فِى وُجُوهِهِمْ نَضْرَةُ ٱلنَّعِيمِ",
-      hafsContrast: "تَعْرِفُ فِى وُجُوهِهِمْ نَضْرَةَ ٱلنَّعِيمِ",
-      grammaticalNote: "Forme passive chez Warsh (Tu'rafu... nadratu n-na'îm) avec le sujet passif au nominatif, accentuant la manifestation spontanée de la félicité sur les visages."
-    },
     {
       surah: "Al-Burûj (85)",
       verse: 22,
@@ -180,93 +169,69 @@ export const WARSH_TRIPLE_CERTIFICATION: WarshCertification = {
   ]
 };
 
-export const STUDY_GROUP_AUDIT_CRITERIA: AuditCriterion[] = [
+export const METHODOLOGICAL_PILLARS: MethodologicalPillar[] = [
   {
     category: "Fidélité & Récitation Warsh 'an Nâfi'",
-    score: 10.0,
-    verdict: "Excellence Canonique Triple-Certifiée",
-    details: "Respect rigoureux du Rasm maghrébin et de la voie d'Al-Azraq. Les 9 variantes canoniques (dont Al-Mutaffifin 83:24, Al-Buruj 85:22, Ash-Shams 91:15, Al-Ikhlas 112:4) sont auditées et vérifiées 3 fois."
+    level: "Rigueur Canonique",
+    verdict: "Voie d'Al-Azraq respectée",
+    details: "Respect rigoureux du Rasm et de la voie d'Al-Azraq. Les 8 variantes canoniques face à Hafs (dont 85:22, 91:15, 98:6-7, 112:4) sont documentées avec leurs justifications grammaticales."
   },
   {
     category: "Contexte Historique & Asbâb an-Nuzûl",
-    score: 9.9,
-    verdict: "Immersion Historique Exceptionnelle",
-    details: "Intégration systématique des causes de la révélation (Abraha, Abu Lahab, négociation de Quraysh, Al-Kawthar, Umm Maktum). Les sourates prennent tout leur sens dans leur environnement prophétique réel."
+    level: "Sources Classiques",
+    verdict: "Al-Wâhidî & Ibn Kathîr",
+    details: "Intégration des causes de la révélation pour chaque sourate (Abraha, Abu Lahab, négociation de Quraysh, Al-Kawthar, Ibn Umm Maktum) pour replacer les versets dans leur environnement prophétique vivant."
   },
   {
-    category: "Quiz Ludo-Éducatif & Gamification",
-    score: 9.9,
-    verdict: "Expérience Éducative Addictive & Formatrice",
-    details: "Modes de jeu variés (Asbâb an-Nuzûl, Sens contemporain, Défi Sprint 60s, Arène Survie 3 cœurs), combos multiplicateurs, fiches explicatives détaillées et citations d'exégèse."
+    category: "Interprétation pour notre époque",
+    level: "Pédagogie & Réflexion",
+    verdict: "Applicabilité Contemporaine",
+    details: "L'application propose des éclairages contemporains formulés avec l'aide de l'IA pour relier les enseignements coraniques aux défis actuels (scroll infini, amitiés toxiques, estime de soi, gestion du temps et du stress)."
   },
   {
-    category: "Pertinence Contemporaine & Langage des Jeunes",
-    score: 9.9,
-    verdict: "Résonance Vivante & Révolutionnaire",
-    details: "L'approche 'Cap sur notre époque' brise les barrières du jargon abstrait pour aborder directement les questions qui hantent les ados : scroll infini, amitiés toxiques, estime de soi, examens et anxiété nocturne."
-  },
-  {
-    category: "Fluidité Technique & Synchronisation Audio",
-    score: 9.8,
-    verdict: "Expérience Utilisateur Immersive",
-    details: "Surlignage mot à mot en temps réel avec défilement automatique intelligent (auto-scroll doux), persistance de l'état audio et lecture instantanée au toucher de chaque mot."
+    category: "Pédagogie Hifz & Synchronisation Audio",
+    level: "Ergonomie d'Apprentissage",
+    verdict: "Précision Mot à Mot",
+    details: "Surlignage mot à mot en temps réel avec synchronisation audio (gestion exacte du temps de Basmalah), défilement automatique doux et masque progressif de mémorisation."
   }
 ];
 
 export const STUDY_GROUP_IMPROVEMENTS: AppliedImprovement[] = [
   {
     id: "imp-audit-warsh",
-    requestedBy: "Dr. Tariq Al-Maghribi",
-    title: "Vérification en 3 Passes & Correction des 9 Variantes Canoniques Warsh",
-    description: "Audit minutieux en 3 passes croisées de chaque verset de Juz 'Amma (Surates 78 à 114) par rapport au Mushaf de Médine Warsh et au Mushaf Al-Maghribi. Correction des variantes historiques (83:24 تُعْرَفُ, 85:22 مَّحْفُوظٌ, 87:16 تُوثِرُونَ, 89:15-16 رَبِّىَ, 91:15 فَلَا يَخَافُ, 98:6-7 ٱلْبَرِيٓـَٔةِ, 112:4 كُفُؤًا).",
-    impact: "Garantit une authenticité philologique sans compromis conforme à la tradition maghrébine et médinoise.",
+    source: "Relecture Philologique Warsh",
+    title: "Vérification Complète & Correction des 8 Variantes Canoniques Warsh",
+    description: "Revue minutieuse de chaque verset de Juz 'Amma (Sourates 78 à 114) par rapport au Mushaf de Médine Warsh. Correction et documentation des variantes historiques (85:22, 87:16, 89:15-16, 91:15, 98:6-7, 112:4).",
+    impact: "Garantit une fidélité textuelle conforme à la tradition maghrébine et médinoise.",
     status: "verified",
-    tag: "Audit Warsh"
+    tag: "Texte Warsh"
+  },
+  {
+    id: "imp-audio-bismillah",
+    source: "Synchronisation Audio & Silence Detection",
+    title: "Calibrage Exact de la Basmalah sur les 37 Sourates",
+    description: "Mesure acoustique par analyse spectrale du temps exact de la Bismillah au verset 1. Élimination du décalage lors du passage au premier mot de la sourate.",
+    impact: "Synchronisation parfaite entre la voix du récitateur et l'illumination du mot à mot.",
+    status: "verified",
+    tag: "Audio & Récitation"
+  },
+  {
+    id: "imp-dico-bedouin",
+    source: "Lexique du Désert (Lisân al-'Arab)",
+    title: "Dictionnaire du Bédouin & Racines Pastorales",
+    description: "Restitution des racines originelles du désert (chameau, caravane, tente, oasis) pour chaque mot-clé avant d'en montrer l'élévation spirituelle dans le Coran.",
+    impact: "Permet de comprendre la force et la poésie concrète de la langue arabe de la Révélation.",
+    status: "verified",
+    tag: "Lexique"
   },
   {
     id: "imp-quiz-asbab",
-    requestedBy: "Cheikh Youssef Al-Qâdî & Ustadh Nouman",
-    title: "Nouveau Quiz Historique & Sens Profond avec Gamification Complète",
-    description: "Refonte totale du module de Quiz : intégration de questions d'histoire vivante (Asbâb an-Nuzûl), de sagesses contemporaines pour adolescents, mode Sprint chrono 60s, mode Survie à 3 cœurs, multiplicateurs de combos (x1.5, x2, x3) et fiches d'exégèse post-réponse.",
-    impact: "Transforme l'évaluation en une aventure passionnante où l'adolescent apprend le contexte historique réel de chaque sourate tout en s'amusant.",
+    source: "Module Éducatif",
+    title: "Quiz Historique, Sens Profond & Modes Sprint / Survie",
+    description: "Questions d'histoire vivante (Asbâb an-Nuzûl), sagesses contemporaines, mode Sprint chrono 60s, mode Survie à 3 cœurs et fiches d'exégèse explicatives.",
+    impact: "Transforme la révision en une expérience active, stimulante et mémorable.",
     status: "verified",
-    tag: "Quiz & Histoire"
-  },
-  {
-    id: "imp-1",
-    requestedBy: "Dr. Tariq Al-Maghribi",
-    title: "Surlignage Mot par Mot Dynamique avec Défilement Auto",
-    description: "Synchronisation continue du texte arabe avec l'audio en direct. Chaque mot s'illumine en or sacré au rythme précis de la récitation, en tenant compte des prolongations (Madd) et des nasales (Ghunna).",
-    impact: "Permet aux apprenants et aux adolescents de ne jamais perdre le fil et d'ancrer l'orthographe exacte de chaque mot.",
-    status: "verified",
-    tag: "Récitation Warsh"
-  },
-  {
-    id: "imp-2",
-    requestedBy: "Ustadh Nouman A. K.",
-    title: "Explication Contemporaine 'Cap sur notre époque (Spécial Ados)'",
-    description: "Ajout d'un volet d'exégèse moderne pour chaque sourate et chaque verset, traduisant les enseignements coraniques en réponses concrètes aux défis actuels (réseaux sociaux, anxiété, harcèlement, gestion du temps).",
-    impact: "Transforme la récitation mécanique en une boussole morale vivante et immédiatement actionnable au collège et au lycée.",
-    status: "verified",
-    tag: "Sens & Jeunesse"
-  },
-  {
-    id: "imp-3",
-    requestedBy: "Pr. Amine & Dr. Sarah Benali",
-    title: "Défilement Automatique (Auto-scroll) Doux et Intelligent",
-    description: "Le verset et le mot en cours de récitation restent automatiquement centrés dans la zone de lecture confortable sans saccade ni à-coup.",
-    impact: "Élimine la friction visuelle et optimise la concentration pour la mémorisation (Hifz).",
-    status: "verified",
-    tag: "Ergonomie Hifz"
-  },
-  {
-    id: "imp-4",
-    requestedBy: "Ustadh Nouman A. K.",
-    title: "Questions d'Introspection & Règles d'Or Concrètes",
-    description: "Chaque verset et chaque sourate s'accompagnent de questions percutantes invitant l'adolescent à sonder son comportement et de 3 règles d'or pratiques à appliquer le jour même.",
-    impact: "Développe l'esprit critique et l'intelligence émotionnelle des jeunes croyants.",
-    status: "verified",
-    tag: "Pédagogie & Éthique"
+    tag: "Quiz & Hifz"
   }
 ];
 
@@ -274,7 +239,7 @@ export const SURAH_EXPERT_ADVICES: Record<number, SurahExpertAdvice> = {
   103: {
     surahId: 103,
     recitationTipWarsh: "Dans 'Wa-l-'Asr', appliquez un tafkhîm (emphase) majestueux sur le Saad (ص) avec un arrêt doux sur le Ra (ر) légèrement emphatisé sans exagérer la vibration.",
-    contemporaryAdoInsight: "Al-'Asr est le vaccin universel contre le scroll infini : 3 versets qui vous rappellent que perdre 3 heures sur son smartphone sans but est un déficit irrécupérable de votre capital de vie.",
+    contemporaryAdoInsight: "Al-'Asr est le rappel universel contre le scroll infini : 3 versets qui vous rappellent que perdre 3 heures sur son smartphone sans but est un déficit irrécupérable de votre capital de vie.",
     memorizationTechnique: "Répétez la sourate en binôme avec un ami (chacun récite un verset à l'autre) conformément à la tradition des Compagnons du Prophète ﷺ."
   },
   104: {

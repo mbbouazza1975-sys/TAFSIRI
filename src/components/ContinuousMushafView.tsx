@@ -6,8 +6,9 @@ import { Volume2, Play, Eye, EyeOff, BookOpen } from 'lucide-react';
 interface ContinuousMushafViewProps {
   surah: Surah;
   currentVerseNumber: number;
-  currentWordIndex: number;
+  currentWordIndex: number | null;
   isPlaying: boolean;
+  isRecitingBismillah?: boolean;
   arabicFontSize: number;
   onSelectVerse: (verseNumber: number) => void;
   onPlayVerse: (verseNumber: number) => void;
@@ -24,6 +25,7 @@ export const ContinuousMushafView: React.FC<ContinuousMushafViewProps> = ({
   currentVerseNumber,
   currentWordIndex,
   isPlaying,
+  isRecitingBismillah = false,
   arabicFontSize,
   onSelectVerse,
   onPlayVerse,
@@ -90,7 +92,7 @@ export const ContinuousMushafView: React.FC<ContinuousMushafViewProps> = ({
               >
                 {/* Words with Tajwid & active word highlight */}
                 {words.map((word, wordIdx) => {
-                  const isActiveWord = isCurrentVerse && currentWordIndex === wordIdx;
+                  const isActiveWord = isCurrentVerse && isPlaying && (!isRecitingBismillah || verse.number !== 1) && currentWordIndex === wordIdx;
                   return (
                     <React.Fragment key={wordIdx}>
                       {renderTajwidWord(word, verse.number, wordIdx, isActiveWord)}{' '}

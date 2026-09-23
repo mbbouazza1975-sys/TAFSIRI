@@ -59,17 +59,19 @@ export const Navbar: React.FC<NavbarProps> = ({
             onKeyDown={e => e.key === 'Enter' && onTabChange('catalog')}
             className="flex items-center gap-3.5 cursor-pointer select-none group"
           >
-            <div className="w-11 h-11 bg-[#C9A24B] rounded-xl flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform shrink-0">
-              <span className="font-quran text-2xl font-bold text-[#14332A]">عمّ</span>
+            <div className="w-12 h-12 bg-gradient-to-br from-[#E5BE64] via-[#C9A24B] to-[#997328] rounded-xl flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform shrink-0 border border-[#E5BE64]/40">
+              <span className="font-quran text-3xl font-black text-[#14332A] drop-shadow-xs">عمّ</span>
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="font-bold text-lg tracking-tight font-sans text-[#FAF6EC]">Juz 'Amma</span>
-                <span className="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded bg-[#C9A24B] text-[#14332A] shadow-sm">
+                <span className="font-black text-xl tracking-normal font-sans text-[#FAF6EC] flex items-center gap-1.5">
+                  <span className="text-[#C9A24B]">Juz</span> 'Amma
+                </span>
+                <span className="text-[11px] font-black tracking-wider uppercase px-2.5 py-0.5 rounded-md bg-[#C9A24B] text-[#14332A] shadow-xs">
                   Warsh
                 </span>
               </div>
-              <p className="text-xs text-[#FAF6EC]/70 hidden sm:block">37 sourates • Récitation Warsh 'an Nâfi'</p>
+              <p className="text-xs text-[#FAF6EC]/85 font-medium hidden sm:block">37 sourates • Récitation Warsh 'an Nâfi'</p>
             </div>
           </div>
 
@@ -98,15 +100,15 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Right Status Indicators */}
           <div className="flex items-center gap-2 sm:gap-3">
-            {/* Study Group Audit Button */}
+            {/* Method & Sources Reference Button */}
             {onOpenStudyGroup && (
               <button
                 onClick={onOpenStudyGroup}
-                title="Comité d'experts & Exégèse contemporaine"
+                title="Méthode, Sources classiques & Règles Warsh"
                 className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#C9A24B]/20 hover:bg-[#C9A24B]/30 border border-[#C9A24B]/50 text-[#FAF6EC] text-xs font-bold transition-all shadow-xs"
               >
-                <Users className="w-3.5 h-3.5 text-[#C9A24B]" />
-                <span className="hidden sm:inline">Comité Experts</span>
+                <BookOpen className="w-3.5 h-3.5 text-[#C9A24B]" />
+                <span className="hidden sm:inline">Méthode & Sources</span>
               </button>
             )}
 

@@ -1,0 +1,628 @@
+عَبَسَ | Abasa v1 | Il a froncé les sourcils et s’est détourné,
+جَآءَهُ | Abasa v2 | parce que l’aveugle est venu vers lui (lui parler).
+يُدْرِيكَ | Abasa v3 | Qui te dit qu’il n’allait pas se purifier ?
+يَزَّكَّىٰٓ | Abasa v3 | Qui te dit qu’il n’allait pas se purifier ?
+يَذَّكَّرُ | Abasa v4 | Ou que, rappelé, il n’allait pas profiter du rappel ?
+أَمَّا | Abasa v5 | Quant à celui qui se complaît et se suffit de sa richesse,
+ٱسْتَغْنَىٰ | Abasa v5 | Quant à celui qui se complaît et se suffit de sa richesse,
+تَصَدَّىٰ | Abasa v6 | celui-là tu vas volontiers à sa rencontre,
+عَلَيْكَ | Abasa v7 | alors qu’il ne te sera fait aucun reproche s’il ne se purifie pas (de sa mécréance).
+أَلَّا | Abasa v7 | alors qu’il ne te sera fait aucun reproche s’il ne se purifie pas (de sa mécréance).
+يَزَّكَّىٰ | Abasa v7 | alors qu’il ne te sera fait aucun reproche s’il ne se purifie pas (de sa mécréance).
+جَآءَكَ | Abasa v8 | Mais celui qui vient te trouver en toute hâte,
+يَخْشَىٰ | Abasa v9 | et qui craint (Allah),
+عَنْهُ | Abasa v10 | tu le délaisses, détourné par (autre chose) !
+تَلَهَّىٰ | Abasa v10 | tu le délaisses, détourné par (autre chose) !
+إِنَّهَا | Abasa v11 | Que non, et cela est un rappel.
+تَذْكِرَةٌ | Abasa v11 | Que non, et cela est un rappel.
+ذَكَرَهُۥ | Abasa v12 | S’en souvienne qui voudra.
+صُحُفٍ | Abasa v13 | (Ce rappel est écrit) sur des Feuillets révérés,
+مُّكَرَّمَةٍ | Abasa v13 | (Ce rappel est écrit) sur des Feuillets révérés,
+مَّرْفُوعَةٍ | Abasa v14 | élevées haut et purifiées
+مُّطَهَّرَةٍۭ | Abasa v14 | élevées haut et purifiées
+سَفَرَةٍ | Abasa v15 | entre les mains d’émissaires
+كِرَامٍۭ | Abasa v16 | honorés et dévoués.
+قُتِلَ | Abasa v17 | Périsse l’homme ! Comme il est ingrat !
+أَكْفَرَهُۥ | Abasa v17 | Périsse l’homme ! Comme il est ingrat !
+أَىِّ | Abasa v18 | De quoi l’a-t-Il créé ?
+خَلَقَهُۥ | Abasa v18 | De quoi l’a-t-Il créé ?
+نُّطْفَةٍ | Abasa v19 | C’est d’une goutte de sperme qu’Il l’a créé ; puis Il en a déterminé la destinée.
+يَسَّرَهُۥ | Abasa v20 | Il lui a rendu facile le chemin,
+أَمَاتَهُۥ | Abasa v21 | puis l’a fait mourir et entrer dans la tombe,
+أَنشَرَهُۥ | Abasa v22 | puis quand Il voudra, Il le ressuscitera.
+يَقْضِ | Abasa v23 | Non, (l’homme) n’a pas encore accompli ce qu’(Allah) lui a ordonné.
+أَمَرَهُۥ | Abasa v23 | Non, (l’homme) n’a pas encore accompli ce qu’(Allah) lui a ordonné.
+طَعَامِهِۦٓ | Abasa v24 | Que l’homme considère donc sa nourriture !
+أَنَّا | Abasa v25 | C’est bien Nous Qui déversons l’eau (du ciel) en abondance,
+صَبَبْنَا | Abasa v25 | C’est bien Nous Qui déversons l’eau (du ciel) en abondance,
+صَبًّا | Abasa v25 | C’est bien Nous Qui déversons l’eau (du ciel) en abondance,
+شَقَقْنَا | Abasa v26 | puis fendons (et creusons) la terre,
+شَقًّا | Abasa v26 | puis fendons (et creusons) la terre,
+غُلْبًا | Abasa v30 | et les jardins luxuriants,
+مَّتَـٰعًا | Abasa v32 | en jouissance pour vous et pour vos bestiaux.
+يَفِرُّ | Abasa v34 | le jour où l’homme fuira son frère,
+أَخِيهِ | Abasa v34 | le jour où l’homme fuira son frère,
+ٱمْرِئٍ | Abasa v37 | alors, ce jour-là, chacun d’entre eux sera préoccupé par ce qui le concerne.
+مِّنْهُمْ | Abasa v37 | alors, ce jour-là, chacun d’entre eux sera préoccupé par ce qui le concerne.
+شَأْنٌ | Abasa v37 | alors, ce jour-là, chacun d’entre eux sera préoccupé par ce qui le concerne.
+يُغْنِيهِ | Abasa v37 | alors, ce jour-là, chacun d’entre eux sera préoccupé par ce qui le concerne.
+مُّسْفِرَةٌ | Abasa v38 | Des visages, ce jour-là, seront radieux,
+ضَاحِكَةٌ | Abasa v39 | riants et pleins d’espérance.
+مُّسْتَبْشِرَةٌ | Abasa v39 | riants et pleins d’espérance.
+عَلَيْهَا | Abasa v40 | Et (d’autres) visages, ce jour-là, seront couverts de poussière
+غَبَرَةٌ | Abasa v40 | Et (d’autres) visages, ce jour-là, seront couverts de poussière
+تَرْهَقُهَا | Abasa v41 | rembrunis par les ténèbres.
+قَتَرَةٌ | Abasa v41 | rembrunis par les ténèbres.
+أُو۟لَـٰٓئِكَ | Abasa v42 | Ceux-là sont les mécréants et les pervers !
+تَلَىٰهَا | Ach-Chams v2 | Par la lune quand elle le suit !
+جَلَّىٰهَا | Ach-Chams v3 | Par le jour quand il en montre tout l’éclat !
+يَغْشَىٰهَا | Ach-Chams v4 | Par la nuit quand elle le voile !
+طَحَىٰهَا | Ach-Chams v6 | Par la terre et ce qui l’a étendue !
+سَوَّىٰهَا | Ach-Chams v7 | Par l’âme et ce qui l’a si harmonieusement formée,
+زَكَّىٰهَا | Ach-Chams v9 | Heureux sera, assurément, celui qui la purifie,
+خَابَ | Ach-Chams v10 | et perdu sera celui qui la souille.
+دَسَّىٰهَا | Ach-Chams v10 | et perdu sera celui qui la souille.
+كَذَّبَتْ | Ach-Chams v11 | Les Thamûd ont crié au mensonge, emportés par leur transgression,
+ثَمُودُ | Ach-Chams v11 | Les Thamûd ont crié au mensonge, emportés par leur transgression,
+إِذِ | Ach-Chams v12 | lorsque (pour tuer la chamelle) surgit le plus maudit d’entre eux.
+ٱنۢبَعَثَ | Ach-Chams v12 | lorsque (pour tuer la chamelle) surgit le plus maudit d’entre eux.
+أَشْقَىٰهَا | Ach-Chams v12 | lorsque (pour tuer la chamelle) surgit le plus maudit d’entre eux.
+رَسُولُ | Ach-Chams v13 | Le Messager d’Allah leur avait dit : « C’est la chamelle d’Allah, laissez-la donc s’abreuver! »
+نَاقَةَ | Ach-Chams v13 | Le Messager d’Allah leur avait dit : « C’est la chamelle d’Allah, laissez-la donc s’abreuver! »
+رَبُّهُم | Ach-Chams v14 | Mais ils le traitèrent de menteur et la tuèrent. Leur Seigneur sévit contre eux (les punissant) de leur péché et Il les châtia tous d’un égal supplice.
+سَجَىٰ | Ad-Duha v2 | Par la nuit quand elle voile tout !
+قَلَىٰ | Ad-Duha v3 | Ton Seigneur ne t’a point délaissé, ni ne t’a haï.
+يُعْطِيكَ | Ad-Duha v5 | Ton Seigneur te donnera certes ce dont tu seras satisfait.
+يَجِدْكَ | Ad-Duha v6 | Ne t’a-t-Il pas trouvé orphelin, et Il t’a alors donné asile ?
+ضَآلًّا | Ad-Duha v7 | Ne t’a-t-Il pas trouvé égaré, et Il t’a alors guidé ?
+عَآئِلًا | Ad-Duha v8 | Ne t’a-t-Il pas trouvé pauvre, et Il t’a alors enrichi ?
+تَقْهَرْ | Ad-Duha v9 | Quant à l’orphelin, ne le persécute point.
+تَنْهَرْ | Ad-Duha v10 | Quant au mendiant, ne le malmène point.
+سَبِّحِ | Al-A'la v1 | Rends gloire au nom de ton Seigneur, le Plus Haut !
+ٱسْمَ | Al-A'la v1 | Rends gloire au nom de ton Seigneur, le Plus Haut !
+قَدَّرَ | Al-A'la v3 | Celui Qui prédestine et guide,
+غُثَآءً | Al-A'la v5 | pour en faire ensuite une herbe sombre et desséchée.
+أَحْوَىٰ | Al-A'la v5 | pour en faire ensuite une herbe sombre et desséchée.
+سَنُقْرِئُكَ | Al-A'la v6 | Nous te ferons lire (le Coran) dont tu n’oublieras rien,
+تَنسَىٰٓ | Al-A'la v6 | Nous te ferons lire (le Coran) dont tu n’oublieras rien,
+يَعْلَمُ | Al-A'la v7 | sauf ce qu’Allah voudra (que tu oublies), car Il Sait ce qui se manifeste au grand jour et ce qui reste caché.
+يَخْفَىٰ | Al-A'la v7 | sauf ce qu’Allah voudra (que tu oublies), car Il Sait ce qui se manifeste au grand jour et ce qui reste caché.
+نَّفَعَتِ | Al-A'la v9 | Rappelle donc ! Pour peu que le Rappel soit vraiment utile.
+سَيَذَّكَّرُ | Al-A'la v10 | S’en souviendra sûrement celui qui craint (Allah).
+يَصْلَى | Al-A'la v12 | lui qui brûlera dans le Feu le plus grand,
+يَمُوتُ | Al-A'la v13 | puis n’y mourra point, pas plus qu’il n’y vivra.
+يَحْيَىٰ | Al-A'la v13 | puis n’y mourra point, pas plus qu’il n’y vivra.
+قَدْ | Al-A'la v14 | Aura la réussite celui qui s’est purifié,
+أَفْلَحَ | Al-A'la v14 | Aura la réussite celui qui s’est purifié,
+خَيْرٌ | Al-A'la v17 | alors que l’autre monde est bien meilleur et autrement durable.
+صُحُفِ | Al-A'la v19 | les Feuillets d’Abraham et de Moïse.
+إِبْرَٰهِيمَ | Al-A'la v19 | les Feuillets d’Abraham et de Moïse.
+ضَبْحًا | Al-Adiyat v1 | Par les coursiers haletant,
+قَدْحًا | Al-Adiyat v2 | faisant jaillir des étincelles (en galopant),
+صُبْحًا | Al-Adiyat v3 | qui attaquent au petit jour,
+نَقْعًا | Al-Adiyat v4 | et font voler la poussière (sous leurs sabots),
+جَمْعًا | Al-Adiyat v5 | puis percent au milieu (des rangs ennemis) !
+رَبَّهُم | Al-Adiyat v11 | ce jour-là, leur Seigneur sera à leur sujet parfaitement Informé ?
+ٱقْرَأْ | Al-Alaq v1 | Lis par le nom de ton Seigneur Qui a créé !
+عَلَقٍ | Al-Alaq v2 | Qui a créé l’homme d’un grumeau de sang.
+عَلَّمَ | Al-Alaq v4 | Qui enseigna par le Calame.
+يَعْلَمْ | Al-Alaq v5 | Qui enseigna à l’homme ce qu’il ne savait pas.
+رَّءَاهُ | Al-Alaq v7 | dès qu’il se voit gagner en richesses.
+ٱسْتَغْنَىٰٓ | Al-Alaq v7 | dès qu’il se voit gagner en richesses.
+أَرَءَيْتَ | Al-Alaq v9 | N’as-tu pas vu celui qui défend
+يَنْهَىٰ | Al-Alaq v9 | N’as-tu pas vu celui qui défend
+عَبْدًا | Al-Alaq v10 | à un serviteur (d’Allah) de faire la prière ?
+صَلَّىٰٓ | Al-Alaq v10 | à un serviteur (d’Allah) de faire la prière ?
+أَمَرَ | Al-Alaq v12 | et appelait à la piété ?
+يَعْلَم | Al-Alaq v14 | Ne sait-il pas qu’Allah Voit Tout ?
+يَنتَهِ | Al-Alaq v15 | Certes non ! S’il ne cesse pas, Nous le prendrons par le toupet,
+نَاصِيَةٍ | Al-Alaq v16 | un toupet menteur et coupable.
+كَـٰذِبَةٍ | Al-Alaq v16 | un toupet menteur et coupable.
+خَاطِئَةٍ | Al-Alaq v16 | un toupet menteur et coupable.
+نَادِيَهُۥ | Al-Alaq v17 | Qu’il appelle donc son clan (à son secours).
+سَنَدْعُ | Al-Alaq v18 | Nous ferons appel aux gardiens (de l’Enfer).
+تُطِعْهُ | Al-Alaq v19 | Non ! Ne lui obéis pas ! Prosterne-toi et rapproche-toi (d’Allah) !
+خُسْرٍ | Al-Asr v2 | L’homme, en vérité, est en perdition,
+حِلٌّۢ | Al-Balad v2 | où il t’est licite (de combattre tes ennemis) !
+خَلَقْنَا | Al-Balad v4 | Nous avons certes créé l’homme livré à l’adversité.
+كَبَدٍ | Al-Balad v4 | Nous avons certes créé l’homme livré à l’adversité.
+أَيَحْسَبُ | Al-Balad v5 | S’imagine-t-il que personne ne pourra rien contre lui ?
+يَقْدِرَ | Al-Balad v5 | S’imagine-t-il que personne ne pourra rien contre lui ?
+أَهْلَكْتُ | Al-Balad v6 | « J’ai prodigué, dit-il, une énorme fortune. »
+مَالًا | Al-Balad v6 | « J’ai prodigué, dit-il, une énorme fortune. »
+يَرَهُۥٓ | Al-Balad v7 | Croit-il donc que personne ne l’a vu ?
+عَيْنَيْنِ | Al-Balad v8 | Ne lui avons-Nous pas donné deux yeux,
+ٱقْتَحَمَ | Al-Balad v11 | Or, il n’a pas osé affronter la voie pentue.
+رَقَبَةٍ | Al-Balad v13 | C’est affranchir un esclave,
+إِطْعَـٰمٌ | Al-Balad v14 | ou donner à manger, en un jour de disette,
+مَسْغَبَةٍ | Al-Balad v14 | ou donner à manger, en un jour de disette,
+يَتِيمًا | Al-Balad v15 | à un orphelin de la proche famille,
+ذَا | Al-Balad v15 | à un orphelin de la proche famille,
+مَقْرَبَةٍ | Al-Balad v15 | à un orphelin de la proche famille,
+مِسْكِينًا | Al-Balad v16 | ou à un pauvre hère qui couche à même la terre.
+مَتْرَبَةٍ | Al-Balad v16 | ou à un pauvre hère qui couche à même la terre.
+نَارٌ | Al-Balad v20 | Sur eux (de toutes parts) se refermera le Feu (de la Géhenne).
+مُّؤْصَدَةٌۢ | Al-Balad v20 | Sur eux (de toutes parts) se refermera le Feu (de la Géhenne).
+أَهْلِ | Al-Bayyina v1 | Les mécréants, parmi les gens du Livre et les associâtres, n’allaient pas renoncer (à leur impiété) avant que ne leur parvînt la preuve évidente :
+مُنفَكِّينَ | Al-Bayyina v1 | Les mécréants, parmi les gens du Livre et les associâtres, n’allaient pas renoncer (à leur impiété) avant que ne leur parvînt la preuve évidente :
+تَأْتِيَهُمُ | Al-Bayyina v1 | Les mécréants, parmi les gens du Livre et les associâtres, n’allaient pas renoncer (à leur impiété) avant que ne leur parvînt la preuve évidente :
+رَسُولٌ | Al-Bayyina v2 | un Messager d’Allah qui récite des Feuillets purifiés,
+يَتْلُوا۟ | Al-Bayyina v2 | un Messager d’Allah qui récite des Feuillets purifiés,
+صُحُفًا | Al-Bayyina v2 | un Messager d’Allah qui récite des Feuillets purifiés,
+مُّطَهَّرَةً | Al-Bayyina v2 | un Messager d’Allah qui récite des Feuillets purifiés,
+كُتُبٌ | Al-Bayyina v3 | dans lesquels se trouvent des Écritures parfaitement justes.
+قَيِّمَةٌ | Al-Bayyina v3 | dans lesquels se trouvent des Écritures parfaitement justes.
+تَفَرَّقَ | Al-Bayyina v4 | Ceux à qui le Livre a été donné ne se sont divisés qu’après avoir reçu la preuve évidente.
+أُوتُوا۟ | Al-Bayyina v4 | Ceux à qui le Livre a été donné ne se sont divisés qu’après avoir reçu la preuve évidente.
+جَآءَتْهُمُ | Al-Bayyina v4 | Ceux à qui le Livre a été donné ne se sont divisés qu’après avoir reçu la preuve évidente.
+أُمِرُوٓا۟ | Al-Bayyina v5 | Il ne leur a été ordonné que d’adorer Allah en Lui vouant un culte sincère, d’accomplir la Çalât et de s’acquitter de la Zakât. Telle est la religion juste.
+مُخْلِصِينَ | Al-Bayyina v5 | Il ne leur a été ordonné que d’adorer Allah en Lui vouant un culte sincère, d’accomplir la Çalât et de s’acquitter de la Zakât. Telle est la religion juste.
+حُنَفَآءَ | Al-Bayyina v5 | Il ne leur a été ordonné que d’adorer Allah en Lui vouant un culte sincère, d’accomplir la Çalât et de s’acquitter de la Zakât. Telle est la religion juste.
+دِينُ | Al-Bayyina v5 | Il ne leur a été ordonné que d’adorer Allah en Lui vouant un culte sincère, d’accomplir la Çalât et de s’acquitter de la Zakât. Telle est la religion juste.
+نَارِ | Al-Bayyina v6 | Ceux qui ont mécru, parmi les gens du Livre et les associâtres, seront livrés au feu de la Géhenne, où ils demeureront pour l’éternité. Car ce sont les pires des créatures.
+خَـٰلِدِينَ | Al-Bayyina v6 | Ceux qui ont mécru, parmi les gens du Livre et les associâtres, seront livrés au feu de la Géhenne, où ils demeureront pour l’éternité. Car ce sont les pires des créatures.
+خَيْرُ | Al-Bayyina v7 | Ceux qui ont cru et accompli les bonnes œuvres, ceux là sont les meilleures de toutes les créatures.
+جَزَآؤُهُمْ | Al-Bayyina v8 | Leur récompense, auprès de leur Seigneur, sera les Jardins d’Éden sous lesquels coulent les rivières, où ils séjourneront à tout jamais. Allah sera satisfait d’eux, et eux seront satisfaits de Lui. Voilà (ce qui attend) celui qui craint son Seigneur.
+رَبِّهِمْ | Al-Bayyina v8 | Leur récompense, auprès de leur Seigneur, sera les Jardins d’Éden sous lesquels coulent les rivières, où ils séjourneront à tout jamais. Allah sera satisfait d’eux, et eux seront satisfaits de Lui. Voilà (ce qui attend) celui qui craint son Seigneur.
+جَنَّـٰتُ | Al-Bayyina v8 | Leur récompense, auprès de leur Seigneur, sera les Jardins d’Éden sous lesquels coulent les rivières, où ils séjourneront à tout jamais. Allah sera satisfait d’eux, et eux seront satisfaits de Lui. Voilà (ce qui attend) celui qui craint son Seigneur.
+عَدْنٍ | Al-Bayyina v8 | Leur récompense, auprès de leur Seigneur, sera les Jardins d’Éden sous lesquels coulent les rivières, où ils séjourneront à tout jamais. Allah sera satisfait d’eux, et eux seront satisfaits de Lui. Voilà (ce qui attend) celui qui craint son Seigneur.
+أَبَدًا | Al-Bayyina v8 | Leur récompense, auprès de leur Seigneur, sera les Jardins d’Éden sous lesquels coulent les rivières, où ils séjourneront à tout jamais. Allah sera satisfait d’eux, et eux seront satisfaits de Lui. Voilà (ce qui attend) celui qui craint son Seigneur.
+رَّضِىَ | Al-Bayyina v8 | Leur récompense, auprès de leur Seigneur, sera les Jardins d’Éden sous lesquels coulent les rivières, où ils séjourneront à tout jamais. Allah sera satisfait d’eux, et eux seront satisfaits de Lui. Voilà (ce qui attend) celui qui craint son Seigneur.
+عَنْهُمْ | Al-Bayyina v8 | Leur récompense, auprès de leur Seigneur, sera les Jardins d’Éden sous lesquels coulent les rivières, où ils séjourneront à tout jamais. Allah sera satisfait d’eux, et eux seront satisfaits de Lui. Voilà (ce qui attend) celui qui craint son Seigneur.
+خَشِىَ | Al-Bayyina v8 | Leur récompense, auprès de leur Seigneur, sera les Jardins d’Éden sous lesquels coulent les rivières, où ils séjourneront à tout jamais. Allah sera satisfait d’eux, et eux seront satisfaits de Lui. Voilà (ce qui attend) celui qui craint son Seigneur.
+ذَاتِ | Al-Buruj v1 | Par le ciel et ses constellations !
+أَصْحَـٰبُ | Al-Buruj v4 | Mort aux gens de la tranchée très longue (Al-Ukhdûd) !
+قُعُودٌ | Al-Buruj v6 | (les mécréants) étaient assis,
+شُهُودٌ | Al-Buruj v7 | et regardaient en témoins ce qu’ils faisaient subir aux croyants.
+نَقَمُوا۟ | Al-Buruj v8 | Ils ne leur en voulaient que parce qu’ils croyaient en Allah, le Tout- Puissant, le Digne de Toute Louange,
+مِنْهُمْ | Al-Buruj v8 | Ils ne leur en voulaient que parce qu’ils croyaient en Allah, le Tout- Puissant, le Digne de Toute Louange,
+يُؤْمِنُوا۟ | Al-Buruj v8 | Ils ne leur en voulaient que parce qu’ils croyaient en Allah, le Tout- Puissant, le Digne de Toute Louange,
+كُلِّ | Al-Buruj v9 | Celui à Qui appartient la royauté des cieux et de la terre, Allah, Qui de Toute chose est le Témoin.
+شَهِيدٌ | Al-Buruj v9 | Celui à Qui appartient la royauté des cieux et de la terre, Allah, Qui de Toute chose est le Témoin.
+يَتُوبُوا۟ | Al-Buruj v10 | Ceux qui ont infligé les pires épreuves aux croyants et aux croyantes, puis qui ne s’en sont pas repentis, auront le supplice de la Géhenne et le supplice du Brasier infernal.
+عَذَابُ | Al-Buruj v10 | Ceux qui ont infligé les pires épreuves aux croyants et aux croyantes, puis qui ne s’en sont pas repentis, auront le supplice de la Géhenne et le supplice du Brasier infernal.
+جَنَّـٰتٌ | Al-Buruj v11 | Ceux qui ont cru et ont accompli les bonnes œuvres auront des jardins sous lesquels coulent les rivières. Tel est le succès suprême !
+تَجْرِى | Al-Buruj v11 | Ceux qui ont cru et ont accompli les bonnes œuvres auront des jardins sous lesquels coulent les rivières. Tel est le succès suprême !
+تَحْتِهَا | Al-Buruj v11 | Ceux qui ont cru et ont accompli les bonnes œuvres auront des jardins sous lesquels coulent les rivières. Tel est le succès suprême !
+يُبْدِئُ | Al-Buruj v13 | C’est Lui Qui initie (la création) puis la recommence.
+ذُو | Al-Buruj v15 | Le Détenteur du Trône, le Glorieux,
+يُرِيدُ | Al-Buruj v16 | Qui fait toujours ce qu’Il veut !
+تَكْذِيبٍ | Al-Buruj v19 | Et pourtant, ceux qui ont mécru crient toujours au mensonge.
+مُّحِيطٌۢ | Al-Buruj v20 | Allah, derrière eux, les Cerne de partout.
+قُرْءَانٌ | Al-Buruj v21 | C’est en vérité un Coran glorieux,
+مَّجِيدٌ | Al-Buruj v21 | C’est en vérité un Coran glorieux,
+عَشْرٍ | Al-Fajr v2 | Par les Dix nuits !
+يَسْرِ | Al-Fajr v4 | Par la nuit quand elle passe!
+قَسَمٌ | Al-Fajr v5 | N’y a-t-il pas là un serment pour un esprit sagace?
+حِجْرٍ | Al-Fajr v5 | N’y a-t-il pas là un serment pour un esprit sagace?
+تَرَ | Al-Fajr v6 | Ne vois-tu pas ce que ton Seigneur a fait des ‘Ad,
+إِرَمَ | Al-Fajr v7 | et de Iram, la cité aux (hautes) colonnes,
+يُخْلَقْ | Al-Fajr v8 | à laquelle jamais cité semblable ne fut créée dans la contrée ?
+مِثْلُهَا | Al-Fajr v8 | à laquelle jamais cité semblable ne fut créée dans la contrée ?
+جَابُوا۟ | Al-Fajr v9 | Et (ce qu’Il a fait) des Thamûd qui avaient taillé (leurs maisons) à même le roc dans la vallée,
+طَغَوْا۟ | Al-Fajr v11 | qui tous transgressaient dans la contrée,
+سَوْطَ | Al-Fajr v13 | Ton Seigneur sévit alors contre eux par le fouet de (Son) supplice.
+عَذَابٍ | Al-Fajr v13 | Ton Seigneur sévit alors contre eux par le fouet de (Son) supplice.
+ٱبْتَلَىٰهُ | Al-Fajr v15 | Quand son Seigneur, en l’éprouvant, l’honore et le comble de bienfaits, l’homme dit : « Mon Seigneur m’a honoré ! »
+رَبِّىٓ | Al-Fajr v15 | Quand son Seigneur, en l’éprouvant, l’honore et le comble de bienfaits, l’homme dit : « Mon Seigneur m’a honoré ! »
+أَكْرَمَنِ | Al-Fajr v15 | Quand son Seigneur, en l’éprouvant, l’honore et le comble de bienfaits, l’homme dit : « Mon Seigneur m’a honoré ! »
+رِزْقَهُۥ | Al-Fajr v16 | Mais quand, en l’éprouvant, Il lui accorde parcimonieusement sa subsistance, il proteste : « Mon Seigneur m’a humilié ! »
+رَبِّىَ | Al-Fajr v16 | Mais quand, en l’éprouvant, Il lui accorde parcimonieusement sa subsistance, il proteste : « Mon Seigneur m’a humilié ! »
+أَهَـٰنَنِ | Al-Fajr v16 | Mais quand, en l’éprouvant, Il lui accorde parcimonieusement sa subsistance, il proteste : « Mon Seigneur m’a humilié ! »
+تُكْرِمُونَ | Al-Fajr v17 | Que non ! Car c’est plutôt vous qui manquez de générosité envers l’orphelin,
+تَحَـٰٓضُّونَ | Al-Fajr v18 | qui ne vous exhortez pas (les uns les autres) à nourrir le pauvre,
+طَعَامِ | Al-Fajr v18 | qui ne vous exhortez pas (les uns les autres) à nourrir le pauvre,
+أَكْلًا | Al-Fajr v19 | qui vous emparez des héritages avec cupidité,
+جَمًّا | Al-Fajr v20 | et aimez les richesses d’un amour démesuré.
+دُكَّتِ | Al-Fajr v21 | Que non ! Lorsque la terre s’effritera parcelle par parcelle,
+دَكًّا | Al-Fajr v21 | Que non ! Lorsque la terre s’effritera parcelle par parcelle,
+يَوْمَئِذٍۭ | Al-Fajr v23 | et lorsque, ce jour-là, la Géhenne sera amenée; ce jour-là alors, l’homme se souviendra. Mais à quoi pourrait bien lui servir de se souvenir ?
+يَقُولُ | Al-Fajr v24 | Il dira : « Ah, Si seulement j’avais prévu (de faire le bien) pour ma vie (dans l’autre monde) ! »
+يُعَذِّبُ | Al-Fajr v25 | Ce jour-là, nul ne suppliciera comme Lui supplicie.
+عَذَابَهُۥٓ | Al-Fajr v25 | Ce jour-là, nul ne suppliciera comme Lui supplicie.
+يُوثِقُ | Al-Fajr v26 | Nul ne ligotera comme Lui ligote.
+يَـٰٓأَيَّتُهَا | Al-Fajr v27 | « Ô toi, âme sereine !
+ٱرْجِعِىٓ | Al-Fajr v28 | Reviens vers ton Seigneur, contente et agréée !
+رَاضِيَةً | Al-Fajr v28 | Reviens vers ton Seigneur, contente et agréée !
+مَّرْضِيَّةً | Al-Fajr v28 | Reviens vers ton Seigneur, contente et agréée !
+عِبَـٰدِى | Al-Fajr v29 | Entre parmi Mes serviteurs !
+جَنَّتِى | Al-Fajr v30 | Entre dans Mon Paradis !»
+يَجْعَلْ | Al-Fil v2 | N’a-t-Il pas déjoué leurs intrigues,
+كَيْدَهُمْ | Al-Fil v2 | N’a-t-Il pas déjoué leurs intrigues,
+تَضْلِيلٍ | Al-Fil v2 | N’a-t-Il pas déjoué leurs intrigues,
+طَيْرًا | Al-Fil v3 | en leur envoyant des nuées d’oiseaux,
+أَبَابِيلَ | Al-Fil v3 | en leur envoyant des nuées d’oiseaux,
+تَرْمِيهِم | Al-Fil v4 | qui leur lançaient des pierres argileuses ?
+سِجِّيلٍ | Al-Fil v4 | qui leur lançaient des pierres argileuses ?
+كَعَصْفٍ | Al-Fil v5 | Il les rendit telles des brindilles mâchées (et recrachées.).
+مَّأْكُولٍۭ | Al-Fil v5 | Il les rendit telles des brindilles mâchées (et recrachées.).
+عَامِلَةٌ | Al-Ghachiya v3 | peinant, épuisés,
+نَّاصِبَةٌ | Al-Ghachiya v3 | peinant, épuisés,
+تَصْلَىٰ | Al-Ghachiya v4 | qui brûleront dans un Feu très ardent,
+نَارًا | Al-Ghachiya v4 | qui brûleront dans un Feu très ardent,
+حَامِيَةً | Al-Ghachiya v4 | qui brûleront dans un Feu très ardent,
+تُسْقَىٰ | Al-Ghachiya v5 | et boiront à une source d’eau bouillante.
+عَيْنٍ | Al-Ghachiya v5 | et boiront à une source d’eau bouillante.
+ءَانِيَةٍ | Al-Ghachiya v5 | et boiront à une source d’eau bouillante.
+طَعَامٌ | Al-Ghachiya v6 | Ils n’auront pour toute nourriture que du Dhari‘,
+ضَرِيعٍ | Al-Ghachiya v6 | Ils n’auront pour toute nourriture que du Dhari‘,
+يُسْمِنُ | Al-Ghachiya v7 | qui n’engraissera point, ni ne calmera la faim.
+يُغْنِى | Al-Ghachiya v7 | qui n’engraissera point, ni ne calmera la faim.
+جُوعٍ | Al-Ghachiya v7 | qui n’engraissera point, ni ne calmera la faim.
+نَّاعِمَةٌ | Al-Ghachiya v8 | Et il y aura, ce jour-là, des visages radieux,
+رَاضِيَةٌ | Al-Ghachiya v9 | satisfaits de ce qu’ils auront accompli,
+جَنَّةٍ | Al-Ghachiya v10 | dans des jardins surplombants,
+عَالِيَةٍ | Al-Ghachiya v10 | dans des jardins surplombants,
+تَسْمَعُ | Al-Ghachiya v11 | où il ne sera entendu aucune parole futile.
+عَيْنٌ | Al-Ghachiya v12 | Il s’y trouvera une source qui coule,
+جَارِيَةٌ | Al-Ghachiya v12 | Il s’y trouvera une source qui coule,
+سُرُرٌ | Al-Ghachiya v13 | des lits y seront élevés,
+مَّرْفُوعَةٌ | Al-Ghachiya v13 | des lits y seront élevés,
+مَّوْضُوعَةٌ | Al-Ghachiya v14 | des coupes posées,
+مَصْفُوفَةٌ | Al-Ghachiya v15 | des coussins bien disposés,
+مَبْثُوثَةٌ | Al-Ghachiya v16 | et des tapis étendus.
+أَفَلَا | Al-Ghachiya v17 | Ne voient-ils donc pas comment les chameaux ont été créés ?
+كَيْفَ | Al-Ghachiya v17 | Ne voient-ils donc pas comment les chameaux ont été créés ?
+خُلِقَتْ | Al-Ghachiya v17 | Ne voient-ils donc pas comment les chameaux ont été créés ?
+رُفِعَتْ | Al-Ghachiya v18 | Et comment le ciel a été élevé ?
+نُصِبَتْ | Al-Ghachiya v19 | Et comment les montagnes ont été érigées ?
+سُطِحَتْ | Al-Ghachiya v20 | Et comment la terre a été aplanie ?
+مُذَكِّرٌ | Al-Ghachiya v21 | Rappelle donc ! Car tu es là pour rappeler !
+عَلَيْهِم | Al-Ghachiya v22 | Tu n’as pas à les contraindre,
+تَوَلَّىٰ | Al-Ghachiya v23 | mais celui-là seul qui se détourne et mécroit,
+إِلَيْنَآ | Al-Ghachiya v25 | C’est vers Nous, certes, que sera leur retour.
+إِيَابَهُمْ | Al-Ghachiya v25 | C’est vers Nous, certes, que sera leur retour.
+عَلَيْنَا | Al-Ghachiya v26 | Puis c’est à Nous qu’il incombera de leur demander des comptes.
+حِسَابَهُم | Al-Ghachiya v26 | Puis c’est à Nous qu’il incombera de leur demander des comptes.
+هُمَزَةٍ | Al-Humaza v1 | Malheur à tout calomniateur, diffamateur,
+جَمَعَ | Al-Humaza v2 | qui amasse les biens et ne laisse pas de les compter,
+يَحْسَبُ | Al-Humaza v3 | pensant que ses biens le rendront éternel.
+أَنَّ | Al-Humaza v3 | pensant que ses biens le rendront éternel.
+مَالَهُۥٓ | Al-Humaza v3 | pensant que ses biens le rendront éternel.
+أَخْلَدَهُۥ | Al-Humaza v3 | pensant que ses biens le rendront éternel.
+نَارُ | Al-Humaza v6 | C’est le Feu d’Allah, à jamais attisé,
+تَطَّلِعُ | Al-Humaza v7 | qui atteindra les cœurs.
+مُّؤْصَدَةٌ | Al-Humaza v8 | Sur eux il se refermera
+عَمَدٍ | Al-Humaza v9 | et s’étendra par colonnes.
+مُّمَدَّدَةٍۭ | Al-Humaza v9 | et s’étendra par colonnes.
+ٱنشَقَّتْ | Al-Inchiqaq v1 | Quand le ciel sera lézardé,
+مُدَّتْ | Al-Inchiqaq v3 | quand la terre sera aplanie,
+إِنَّكَ | Al-Inchiqaq v6 | alors, ô toi être humain qui sans cesse t’évertues pour aller vers ton Seigneur, (sache que) tu Le rencontreras !
+كَادِحٌ | Al-Inchiqaq v6 | alors, ô toi être humain qui sans cesse t’évertues pour aller vers ton Seigneur, (sache que) tu Le rencontreras !
+كَدْحًا | Al-Inchiqaq v6 | alors, ô toi être humain qui sans cesse t’évertues pour aller vers ton Seigneur, (sache que) tu Le rencontreras !
+أُوتِىَ | Al-Inchiqaq v7 | Celui qui aura reçu son Livre en sa main droite
+كِتَـٰبَهُۥ | Al-Inchiqaq v7 | Celui qui aura reçu son Livre en sa main droite
+يُحَاسَبُ | Al-Inchiqaq v8 | sera jugé d’un jugement clément,
+يَسِيرًا | Al-Inchiqaq v8 | sera jugé d’un jugement clément,
+أَهْلِهِۦ | Al-Inchiqaq v9 | et s’en reviendra heureux auprès de sa famille.
+مَسْرُورًا | Al-Inchiqaq v9 | et s’en reviendra heureux auprès de sa famille.
+ظَهْرِهِۦ | Al-Inchiqaq v10 | Quant à celui qui recevra son Livre derrière son dos,
+يَدْعُوا۟ | Al-Inchiqaq v11 | il criera au malheur
+ثُبُورًا | Al-Inchiqaq v11 | il criera au malheur
+سَعِيرًا | Al-Inchiqaq v12 | et brûlera dans le Brasier.
+ظَنَّ | Al-Inchiqaq v14 | s’imaginant que jamais il ne reviendrait à la vie (pour être jugé).
+يَحُورَ | Al-Inchiqaq v14 | s’imaginant que jamais il ne reviendrait à la vie (pour être jugé).
+ٱتَّسَقَ | Al-Inchiqaq v18 | Par la lune quand elle est pleine !
+طَبَقًا | Al-Inchiqaq v19 | Vous passerez sans cesse étape par étape.
+طَبَقٍ | Al-Inchiqaq v19 | Vous passerez sans cesse étape par étape.
+يُؤْمِنُونَ | Al-Inchiqaq v20 | Pourquoi donc ne croient-ils pas ?
+قُرِئَ | Al-Inchiqaq v21 | Et quand le Coran leur est lu ne se prosternent-ils pas ?
+عَلَيْهِمُ | Al-Inchiqaq v21 | Et quand le Coran leur est lu ne se prosternent-ils pas ?
+يَسْجُدُونَ | Al-Inchiqaq v21 | Et quand le Coran leur est lu ne se prosternent-ils pas ?
+كَفَرُوا۟ | Al-Inchiqaq v22 | C’est que les mécréants le tiennent pour mensonge.
+أَعْلَمُ | Al-Inchiqaq v23 | Mais Allah Sait le mieux (les sentiments secrets) qu’ils nourrissent.
+يُوعُونَ | Al-Inchiqaq v23 | Mais Allah Sait le mieux (les sentiments secrets) qu’ils nourrissent.
+أَلِيمٍ | Al-Inchiqaq v24 | Annonce-leur donc un supplice très douloureux.
+أَجْرٌ | Al-Inchiqaq v25 | À l’exception de ceux qui ont cru et ont accompli les bonnes œuvres, et qui auront alors une récompense illimitée.
+غَيْرُ | Al-Inchiqaq v25 | À l’exception de ceux qui ont cru et ont accompli les bonnes œuvres, et qui auront alors une récompense illimitée.
+مَمْنُونٍۭ | Al-Inchiqaq v25 | À l’exception de ceux qui ont cru et ont accompli les bonnes œuvres, et qui auront alors une récompense illimitée.
+نَشْرَحْ | Al-Inchirah v1 | Ne t’avons-Nous pas ouvert la poitrine?
+ٱنفَطَرَتْ | Al-Infitar v1 | Quand le ciel se brisera,
+ٱنتَثَرَتْ | Al-Infitar v2 | quand les astres choiront,
+يَـٰٓأَيُّهَا | Al-Infitar v6 | Ô homme ! Qu’est-ce qui t’a donc leurré au sujet de ton Noble Seigneur
+غَرَّكَ | Al-Infitar v6 | Ô homme ! Qu’est-ce qui t’a donc leurré au sujet de ton Noble Seigneur
+خَلَقَكَ | Al-Infitar v7 | Qui t’a créé, t’a façonné et t’a donné des formes aussi proportionnées ?
+صُورَةٍ | Al-Infitar v8 | Il t’a constitué dans la forme qu’Il a voulue.
+رَكَّبَكَ | Al-Infitar v8 | Il t’a constitué dans la forme qu’Il a voulue.
+تُكَذِّبُونَ | Al-Infitar v9 | Et pourtant, vous tenez la Rétribution pour imposture.
+عَلَيْكُمْ | Al-Infitar v10 | Des gardiens sont là à vous surveiller,
+كِرَامًا | Al-Infitar v11 | qui sont de nobles scripteurs,
+كَـٰتِبِينَ | Al-Infitar v11 | qui sont de nobles scripteurs,
+يَعْلَمُونَ | Al-Infitar v12 | sachant bien ce que vous faites.
+تَفْعَلُونَ | Al-Infitar v12 | sachant bien ce que vous faites.
+نَعِيمٍ | Al-Infitar v13 | Les vertueux auront droit au délice absolu.
+جَحِيمٍ | Al-Infitar v14 | Les scélérats seront en Enfer.
+يَصْلَوْنَهَا | Al-Infitar v15 | Ils y brûleront au Jour de la Rétribution,
+عَنْهَا | Al-Infitar v16 | et ne pourront s’y dérober.
+أَدْرَىٰكَ | Al-Infitar v17 | Et qui te fera jamais savoir ce qu’est le Jour de la Rétribution ?
+تَمْلِكُ | Al-Infitar v19 | C’est le jour où aucune âme ne pourra rien pour une autre âme. Et la décision, ce jour-là, reviendra entière à Allah.
+شَيْـًٔا | Al-Infitar v19 | C’est le jour où aucune âme ne pourra rien pour une autre âme. Et la décision, ce jour-là, reviendra entière à Allah.
+أَعْبُدُ | Al-Kafirun v2 | Je n’adore point ce que vous adorez.
+تَعْبُدُونَ | Al-Kafirun v2 | Je n’adore point ce que vous adorez.
+أَنتُمْ | Al-Kafirun v3 | Pas plus que vous n’allez adorer ce que j’adore.
+عَـٰبِدُونَ | Al-Kafirun v3 | Pas plus que vous n’allez adorer ce que j’adore.
+عَابِدٌ | Al-Kafirun v4 | Ni moi je ne vais adorer ce que vous avez adoré.
+عَبَدتُّمْ | Al-Kafirun v4 | Ni moi je ne vais adorer ce que vous avez adoré.
+دِينُكُمْ | Al-Kafirun v6 | Vous, vous avez votre religion et moi, j’ai la mienne. »
+دِينِ | Al-Kafirun v6 | Vous, vous avez votre religion et moi, j’ai la mienne. »
+يَغْشَىٰ | Al-Layl v1 | Par la nuit quand elle voile tout !
+تَجَلَّىٰ | Al-Layl v2 | Par le jour quand il est dans tout son éclat !
+سَعْيَكُمْ | Al-Layl v4 | Vos efforts sont, en vérité, (déployés) pour des desseins divers.
+أَعْطَىٰ | Al-Layl v5 | Celui qui donne (de ses biens) et qui craint (Allah),
+مَالُهُۥٓ | Al-Layl v11 | Ses biens ne lui seront en rien utiles quand il sera livré (au Feu).
+تَرَدَّىٰٓ | Al-Layl v11 | Ses biens ne lui seront en rien utiles quand il sera livré (au Feu).
+تَلَظَّىٰ | Al-Layl v14 | Je vous mets en garde contre un Feu dévorant,
+يَصْلَىٰهَآ | Al-Layl v15 | où ne brûlera que le réprouvé,
+كَذَّبَ | Al-Layl v16 | qui a osé démentir et s’est détourné avec dédain.
+يُؤْتِى | Al-Layl v18 | qui dépense de ses biens pour se purifier,
+مَالَهُۥ | Al-Layl v18 | qui dépense de ses biens pour se purifier,
+يَتَزَكَّىٰ | Al-Layl v18 | qui dépense de ses biens pour se purifier,
+عِندَهُۥ | Al-Layl v19 | et ne le fait point pour rendre à quelqu’un la dette d’un bienfait,
+نِّعْمَةٍ | Al-Layl v19 | et ne le fait point pour rendre à quelqu’un la dette d’un bienfait,
+تُجْزَىٰٓ | Al-Layl v19 | et ne le fait point pour rendre à quelqu’un la dette d’un bienfait,
+ٱبْتِغَآءَ | Al-Layl v20 | mais pour être agréable à son Seigneur, l’Altissime.
+يَرْضَىٰ | Al-Layl v21 | Et il sera, assurément, satisfait.
+يَدُعُّ | Al-Ma'un v2 | C’est justement lui qui rudoie l’orphelin,
+يَحُضُّ | Al-Ma'un v3 | et qui n’incite point à assurer la subsistance du pauvre.
+صَلَاتِهِمْ | Al-Ma'un v5 | mais qui sont distraits de leur prière (Çalât),
+سَاهُونَ | Al-Ma'un v5 | mais qui sont distraits de leur prière (Çalât),
+يُرَآءُونَ | Al-Ma'un v6 | ceux qui font tout par ostentation,
+تَبَّتْ | Al-Masad v1 | Que périssent les mains d’Abu Lahab, et qu’il périsse lui-même !
+يَدَآ | Al-Masad v1 | Que périssent les mains d’Abu Lahab, et qu’il périsse lui-même !
+أَبِى | Al-Masad v1 | Que périssent les mains d’Abu Lahab, et qu’il périsse lui-même !
+أَغْنَىٰ | Al-Masad v2 | À rien ne lui serviront ses richesses ni tout ce qu’il a acquis !
+مَالُهُۥ | Al-Masad v2 | À rien ne lui serviront ses richesses ni tout ce qu’il a acquis !
+كَسَبَ | Al-Masad v2 | À rien ne lui serviront ses richesses ni tout ce qu’il a acquis !
+سَيَصْلَىٰ | Al-Masad v3 | Il brûlera dans un Feu aux flammes incandescentes,
+ذَاتَ | Al-Masad v3 | Il brûlera dans un Feu aux flammes incandescentes,
+حَمَّالَةَ | Al-Masad v4 | ainsi que sa femme, porteuse de bois mort,
+جِيدِهَا | Al-Masad v5 | et portant au cou une corde de fibres tressées!
+حَبْلٌ | Al-Masad v5 | et portant au cou une corde de fibres tressées!
+مَّسَدٍۭ | Al-Masad v5 | et portant au cou une corde de fibres tressées!
+ٱكْتَالُوا۟ | Al-Mutaffifin v2 | qui, lorsqu’ils font peser (ce qu’ils achètent), exigent la pleine mesure,
+يَسْتَوْفُونَ | Al-Mutaffifin v2 | qui, lorsqu’ils font peser (ce qu’ils achètent), exigent la pleine mesure,
+كَالُوهُمْ | Al-Mutaffifin v3 | mais qui, lorsqu’ils ont eux-mêmes à mesurer ou à peser (pour les autres), trichent volontiers.
+أَو | Al-Mutaffifin v3 | mais qui, lorsqu’ils ont eux-mêmes à mesurer ou à peser (pour les autres), trichent volontiers.
+يُخْسِرُونَ | Al-Mutaffifin v3 | mais qui, lorsqu’ils ont eux-mêmes à mesurer ou à peser (pour les autres), trichent volontiers.
+أَلَا | Al-Mutaffifin v4 | Ceux-là ne songent-ils pas qu’ils seront ressuscités,
+يَظُنُّ | Al-Mutaffifin v4 | Ceux-là ne songent-ils pas qu’ils seront ressuscités,
+أَنَّهُم | Al-Mutaffifin v4 | Ceux-là ne songent-ils pas qu’ils seront ressuscités,
+مَّبْعُوثُونَ | Al-Mutaffifin v4 | Ceux-là ne songent-ils pas qu’ils seront ressuscités,
+عَظِيمٍ | Al-Mutaffifin v5 | pour un terrible jour,
+كِتَـٰبَ | Al-Mutaffifin v7 | Que non ! le Livre des pervers sera dans Sijjîn.
+سِجِّينٍ | Al-Mutaffifin v7 | Que non ! le Livre des pervers sera dans Sijjîn.
+سِجِّينٌ | Al-Mutaffifin v8 | Et qui te fera jamais savoir ce que c’est que Sijjîn ?
+كِتَـٰبٌ | Al-Mutaffifin v9 | Un Livre (où les noms des négateurs sont) définitivement inventoriés.
+مَّرْقُومٌ | Al-Mutaffifin v9 | Un Livre (où les noms des négateurs sont) définitivement inventoriés.
+يُكَذِّبُونَ | Al-Mutaffifin v11 | qui tiennent pour imposture le Jour de la Rétribution.
+يُكَذِّبُ | Al-Mutaffifin v12 | Or seul (l’homme pervers), livré à ses abus et à ses péchés, tient ce jour pour mensonge.
+كُلُّ | Al-Mutaffifin v12 | Or seul (l’homme pervers), livré à ses abus et à ses péchés, tient ce jour pour mensonge.
+مُعْتَدٍ | Al-Mutaffifin v12 | Or seul (l’homme pervers), livré à ses abus et à ses péchés, tient ce jour pour mensonge.
+أَثِيمٍ | Al-Mutaffifin v12 | Or seul (l’homme pervers), livré à ses abus et à ses péchés, tient ce jour pour mensonge.
+تُتْلَىٰ | Al-Mutaffifin v13 | Quand Nos versets lui sont récités, il dit : « Ce ne sont que fables d’anciens ! »
+عَلَيْهِ | Al-Mutaffifin v13 | Quand Nos versets lui sont récités, il dit : « Ce ne sont que fables d’anciens ! »
+ءَايَـٰتُنَا | Al-Mutaffifin v13 | Quand Nos versets lui sont récités, il dit : « Ce ne sont que fables d’anciens ! »
+قَالَ | Al-Mutaffifin v13 | Quand Nos versets lui sont récités, il dit : « Ce ne sont que fables d’anciens ! »
+أَسَـٰطِيرُ | Al-Mutaffifin v13 | Quand Nos versets lui sont récités, il dit : « Ce ne sont que fables d’anciens ! »
+رَانَ | Al-Mutaffifin v14 | Que non ! Ce sont plutôt leurs actions qui ont voilé leurs cœurs.
+عَلَىٰ | Al-Mutaffifin v14 | Que non ! Ce sont plutôt leurs actions qui ont voilé leurs cœurs.
+قُلُوبِهِم | Al-Mutaffifin v14 | Que non ! Ce sont plutôt leurs actions qui ont voilé leurs cœurs.
+يَكْسِبُونَ | Al-Mutaffifin v14 | Que non ! Ce sont plutôt leurs actions qui ont voilé leurs cœurs.
+رَّبِّهِمْ | Al-Mutaffifin v15 | Que non ! ce jour-là, ils seront eux-mêmes privés de la vision de leur Seigneur.
+يُقَالُ | Al-Mutaffifin v17 | Et il leur sera dit : « Voilà ce que vous teniez pour mensonge ! »
+هَـٰذَا | Al-Mutaffifin v17 | Et il leur sera dit : « Voilà ce que vous teniez pour mensonge ! »
+كُنتُم | Al-Mutaffifin v17 | Et il leur sera dit : « Voilà ce que vous teniez pour mensonge ! »
+عِلِّيِّينَ | Al-Mutaffifin v18 | Que non ! le Livre des vertueux sera dans ‘Illiyyûn.
+عِلِّيُّونَ | Al-Mutaffifin v19 | Et qui te fera jamais savoir ce que c’est que ‘Illiyyûn ?
+يَشْهَدُهُ | Al-Mutaffifin v21 | En seront témoins les rapprochés (d’Allah)
+يَنظُرُونَ | Al-Mutaffifin v23 | sur des couches, ils regarderont autour d’eux.
+يُسْقَوْنَ | Al-Mutaffifin v25 | Il leur sera servi à boire d’un nectar cacheté.
+رَّحِيقٍ | Al-Mutaffifin v25 | Il leur sera servi à boire d’un nectar cacheté.
+مَّخْتُومٍ | Al-Mutaffifin v25 | Il leur sera servi à boire d’un nectar cacheté.
+خِتَـٰمُهُۥ | Al-Mutaffifin v26 | Son cachet sera de musc : voilà (un objectif) pour ceux qui voudraient rivaliser (de ferveur pour l’atteindre) !
+مِسْكٌ | Al-Mutaffifin v26 | Son cachet sera de musc : voilà (un objectif) pour ceux qui voudraient rivaliser (de ferveur pour l’atteindre) !
+تَسْنِيمٍ | Al-Mutaffifin v27 | (Et ce nectar) sera mélangé à l’eau de Tasnîm,
+عَيْنًا | Al-Mutaffifin v28 | source dont boivent les privilégiés.
+يَشْرَبُ | Al-Mutaffifin v28 | source dont boivent les privilégiés.
+أَجْرَمُوا۟ | Al-Mutaffifin v29 | Ceux qui commettaient les crimes se riaient de ceux qui avaient cru.
+ءَامَنُوا۟ | Al-Mutaffifin v29 | Ceux qui commettaient les crimes se riaient de ceux qui avaient cru.
+يَضْحَكُونَ | Al-Mutaffifin v29 | Ceux qui commettaient les crimes se riaient de ceux qui avaient cru.
+مَرُّوا۟ | Al-Mutaffifin v30 | Lorsqu’ils passaient à côté d’eux, (ils les toisaient et) échangeaient des clins d’œil.
+يَتَغَامَزُونَ | Al-Mutaffifin v30 | Lorsqu’ils passaient à côté d’eux, (ils les toisaient et) échangeaient des clins d’œil.
+ٱنقَلَبُوٓا۟ | Al-Mutaffifin v31 | Et quand ils retournaient chez eux, ils retournaient l’air moqueur.
+أَهْلِهِمُ | Al-Mutaffifin v31 | Et quand ils retournaient chez eux, ils retournaient l’air moqueur.
+ٱنقَلَبُوا۟ | Al-Mutaffifin v31 | Et quand ils retournaient chez eux, ils retournaient l’air moqueur.
+رَأَوْهُمْ | Al-Mutaffifin v32 | Et quand ils les voyaient, ils disaient : « Ceux-là sont vraiment égarés ! »
+قَالُوٓا۟ | Al-Mutaffifin v32 | Et quand ils les voyaient, ils disaient : « Ceux-là sont vraiment égarés ! »
+هَـٰٓؤُلَآءِ | Al-Mutaffifin v32 | Et quand ils les voyaient, ils disaient : « Ceux-là sont vraiment égarés ! »
+أُرْسِلُوا۟ | Al-Mutaffifin v33 | Pourtant, nul ne les a chargés d’être leurs gardiens.
+عَلَيْهِمْ | Al-Mutaffifin v33 | Pourtant, nul ne les a chargés d’être leurs gardiens.
+حَـٰفِظِينَ | Al-Mutaffifin v33 | Pourtant, nul ne les a chargés d’être leurs gardiens.
+ثُوِّبَ | Al-Mutaffifin v36 | si les mécréants n’ont pas été rétribués pour ce qu’ils faisaient !
+يَفْعَلُونَ | Al-Mutaffifin v36 | si les mécréants n’ont pas été rétribués pour ce qu’ils faisaient !
+أَنزَلْنَـٰهُ | Al-Qadr v1 | Nous l’avons révélé en la nuit du Destin.
+أَلْفِ | Al-Qadr v3 | La nuit du Destin vaut mieux que mille mois.
+شَهْرٍ | Al-Qadr v3 | La nuit du Destin vaut mieux que mille mois.
+تَنَزَّلُ | Al-Qadr v4 | En cette nuit, descendent les Anges et l’Esprit avec la permission de leur Seigneur et avec les ordres pour toutes choses.
+رَبِّهِم | Al-Qadr v4 | En cette nuit, descendent les Anges et l’Esprit avec la permission de leur Seigneur et avec les ordres pour toutes choses.
+أَمْرٍ | Al-Qadr v4 | En cette nuit, descendent les Anges et l’Esprit avec la permission de leur Seigneur et avec les ordres pour toutes choses.
+سَلَـٰمٌ | Al-Qadr v5 | Paix elle est jusqu’au lever de l’aube.
+حَتَّىٰ | Al-Qadr v5 | Paix elle est jusqu’au lever de l’aube.
+مَطْلَعِ | Al-Qadr v5 | Paix elle est jusqu’au lever de l’aube.
+يَكُونُ | Al-Qari'a v4 | C’est le jour où les hommes seront tels des papillons dispersés,
+كَٱلْفَرَاشِ | Al-Qari'a v4 | C’est le jour où les hommes seront tels des papillons dispersés,
+كَٱلْعِهْنِ | Al-Qari'a v5 | où les montagnes seront comme de la laine démêlée en flocons.
+ثَقُلَتْ | Al-Qari'a v6 | Quant à celui dont les (œuvres) seront lourdes à la balance,
+مَوَٰزِينُهُۥ | Al-Qari'a v6 | Quant à celui dont les (œuvres) seront lourdes à la balance,
+عِيشَةٍ | Al-Qari'a v7 | il aura une vie agréable,
+رَّاضِيَةٍ | Al-Qari'a v7 | il aura une vie agréable,
+خَفَّتْ | Al-Qari'a v8 | et quant à celui dont les (œuvres) seront légères à la balance,
+هَاوِيَةٌ | Al-Qari'a v9 | sa destination sera l’abîme.
+هِيَهْ | Al-Qari'a v10 | Et qui te fera jamais savoir ce que c’est (que l’abîme)?
+حَامِيَةٌۢ | Al-Qari'a v11 | Un Feu très ardent !
+كِذَّٰبًا | An-Naba v35 | Ils n’y entendront ni vains propos ni mensonges.
+جَآءَ | An-Nasr v1 | Lorsque viendra le secours d’Allah (annonçant) la victoire,
+نَصْرُ | An-Nasr v1 | Lorsque viendra le secours d’Allah (annonçant) la victoire,
+يَدْخُلُونَ | An-Nasr v2 | et que tu verras les hommes entrer dans la religion d’Allah en foules,
+تَوَّابًۢا | An-Nasr v3 | rends gloire alors à ton Seigneur, célèbre Ses louanges et implore Son pardon ! Car Il est Tout Absoluteur !
+غَرْقًا | An-Nazi'at v1 | Par les arracheurs (des âmes) avec violence !
+نَشْطًا | An-Nazi'at v2 | Et par ceux qui les cueillent avec douceur !
+سَبْحًا | An-Nazi'at v3 | Par ceux qui naviguent librement,
+سَبْقًا | An-Nazi'at v4 | puis courent et devancent,
+أَمْرًا | An-Nazi'at v5 | pour mieux gérer les affaires !
+تَرْجُفُ | An-Nazi'at v6 | Le jour où retentira (le premier son du Cor),
+تَتْبَعُهَا | An-Nazi'at v7 | et que suivra le second (son du Cor),
+قُلُوبٌ | An-Nazi'at v8 | des cœurs, ce jour-là, seront saisis de frayeur,
+يَوْمَئِذٍ | An-Nazi'at v8 | des cœurs, ce jour-là, seront saisis de frayeur,
+أَبْصَـٰرُهَا | An-Nazi'at v9 | et des regards saisis d’humilité.
+خَـٰشِعَةٌ | An-Nazi'at v9 | et des regards saisis d’humilité.
+يَقُولُونَ | An-Nazi'at v10 | « Serons-nous donc, demanderont-ils, ramenés à notre vie sur terre,
+أَءِنَّا | An-Nazi'at v10 | « Serons-nous donc, demanderont-ils, ramenés à notre vie sur terre,
+أَءِذَا | An-Nazi'at v11 | alors même que nous ne serons plus qu’ossements rongés? »
+كُنَّا | An-Nazi'at v11 | alors même que nous ne serons plus qu’ossements rongés? »
+عِظَـٰمًا | An-Nazi'at v11 | alors même que nous ne serons plus qu’ossements rongés? »
+نَّخِرَةً | An-Nazi'at v11 | alors même que nous ne serons plus qu’ossements rongés? »
+قَالُوا۟ | An-Nazi'at v12 | « Ce serait donc, diront-ils, un retour où nous serions perdants ! »
+تِلْكَ | An-Nazi'at v12 | « Ce serait donc, diront-ils, un retour où nous serions perdants ! »
+كَرَّةٌ | An-Nazi'at v12 | « Ce serait donc, diront-ils, un retour où nous serions perdants ! »
+خَاسِرَةٌ | An-Nazi'at v12 | « Ce serait donc, diront-ils, un retour où nous serions perdants ! »
+هِىَ | An-Nazi'at v13 | Il n’y aura qu’un seul Cri,
+زَجْرَةٌ | An-Nazi'at v13 | Il n’y aura qu’un seul Cri,
+هَلْ | An-Nazi'at v15 | L’histoire de Moïse t’est-elle parvenue ?
+أَتَىٰكَ | An-Nazi'at v15 | L’histoire de Moïse t’est-elle parvenue ?
+حَدِيثُ | An-Nazi'at v15 | L’histoire de Moïse t’est-elle parvenue ?
+مُوسَىٰٓ | An-Nazi'at v15 | L’histoire de Moïse t’est-elle parvenue ?
+إِذْ | An-Nazi'at v16 | Son Seigneur l’appela dans la vallée sacrée de Touwâ en lui disant :
+نَادَىٰهُ | An-Nazi'at v16 | Son Seigneur l’appela dans la vallée sacrée de Touwâ en lui disant :
+طُوًى | An-Nazi'at v16 | Son Seigneur l’appela dans la vallée sacrée de Touwâ en lui disant :
+ٱذْهَبْ | An-Nazi'at v17 | « Va trouver Pharaon, car il a transgressé !
+إِنَّهُۥ | An-Nazi'at v17 | « Va trouver Pharaon, car il a transgressé !
+طَغَىٰ | An-Nazi'at v17 | « Va trouver Pharaon, car il a transgressé !
+هَل | An-Nazi'at v18 | Dis-lui : “Ne voudrais-tu pas te purifier
+أَن | An-Nazi'at v18 | Dis-lui : “Ne voudrais-tu pas te purifier
+تَزَكَّىٰ | An-Nazi'at v18 | Dis-lui : “Ne voudrais-tu pas te purifier
+أَدْبَرَ | An-Nazi'at v22 | puis se détourna persistant dans la mécréance.
+يَسْعَىٰ | An-Nazi'at v22 | puis se détourna persistant dans la mécréance.
+أَنَا۠ | An-Nazi'at v24 | « Je suis votre seigneur le plus haut ! »
+رَبُّكُمُ | An-Nazi'at v24 | « Je suis votre seigneur le plus haut ! »
+نَكَالَ | An-Nazi'at v25 | Allah sévit contre lui par le supplice exemplaire de l’autre monde et de la vie ici-bas.
+يَخْشَىٰٓ | An-Nazi'at v26 | Il y a certes là une leçon à méditer par quiconque craint (Allah).
+ءَأَنتُمْ | An-Nazi'at v27 | Êtes-vous plus difficiles à créer que le ciel qu’Il a édifié ?
+أَشَدُّ | An-Nazi'at v27 | Êtes-vous plus difficiles à créer que le ciel qu’Il a édifié ?
+خَلْقًا | An-Nazi'at v27 | Êtes-vous plus difficiles à créer que le ciel qu’Il a édifié ?
+أَمِ | An-Nazi'at v27 | Êtes-vous plus difficiles à créer que le ciel qu’Il a édifié ?
+رَفَعَ | An-Nazi'at v28 | Il en a élevé bien haut la voûte et a su en parfaire la forme.
+سَمْكَهَا | An-Nazi'at v28 | Il en a élevé bien haut la voûte et a su en parfaire la forme.
+ضُحَىٰهَا | An-Nazi'at v29 | Il en a rendu la nuit obscure et en a fait briller le jour.
+دَحَىٰهَآ | An-Nazi'at v30 | La terre, après cela, Il l’a nivelée.
+أَخْرَجَ | An-Nazi'at v31 | Il en a fait sortir eaux et pâturages.
+مِنْهَا | An-Nazi'at v31 | Il en a fait sortir eaux et pâturages.
+مَآءَهَا | An-Nazi'at v31 | Il en a fait sortir eaux et pâturages.
+أَرْسَىٰهَا | An-Nazi'at v32 | Les montagnes, Il les a implantées,
+مَتَـٰعًا | An-Nazi'at v33 | pour vos besoins à vous et à ceux de vos bestiaux.
+جَآءَتِ | An-Nazi'at v34 | Mais quand se produira le plus grand des cataclysmes,
+يَتَذَكَّرُ | An-Nazi'at v35 | le jour où l’homme se souviendra de ce tout ce qu’il s’est employé à accomplir,
+سَعَىٰ | An-Nazi'at v35 | le jour où l’homme se souviendra de ce tout ce qu’il s’est employé à accomplir,
+يَرَىٰ | An-Nazi'at v36 | et que l’Enfer sera mis en évidence devant quiconque peut voir,
+خَافَ | An-Nazi'at v40 | Quant à celui que le statut suprême de son Seigneur (faisait trembler) de crainte, (celui qui) s’interdisait de succomber aux passions,
+مَقَامَ | An-Nazi'at v40 | Quant à celui que le statut suprême de son Seigneur (faisait trembler) de crainte, (celui qui) s’interdisait de succomber aux passions,
+يَسْـَٔلُونَكَ | An-Nazi'at v42 | Ils t’interrogent au sujet de l’Heure : « Quand va-t-elle enfin venir ? »
+أَيَّانَ | An-Nazi'at v42 | Ils t’interrogent au sujet de l’Heure : « Quand va-t-elle enfin venir ? »
+مُرْسَىٰهَا | An-Nazi'at v42 | Ils t’interrogent au sujet de l’Heure : « Quand va-t-elle enfin venir ? »
+أَنتَ | An-Nazi'at v43 | Comment saurais-tu y trouver réponse ?
+ذِكْرَىٰهَآ | An-Nazi'at v43 | Comment saurais-tu y trouver réponse ?
+مُنتَهَىٰهَآ | An-Nazi'at v44 | C’est de ton Seigneur que relève son terme.
+إِنَّمَآ | An-Nazi'at v45 | Tu n’es là, (quant à toi), que pour avertir quiconque l’appréhende.
+مُنذِرُ | An-Nazi'at v45 | Tu n’es là, (quant à toi), que pour avertir quiconque l’appréhende.
+يَخْشَىٰهَا | An-Nazi'at v45 | Tu n’es là, (quant à toi), que pour avertir quiconque l’appréhende.
+كَأَنَّهُمْ | An-Nazi'at v46 | Le jour où ils la verront, ce sera comme s’ils n’étaient restés (sur terre) qu’un après-midi ou une matinée !
+يَرَوْنَهَا | An-Nazi'at v46 | Le jour où ils la verront, ce sera comme s’ils n’étaient restés (sur terre) qu’un après-midi ou une matinée !
+يَلْبَثُوٓا۟ | An-Nazi'at v46 | Le jour où ils la verront, ce sera comme s’ils n’étaient restés (sur terre) qu’un après-midi ou une matinée !
+عَشِيَّةً | An-Nazi'at v46 | Le jour où ils la verront, ce sera comme s’ils n’étaient restés (sur terre) qu’un après-midi ou une matinée !
+أَوْ | An-Nazi'at v46 | Le jour où ils la verront, ce sera comme s’ils n’étaient restés (sur terre) qu’un après-midi ou une matinée !
+كُوِّرَتْ | At-Takwir v1 | Quand le soleil sera une sphère obscurcie,
+ٱنكَدَرَتْ | At-Takwir v2 | que les étoiles tomberont, éteintes,
+سُيِّرَتْ | At-Takwir v3 | que les montagnes seront mises en mouvement,
+عُطِّلَتْ | At-Takwir v4 | que les chamelles en gésine seront délaissées,
+حُشِرَتْ | At-Takwir v5 | que les bêtes sauvages seront rassemblées,
+سُجِّرَتْ | At-Takwir v6 | que les mers seront enflammées,
+زُوِّجَتْ | At-Takwir v7 | que les âmes seront réunies en couples (semblables),
+سُئِلَتْ | At-Takwir v8 | et qu’il sera demandé à la fillette enterrée vivante
+ذَنۢبٍ | At-Takwir v9 | pour quel péché elle a été tuée,
+قُتِلَتْ | At-Takwir v9 | pour quel péché elle a été tuée,
+نُشِرَتْ | At-Takwir v10 | quand les feuilles (du Livre des comptes) seront déployées,
+كُشِطَتْ | At-Takwir v11 | quand le ciel sera dépouillé,
+سُعِّرَتْ | At-Takwir v12 | que l’Enfer sera attisé,
+أُزْلِفَتْ | At-Takwir v13 | et le Paradis rapproché,
+عَلِمَتْ | At-Takwir v14 | chaque âme saura alors ce qu’elle aura accompli.
+نَفْسٌ | At-Takwir v14 | chaque âme saura alors ce qu’elle aura accompli.
+أَحْضَرَتْ | At-Takwir v14 | chaque âme saura alors ce qu’elle aura accompli.
+أُقْسِمُ | At-Takwir v15 | J’en jure par les étoiles qui se meuvent,
+عَسْعَسَ | At-Takwir v17 | par la nuit quand elle rampe et se répand,
+تَنَفَّسَ | At-Takwir v18 | par l’aurore quand elle respire,
+رَسُولٍ | At-Takwir v19 | que c’est la parole d’un noble émissaire,
+كَرِيمٍ | At-Takwir v19 | que c’est la parole d’un noble émissaire,
+ذِى | At-Takwir v20 | fort de l’estime du Détenteur du Trône,
+قُوَّةٍ | At-Takwir v20 | fort de l’estime du Détenteur du Trône,
+عِندَ | At-Takwir v20 | fort de l’estime du Détenteur du Trône,
+مَكِينٍ | At-Takwir v20 | fort de l’estime du Détenteur du Trône,
+مُّطَاعٍ | At-Takwir v21 | écouté et loyal.
+أَمِينٍ | At-Takwir v21 | écouté et loyal.
+صَاحِبُكُم | At-Takwir v22 | Votre compagnon n’est certes pas fou.
+رَءَاهُ | At-Takwir v23 | Il l’a bien vu à l’horizon où tout est clair.
+عَلَى | At-Takwir v24 | Et ce n’est pas lui qui sera avare du mystère révélé.
+شَيْطَـٰنٍ | At-Takwir v25 | Ce n’est nullement la parole d’un démon lapidé.
+رَّجِيمٍ | At-Takwir v25 | Ce n’est nullement la parole d’un démon lapidé.
+تَذْهَبُونَ | At-Takwir v26 | Qu’allez-vous donc chercher ?
+ذِكْرٌ | At-Takwir v27 | Ce n’est là qu’un Rappel pour l’Univers,
+مِنكُمْ | At-Takwir v28 | pour ceux d’entre vous, qui voudraient prendre le droit chemin.
+يَسْتَقِيمَ | At-Takwir v28 | pour ceux d’entre vous, qui voudraient prendre le droit chemin.
+تَشَآءُونَ | At-Takwir v29 | Or, vous ne voudrez rien qu’Allah ne veuille, Lui, le Seigneur de l’Univers.
+يَشَآءَ | At-Takwir v29 | Or, vous ne voudrez rien qu’Allah ne veuille, Lui, le Seigneur de l’Univers.
+أَلْهَىٰكُمُ | At-Takâthur v1 | La ruée vers les richesses vous distrait,
+زُرْتُمُ | At-Takâthur v2 | jusqu’au bord de vos tombes.
+سَوْفَ | At-Takâthur v3 | Mais vous allez bientôt savoir.
+تَعْلَمُونَ | At-Takâthur v3 | Mais vous allez bientôt savoir.
+عِلْمَ | At-Takâthur v5 | Si seulement vous pouviez savoir avec certitude,
+عَيْنَ | At-Takâthur v7 | Puis vous le verriez, de vos yeux le verriez,
+نَفْسٍ | At-Tariq v4 | Il n’est pas d’âme qui n’ait son (Ange) gardien.
+حَافِظٌ | At-Tariq v4 | Il n’est pas d’âme qui n’ait son (Ange) gardien.
+مِمَّ | At-Tariq v5 | Que l’homme voie donc de quoi il est créé !
+دَافِقٍ | At-Tariq v6 | Il est créé d’une eau qui gicle,
+يَخْرُجُ | At-Tariq v7 | sortant d’entre les reins (de l’homme) et les côtes (de la femme).
+رَجْعِهِۦ | At-Tariq v8 | (Allah) est certes Capable de le ressusciter.
+تُبْلَى | At-Tariq v9 | Le jour où les secrets seront révélés,
+نَاصِرٍ | At-Tariq v10 | il n’aura ni force ni soutien.
+يَكِيدُونَ | At-Tariq v15 | Ils rusent de leur meilleure ruse,
+كَيْدًا | At-Tariq v15 | Ils rusent de leur meilleure ruse,
+أَمْهِلْهُمْ | At-Tariq v17 | Accorde donc un délai aux mécréants, donne-leur répit pour quelque temps.
+رُوَيْدًۢا | At-Tariq v17 | Accorde donc un délai aux mécréants, donne-leur répit pour quelque temps.
+سِينِينَ | At-Tin v2 | Par le mont Sinaï !
+أَحْسَنِ | At-Tin v4 | Nous avons créé l’homme dans la meilleure forme qui soit.
+تَقْوِيمٍ | At-Tin v4 | Nous avons créé l’homme dans la meilleure forme qui soit.
+رَدَدْنَـٰهُ | At-Tin v5 | Puis Nous l’avons fait choir au rang le plus bas,
+أَسْفَلَ | At-Tin v5 | Puis Nous l’avons fait choir au rang le plus bas,
+سَـٰفِلِينَ | At-Tin v5 | Puis Nous l’avons fait choir au rang le plus bas,
+مَمْنُونٍ | At-Tin v6 | sauf ceux qui ont cru et accompli les bonnes œuvres, qui, eux, auront une récompense inépuisable.
+يُكَذِّبُكَ | At-Tin v7 | Qu’est-ce qui te pousse (ô homme), après cela, à prendre pour un mensonge la Rétribution?
+أَلَيْسَ | At-Tin v8 | Allah n’est-Il pas le plus Sage des juges ?
+زُلْزِلَتِ | Az-Zalzala v1 | Lorsque la terre aura tremblé de son (plus violent) tremblement,
+زِلْزَالَهَا | Az-Zalzala v1 | Lorsque la terre aura tremblé de son (plus violent) tremblement,
+أَثْقَالَهَا | Az-Zalzala v2 | et qu’elle aura rejeté tous ses fardeaux,
+تُحَدِّثُ | Az-Zalzala v4 | Ce jour-là, elle dira son histoire,
+أَخْبَارَهَا | Az-Zalzala v4 | Ce jour-là, elle dira son histoire,
+أَوْحَىٰ | Az-Zalzala v5 | d’après ce que ton Seigneur lui aura ordonné.
+يَصْدُرُ | Az-Zalzala v6 | Ce jour-là, les hommes sortiront par groupes épars pour répondre de leurs œuvres.
+أَشْتَاتًا | Az-Zalzala v6 | Ce jour-là, les hommes sortiront par groupes épars pour répondre de leurs œuvres.
+أَعْمَـٰلَهُمْ | Az-Zalzala v6 | Ce jour-là, les hommes sortiront par groupes épars pour répondre de leurs œuvres.
+يَعْمَلْ | Az-Zalzala v7 | Celui qui aura fait ne fût-ce que le poids d’un atome en bien, le verra ;
+مِثْقَالَ | Az-Zalzala v7 | Celui qui aura fait ne fût-ce que le poids d’un atome en bien, le verra ;
+ذَرَّةٍ | Az-Zalzala v7 | Celui qui aura fait ne fût-ce que le poids d’un atome en bien, le verra ;
+خَيْرًا | Az-Zalzala v7 | Celui qui aura fait ne fût-ce que le poids d’un atome en bien, le verra ;
+يَرَهُۥ | Az-Zalzala v7 | Celui qui aura fait ne fût-ce que le poids d’un atome en bien, le verra ;
+شَرًّا | Az-Zalzala v8 | et celui qui aura fait ne fût-ce que le poids d’un atome en mal, le verra.
+قُرَيْشٍ | Quraych v1 | Pour les bienfaits reçus par Qoraïch,
+إِۦلَـٰفِهِمْ | Quraych v2 | Pour les bienfaits de leurs voyages d’hiver et d’été,
+رِحْلَةَ | Quraych v2 | Pour les bienfaits de leurs voyages d’hiver et d’été,
+أَطْعَمَهُم | Quraych v4 | Qui les a nourris au mépris de la faim, et les a rassurés en dépit de la peur !
+خَوْفٍۭ | Quraych v4 | Qui les a nourris au mépris de la faim, et les a rassurés en dépit de la peur !

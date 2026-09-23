@@ -536,13 +536,12 @@ def enrich_verse(surah_id, surah_name, v_num, arabic_text, trans):
                 fr = f"Mot : {clean_w}"
         words_list.append({'ar': w, 'fr': fr})
 
-    # Meaning: Reformulation simple en français courant
-    # Clean translation quotes
+    # Meaning: Reformulation propre en français courant sans répétition
     clean_trans = trans.strip('«»" \t\n')
-    meaning = f"En français courant : {clean_trans}. Ce verset rappelle avec clarté et bienveillance la portée morale et spirituelle de nos actes."
+    meaning = clean_trans
 
-    # Explanation: Commentaire développé, sobre et sourcé (portée, contexte théologique)
-    explanation = f"Dans le contexte de la sourate {surah_name} (verset {v_num}), l'exégèse traditionnelle (comme celles d'Ibn Kathir et d'As-Sa'di) met en lumière la cohérence du message : ce passage interpelle l'esprit du croyant sur la grandeur divine, l'importance de la sincérité du cœur et la responsabilité de chacun face au Jugement ultime."
+    # Explanation: Tafsir authentique
+    explanation = v_tafsir if v_tafsir else clean_trans
 
     return meaning, explanation, words_list
 

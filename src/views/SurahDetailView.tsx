@@ -80,6 +80,7 @@ export const SurahDetailView: React.FC<SurahDetailViewProps> = ({
     duration,
     currentVerseNumber,
     currentWordIndex,
+    isRecitingBismillah,
     isVerseMode,
     playbackSpeed,
     repeatMode,
@@ -276,17 +277,14 @@ export const SurahDetailView: React.FC<SurahDetailViewProps> = ({
 
   // Historic circumstances and Nouman Ali Khan overview
   const circumstances =
-    surah.historicalContext?.circonstances ||
+    surah.historicalContext?.circumstances ||
     surah.historicalContext?.revelationReason ||
-    (surah.id === 103
-      ? "Les Compagnons ne se séparaient pas sans se la réciter (rapporté par At-Tabarânî)."
-      : "Révélée durant la période prophétique, guidant les croyants vers la piété et l'excellence.");
+    "Révélée durant la période prophétique, guidant les croyants vers la piété et l'excellence.";
 
   const nakOverview =
+    surah.historicalContext?.nak ||
     surah.noumanAliKhan?.overview ||
-    (surah.id === 103
-      ? "NAK : quatre conditions pour ne pas perdre sa vie — foi, œuvres, vérité partagée, patience partagée."
-      : null);
+    null;
 
   const youthExegesis = getYouthExegesisForSurah(surah.id, surah.nameTranslit);
 
@@ -305,9 +303,14 @@ export const SurahDetailView: React.FC<SurahDetailViewProps> = ({
           </button>
 
           <div className="min-w-0 flex-1">
-            <h1 className="truncate text-lg leading-tight font-extrabold tracking-tight">
-              {surah.nameTranslit}
-            </h1>
+            <div className="flex items-center gap-2">
+              <h1 className="truncate text-lg leading-tight font-extrabold tracking-tight">
+                {surah.nameTranslit}
+              </h1>
+              <span className="shrink-0 px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-[#C9A24B] text-[#14332A] shadow-xs">
+                Juz 30
+              </span>
+            </div>
             <p className="text-white/80 truncate text-xs font-semibold">
               {surah.nameTranslation} · {surah.versesCount} versets
             </p>
@@ -345,7 +348,11 @@ export const SurahDetailView: React.FC<SurahDetailViewProps> = ({
         {/* Main Content Area */}
         <main className="px-2 sm:px-3 pt-3 space-y-4">
           {/* Illuminated Traditional Header Cartouche */}
-          <SurahHeaderCartouche surah={surah} arabicFontSize={arabicFontSize} />
+          <SurahHeaderCartouche
+            surah={surah}
+            arabicFontSize={arabicFontSize}
+            isRecitingBismillah={isCurrentSurahPlaying && isRecitingBismillah}
+          />
           
           {/* Section 1: Intro */}
           <section className="surface p-4">
@@ -358,7 +365,7 @@ export const SurahDetailView: React.FC<SurahDetailViewProps> = ({
             </div>
           </section>
 
-          {/* Special Section: Cap sur notre époque (Spécial Ados & Jeunes) */}
+          {/* Special Section: Que nous dit cette sourate aujourd'hui */}
           <section className="p-4 rounded-2xl bg-gradient-to-br from-[#14332A] to-[#1F4D3D] text-[#FAF6EC] border border-[#C9A24B]/40 shadow-lg space-y-3">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
@@ -366,15 +373,16 @@ export const SurahDetailView: React.FC<SurahDetailViewProps> = ({
                   <Smartphone className="w-4 h-4" />
                 </span>
                 <span className="text-xs font-black uppercase tracking-wider text-[#C9A24B]">
-                  Cap sur notre époque · Spécial Ados
+                  Que nous dit cette sourate aujourd'hui
                 </span>
               </div>
               <button
                 onClick={() => setShowStudyGroupModal(true)}
                 className="px-2.5 py-1 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-[11px] font-bold text-[#FAF6EC] flex items-center gap-1 transition-all"
+                title="Méthode & Sources classiques de référence"
               >
-                <Users className="w-3 h-3 text-[#C9A24B]" />
-                <span>Avis Experts</span>
+                <BookOpen className="w-3 h-3 text-[#C9A24B]" />
+                <span>Méthode & Sources</span>
               </button>
             </div>
 
@@ -397,10 +405,10 @@ export const SurahDetailView: React.FC<SurahDetailViewProps> = ({
               </p>
             </div>
 
-            {/* La Réponse Coranique & Style Nouman Ali Khan */}
+            {/* La Réponse Coranique & Analyse Contemporaine */}
             <div className="space-y-1">
               <span className="text-[10px] font-black uppercase tracking-wider text-[#C9A24B] flex items-center gap-1">
-                <Sparkles className="w-3 h-3" /> L'Éclairage Coranique Moderne (Style Nouman Ali Khan)
+                <Sparkles className="w-3 h-3" /> L'Éclairage et l'Analyse Contemporaine
               </span>
               <p className="text-xs text-[#FAF6EC]/90 leading-relaxed">
                 {youthExegesis.reponseCoranique}
@@ -424,14 +432,14 @@ export const SurahDetailView: React.FC<SurahDetailViewProps> = ({
             </div>
           </section>
 
-          {/* Section 2: Contexte Historique & Nouman Ali Khan */}
+          {/* Section 2: Contexte Historique & Analyse */}
           <section className="surface p-4">
             <h2 className="mb-2 text-xs font-black tracking-wide text-stone-700 dark:text-stone-300 flex items-center gap-1.5">
               <History className="w-3.5 h-3.5 text-[#C9A24B]" />
               <span>Contexte Historique & Révélation</span>
             </h2>
             <p className="bg-secondary mb-2 inline-block rounded-full px-2.5 py-1 text-[11px] font-black">
-              {surah.type === 'meccan' ? 'Mecquoise' : 'Médinoise'}
+              {surah.historicalContext?.typeBadge || surah.type}
             </p>
             <p className="text-sm leading-relaxed font-semibold">
               {circumstances}
@@ -446,19 +454,11 @@ export const SurahDetailView: React.FC<SurahDetailViewProps> = ({
               <div className="bg-primary-soft mt-3 rounded-xl px-3 py-2.5">
                 <p className="text-[10px] font-black tracking-wider uppercase opacity-75 flex items-center gap-1">
                   <BookOpen className="w-3 h-3 text-[#C9A24B]" />
-                  <span>Inspiré de l'approche de Nouman Ali Khan</span>
+                  <span>Analyse & Méditation Contemporaine</span>
                 </p>
                 <p className="mt-1 text-xs leading-relaxed font-semibold">
                   {nakOverview}
                 </p>
-                <a
-                  href="https://bayyinah.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-1.5 inline-block text-[10px] font-black underline text-primary hover:opacity-80"
-                >
-                  Écouter ses cours (Bayyinah Institute)
-                </a>
               </div>
             )}
           </section>
@@ -476,7 +476,7 @@ export const SurahDetailView: React.FC<SurahDetailViewProps> = ({
           <section className="grad-emerald text-white shadow-lift rounded-2xl p-4">
             <h2 className="flex items-center gap-1.5 text-sm font-black">
               <Sparkles className="w-4 h-4 text-[#C9A24B]" />
-              <span>Méditation & Mise en Pratique</span>
+              <span>Interprétation pour notre époque</span>
             </h2>
             <p className="mt-2 text-sm leading-relaxed font-semibold">
               {surah.etAujourdhui || surah.valeur || "Trois versets, un plan de vie complet. Ton temps s'écoule à chaque seconde et ne revient pas : la seule question est ce que tu y mets."}
@@ -565,14 +565,14 @@ export const SurahDetailView: React.FC<SurahDetailViewProps> = ({
               <span>Quiz ({surah.quizQuestions?.length || 5} Q.)</span>
             </button>
 
-            {/* Groupe d'Étude Modal Button */}
+            {/* Method & Sources Modal Button */}
             <button
               onClick={() => setShowStudyGroupModal(true)}
               className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-bold bg-[#C9A24B]/15 text-[#b38933] dark:text-[#E2C376] hover:bg-[#C9A24B]/25 border border-[#C9A24B]/30 transition-all shrink-0"
-              title="Avis et recommandations du Groupe d'Experts"
+              title="Méthode d'apprentissage & Sources classiques de référence"
             >
-              <Users size={13} className="text-[#C9A24B]" />
-              <span>Groupe d'Étude</span>
+              <BookOpen size={13} className="text-[#C9A24B]" />
+              <span>Méthode & Sources</span>
             </button>
 
             {/* Tajwîd Toggle */}
@@ -658,6 +658,7 @@ export const SurahDetailView: React.FC<SurahDetailViewProps> = ({
               surah={surah}
               currentVerseNumber={currentVerseNumber}
               isPlaying={isPlaying && isCurrentSurahPlaying}
+              isRecitingBismillah={isRecitingBismillah}
               currentWordIndex={currentWordIndex}
               arabicFontSize={arabicFontSize}
               tajwidEnabled={tajwidEnabled}
@@ -700,17 +701,17 @@ export const SurahDetailView: React.FC<SurahDetailViewProps> = ({
                       <div className="flex items-center gap-1.5">
                         <button
                           onClick={() => handlePlayVerse(verse.number)}
-                          className={`rounded-full p-1.5 transition-all ${
+                          className={`rounded-full p-2 transition-all shadow-xs ${
                             isActiveVerse && isPlaying
-                              ? 'bg-primary text-white scale-105'
-                              : 'bg-secondary hover:bg-stone-200 dark:hover:bg-stone-800 text-stone-700 dark:text-stone-300'
+                              ? 'bg-[#14332A] text-[#C9A24B] ring-2 ring-[#C9A24B] scale-105'
+                              : 'bg-[#C9A24B] text-[#14332A] hover:bg-[#d8b159] hover:scale-105'
                           }`}
                           aria-label={`Écouter verset ${verse.number}`}
                         >
                           {isActiveVerse && isPlaying ? (
-                            <Pause size={14} />
+                            <Pause size={14} className="fill-current" />
                           ) : (
-                            <Play size={14} className="translate-x-[0.5px]" />
+                            <Play size={14} className="fill-current translate-x-[0.5px]" />
                           )}
                         </button>
 
@@ -756,7 +757,7 @@ export const SurahDetailView: React.FC<SurahDetailViewProps> = ({
                           verse.text,
                           tajwidEnabled,
                           verse.number,
-                          isActiveVerse && isPlaying ? currentWordIndex : null
+                          isActiveVerse && isPlaying && (!isRecitingBismillah || verse.number !== 1) ? currentWordIndex : null
                         )
                       }}
                     />
@@ -805,9 +806,10 @@ export const SurahDetailView: React.FC<SurahDetailViewProps> = ({
                             ? 'bg-primary text-white'
                             : 'bg-secondary hover:bg-stone-200 dark:hover:bg-stone-800 text-stone-700 dark:text-stone-300'
                         }`}
+                        title="Dictionnaire du bédouin (Racines et sens originels du désert)"
                       >
                         <Languages className="w-3 h-3 text-[#C9A24B]" />
-                        <span>Vocabulaire</span>
+                        <span>Dictionnaire du bédouin</span>
                       </button>
 
                       <button
@@ -817,9 +819,10 @@ export const SurahDetailView: React.FC<SurahDetailViewProps> = ({
                             ? 'bg-gradient-to-r from-[#C9A24B] to-[#b38933] text-black shadow-xs font-black'
                             : 'bg-[#C9A24B]/15 hover:bg-[#C9A24B]/25 text-[#14332A] dark:text-[#FAF6EC] border border-[#C9A24B]/30'
                         }`}
+                        title="Interprétation pour notre époque (Spécial jeunes & ados)"
                       >
-                        <Smartphone size={12} className="text-[#C9A24B]" />
-                        <span>Ados & Époque</span>
+                        <Sparkles size={12} className="text-[#C9A24B]" />
+                        <span>Interprétation pour notre époque</span>
                       </button>
                     </div>
 
@@ -840,7 +843,7 @@ export const SurahDetailView: React.FC<SurahDetailViewProps> = ({
                       <div className="bg-gradient-to-br from-[#FAF6EC] to-[#F3ECE0] dark:from-[#152720] dark:to-[#101E18] mt-2.5 rounded-xl p-3.5 border border-[#C9A24B]/35 shadow-xs text-xs space-y-2">
                         <div className="flex items-center justify-between">
                           <span className="text-[10px] font-black uppercase tracking-wider text-[#C9A24B] flex items-center gap-1">
-                            <Sparkles size={12} /> Éclairage Jeunesse · Style Nouman Ali Khan
+                            <Sparkles size={12} /> Interprétation pour notre époque
                           </span>
                           <span className="text-[10px] text-stone-500 dark:text-stone-400 font-semibold">
                             Verset {verse.number}
@@ -861,6 +864,10 @@ export const SurahDetailView: React.FC<SurahDetailViewProps> = ({
 
                     {activeSubTab === 'dico' && (
                       <div className="mt-2.5 space-y-2">
+                        <div className="p-2.5 rounded-xl bg-[#C9A24B]/10 border border-[#C9A24B]/30 flex items-center gap-2 text-[11px] font-bold text-[#8a5a22] dark:text-[#E6BE65]">
+                          <BookOpen className="w-3.5 h-3.5 text-[#C9A24B] shrink-0" />
+                          <span>Dictionnaire du bédouin • Sens originel des racines du désert (Lisân al-'Arab)</span>
+                        </div>
                         {dicoEntries.map((entry, idx) => (
                           <div key={idx} className="bg-secondary rounded-xl p-3">
                             <div className="flex items-baseline justify-between gap-2">
@@ -929,13 +936,13 @@ export const SurahDetailView: React.FC<SurahDetailViewProps> = ({
               {/* Play / Pause button */}
               <button
                 onClick={handleToggleMainPlay}
-                className="bg-primary text-white flex h-10 w-10 shrink-0 items-center justify-center rounded-full shadow-md active:scale-95 transition-all"
+                className="bg-gradient-to-br from-[#E5BE64] via-[#C9A24B] to-[#997328] text-[#14332A] flex h-11 w-11 shrink-0 items-center justify-center rounded-full shadow-lg active:scale-95 hover:scale-105 transition-all border border-[#FAF6EC]/40"
                 aria-label={isCurrentSurahPlaying ? "Pause" : "Lecture"}
               >
                 {isCurrentSurahPlaying ? (
-                  <Pause size={18} />
+                  <Pause size={20} className="fill-current" />
                 ) : (
-                  <Play size={18} className="translate-x-[1px]" />
+                  <Play size={20} className="fill-current translate-x-[1.5px]" />
                 )}
               </button>
 

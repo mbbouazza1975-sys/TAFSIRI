@@ -5,6 +5,7 @@ import { Sparkles, MapPin, Hash, BookOpen } from 'lucide-react';
 interface SurahHeaderCartoucheProps {
   surah: Surah;
   arabicFontSize?: number;
+  isRecitingBismillah?: boolean;
 }
 
 /**
@@ -13,7 +14,8 @@ interface SurahHeaderCartoucheProps {
  */
 export const SurahHeaderCartouche: React.FC<SurahHeaderCartoucheProps> = ({
   surah,
-  arabicFontSize = 32
+  arabicFontSize = 32,
+  isRecitingBismillah = false
 }) => {
   return (
     <div className="w-full relative select-none">
@@ -59,9 +61,10 @@ export const SurahHeaderCartouche: React.FC<SurahHeaderCartoucheProps> = ({
               <span>{surah.versesCount} versets</span>
             </span>
 
-            {/* Category / Scope */}
-            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#C9A24B]/20 text-[#FAF6EC] border border-[#C9A24B]/40 font-medium">
-              <span>{surah.categoryTitle || 'Juz 30'}</span>
+            {/* Juz 30 Badge - High contrast and bold visibility */}
+            <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-amber-500/25 border-2 border-[#C9A24B] text-[#FAF6EC] font-extrabold shadow-sm tracking-wide">
+              <span className="text-[#C9A24B] text-xs">📖</span>
+              <span>Juz 30 ('Amma)</span>
             </span>
           </div>
 
@@ -94,16 +97,26 @@ export const SurahHeaderCartouche: React.FC<SurahHeaderCartoucheProps> = ({
           {/* Centered Bismillah Ornamentation */}
           {surah.bismillah && (
             <div className="w-full pt-3">
-              <div className="mx-auto max-w-md py-3 px-6 rounded-2xl bg-gradient-to-r from-[#C9A24B]/10 via-[#C9A24B]/25 to-[#C9A24B]/10 border border-[#C9A24B]/50 shadow-inner">
+              <div
+                className={`mx-auto max-w-md py-3 px-6 rounded-2xl border transition-all duration-500 shadow-inner ${
+                  isRecitingBismillah
+                    ? 'bg-gradient-to-r from-[#C9A24B]/30 via-[#C9A24B]/50 to-[#C9A24B]/30 border-[#C9A24B] ring-2 ring-[#C9A24B]/60 scale-[1.02] shadow-[0_0_20px_rgba(201,162,75,0.35)]'
+                    : 'bg-gradient-to-r from-[#C9A24B]/10 via-[#C9A24B]/25 to-[#C9A24B]/10 border-[#C9A24B]/50'
+                }`}
+              >
                 <p
                   dir="rtl"
-                  className="font-quran text-2xl sm:text-3xl md:text-4xl text-[#FAF6EC] tracking-normal filter drop-shadow-sm"
+                  className={`font-quran text-2xl sm:text-3xl md:text-4xl tracking-normal filter drop-shadow-sm transition-colors duration-300 ${
+                    isRecitingBismillah ? 'text-amber-200' : 'text-[#FAF6EC]'
+                  }`}
                   style={{ lineHeight: 1.8 }}
                 >
                   بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ
                 </p>
-                <span className="text-[10px] tracking-widest text-[#C9A24B] font-mono uppercase block pt-0.5">
-                  Au nom d'Allah, le Tout Miséricordieux, le Très Miséricordieux
+                <span className={`text-[10px] tracking-widest font-mono uppercase block pt-0.5 transition-colors duration-300 ${
+                  isRecitingBismillah ? 'text-amber-300 font-bold' : 'text-[#C9A24B]'
+                }`}>
+                  {isRecitingBismillah ? '• Récitation de la Basmalah en cours •' : "Au nom d'Allah, le Tout Miséricordieux, le Très Miséricordieux"}
                 </span>
               </div>
             </div>

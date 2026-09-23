@@ -151,8 +151,8 @@ export const SurahRow: React.FC<SurahRowProps> = ({
             title={isCurrentlyPlaying ? 'Mettre en pause' : `Écouter ${surah.nameTranslit}`}
             className={`w-9 h-9 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center transition-all ${
               isCurrentlyPlaying
-                ? 'bg-[#C9A24B] text-[#14332A] shadow-md ring-2 ring-[#C9A24B]/40'
-                : 'bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:bg-[#C9A24B]/20 hover:text-[#14332A] dark:hover:text-white'
+                ? 'bg-[#C9A24B] text-[#14332A] shadow-md ring-2 ring-[#C9A24B]'
+                : 'bg-[#14332A] text-[#FAF6EC] hover:bg-[#C9A24B] hover:text-[#14332A] dark:bg-[#C9A24B] dark:text-[#14332A] shadow-xs'
             }`}
           >
             {isCurrentlyPlaying ? (

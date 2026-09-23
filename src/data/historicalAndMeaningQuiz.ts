@@ -113,7 +113,7 @@ export const HISTORICAL_AND_MEANING_QUIZ: QuizItem[] = [
     ],
     correctIndex: 0,
     explanation: 'Alors que la péninsule connaissait pillages et famines, La Mecque jouissait de deux privilèges uniques : être nourrie et vivre sans peur. Allah rappelle que ce sanctuaire est la source de toute leur subsistance.',
-    sourceReference: 'Nouman Ali Khan (Bayyinah) & Tafsir As-Sa\'di',
+    sourceReference: 'Tafsir As-Sa\'di',
     modernReflection: 'Nos réussites professionnelles ou scolaires ne viennent pas de notre seul mérite, mais des opportunités accordées par Allah.'
   },
 
@@ -258,7 +258,7 @@ export const HISTORICAL_AND_MEANING_QUIZ: QuizItem[] = [
     ],
     correctIndex: 1,
     explanation: 'Ce verset établit la clarté : les croyants ne forcent personne mais n\'acceptent aucune dilution de leur foi. C\'est le principe de la liberté de conscience doublé d\'une fidélité sans compromis envers le Tawhid.',
-    sourceReference: 'Tafsir Ibn Kathir & Nouman Ali Khan',
+    sourceReference: 'Tafsir Ibn Kathir',
     modernReflection: 'Apprendre à assumer sereinement son identité sans agressivité ni complexe face à la pression sociale du groupe.'
   },
 
@@ -355,7 +355,7 @@ export const HISTORICAL_AND_MEANING_QUIZ: QuizItem[] = [
     surahId: 103,
     surahName: 'Al-\'Asr (Le Temps)',
     difficulty: 'moyen',
-    question: 'Pourquoi Nouman Ali Khan et les linguistes expliquent-ils qu\'« Al-\'Asr » évoque un temps qui s\'écoule comme un liquide pressé ?',
+    question: 'Pourquoi les linguistes expliquent-ils qu\'« Al-\'Asr » évoque un temps qui s\'écoule comme un liquide pressé ?',
     contextBanner: 'La racine linguistique \'A-S-R (ع-ص-ر)',
     options: [
       'Parce que \'Asr signifie le déluge universel',
@@ -365,7 +365,7 @@ export const HISTORICAL_AND_MEANING_QUIZ: QuizItem[] = [
     ],
     correctIndex: 1,
     explanation: '« Al-\'Asr » n\'est pas un temps statique (Dahr) ou une heure vide (Sâ\'ah) : c\'est le temps qui s\'épuise et se resserre. Chaque heure qui passe est comme une goutte pressée hors de ton existence que tu ne pourras jamais récupérer.',
-    sourceReference: 'Nouman Ali Khan (Bayyinah Quranic Insights)',
+    sourceReference: 'Analyse linguistique (éclairage contemporain)',
     modernReflection: 'La procrastination et le scroll sans fin sur les réseaux sociaux vident nos journées de leur précieux jus.'
   },
 
@@ -449,7 +449,7 @@ export const HISTORICAL_AND_MEANING_QUIZ: QuizItem[] = [
     ],
     correctIndex: 1,
     explanation: 'Allah jure par le Soleil, sa clarté, la Lune, le Jour, la Nuit, le Ciel, la Terre et l\'Âme pour proclamer une vérité fondamentale : l\'enjeu suprême de l\'existence humaine est la purification intérieure (Tazkiyah).',
-    sourceReference: 'Nouman Ali Khan & Tafsir Al-Alûsî',
+    sourceReference: 'Tafsir Al-Alûsî',
     modernReflection: 'Aucun succès matériel n\'a de valeur si l\'âme intérieure est polluée par la jalousie, l\'arrogance ou la rancœur.'
   },
 
@@ -533,7 +533,7 @@ export const HISTORICAL_AND_MEANING_QUIZ: QuizItem[] = [
     ],
     correctIndex: 1,
     explanation: 'Le mal intérieur combattu dans An-Nâs est le plus dangereux pour l\'éternité de l\'âme. C\'est pourquoi dans An-Nâs, on invoque Dieu avec trois attributs majeurs (Seigneur, Roi, Dieu) pour repousser un seul ennemi : le chuchoteur furtif (Al-Khannâs).',
-    sourceReference: 'Ibn Al-Qayyim (Badâ\'i\' al-Fawâ\'id) & Nouman Ali Khan',
+    sourceReference: 'Ibn Al-Qayyim (Badâ\'i\' al-Fawâ\'id)',
     modernReflection: 'Le pire piège n\'est pas toujours l\'obstacle devant nous, mais la voix intérieure qui nous souffle de baisser les bras.'
   },
 
@@ -617,7 +617,7 @@ export const HISTORICAL_AND_MEANING_QUIZ: QuizItem[] = [
     ],
     correctIndex: 1,
     explanation: 'Le pauvre sincère qui cherche à se purifier auprès de Dieu a infiniment plus de poids dans la balance divine que l\'oligarque arrogant qui se croit autosuffisant (« أَمَّا مَنِ ٱسْتَغْنَىٰ »). Plus tard, le Prophète ﷺ accueillait Ibn Umm Maktum en disant : « Bienvenue à celui pour qui mon Seigneur m\'a réprimandé ! ».',
-    sourceReference: 'Nouman Ali Khan & Tafsir Al-Qurtubi',
+    sourceReference: 'Tafsir Al-Qurtubi',
     modernReflection: 'Ne jamais snober ou ignorer un camarade timide pour tenter de se faire bien voir par le groupe populaire de la classe.'
   },
 
@@ -661,9 +661,9 @@ export const HISTORICAL_AND_MEANING_QUIZ: QuizItem[] = [
       '« يَبْدُو فِى وُجُوهِهِمْ بَهْجَةُ ٱلنَّعِيمِ »',
       '« تَنْظُرُ فِى وُجُوهِهِمْ نَضْرَةُ ٱلنَّعِيمِ »'
     ],
-    correctIndex: 0,
-    explanation: 'Dans la lecture de Warsh (Al-Azraq), le verbe est vocalisé au passif : « تُعْرَفُ » (tu\'rafu), avec le sujet passif au nominatif « نَضْرَةُ ٱلنَّعِيمِ » (nadratu n-na\'îm). Chez Hafs, le verbe est actif « تَعْرِفُ » avec le complément à l\'accusatif.',
-    sourceReference: 'Ash-Shâtibiyyah & Rasm Mushaf Warsh',
+    correctIndex: 1,
+    explanation: 'Warsh \'an Nâfi\' lit ici comme Hafs, à la forme active : « تَعْرِفُ » (ta\'rifu, « tu reconnais ») avec « نَضْرَةَ ٱلنَّعِيمِ » à l\'accusatif. La forme passive « تُعْرَفُ … نَضْرَةُ » est la lecture d\'Abu Ja\'far et de Ya\'qub, pas celle de Nâfi\'.',
+    sourceReference: 'Tafsir Al-Qurtubi (sourate 83, verset 24)',
     modernReflection: 'La précision des voyelles coraniques éclaire la beauté descriptive du Paradis.'
   },
 

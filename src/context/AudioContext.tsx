@@ -2,6 +2,7 @@ import React, { createContext, useContext, useState, useRef, useEffect, useCallb
 import { Surah, Reciter } from '../types';
 import { WARSH_RECITERS, getSurahAudioUrl, getVerseAudioUrl } from '../data/reciters';
 import { ALL_SURAHS, getSurahById } from '../data/surahs';
+import { getVerse1BismillahOffset } from '../data/bismillahTimings';
 import { getCachedAudioUrl, isSurahAudioCached, cacheSurahAudio } from '../services/storage';
 
 export type RepeatCountMode = '1' | '2' | '3' | '5' | '10' | 'loop';
@@ -19,6 +20,7 @@ interface AudioContextType {
   isDownloading: boolean;
   currentVerseNumber: number | null;
   currentWordIndex: number | null;
+  isRecitingBismillah: boolean;
   isVerseMode: boolean;
   syncWordHighlight: (verseNum?: number) => void;
   playSurah: (surahId: number, reciterId?: string) => Promise<void>;
@@ -48,6 +50,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const [currentSurahId, setCurrentSurahId] = useState<number | null>(null);
   const [currentVerseNumber, setCurrentVerseNumber] = useState<number | null>(null);
   const [currentWordIndex, setCurrentWordIndex] = useState<number | null>(null);
+  const [isRecitingBismillah, setIsRecitingBismillah] = useState<boolean>(false);
   const [isVerseMode, setIsVerseMode] = useState<boolean>(false);
   const [reciterId, setReciterId] = useState<string>(initialReciter);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
@@ -68,6 +71,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const currentSurahIdRef = useRef<number | null>(null);
   const currentVerseNumberRef = useRef<number | null>(null);
   const currentWordIndexRef = useRef<number | null>(null);
+  const isRecitingBismillahRef = useRef<boolean>(false);
   const isVerseModeRef = useRef<boolean>(false);
   const isPlayingRef = useRef<boolean>(false);
   const isTransitioningRef = useRef<boolean>(false);
@@ -116,6 +120,8 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     }
     currentWordIndexRef.current = null;
     setCurrentWordIndex(null);
+    isRecitingBismillahRef.current = false;
+    setIsRecitingBismillah(false);
     document.querySelectorAll('.w-word.hl').forEach(el => el.classList.remove('hl'));
   }, []);
 
@@ -145,10 +151,45 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       const verse = surah?.verses[verseNum - 1];
       if (!verse) return;
 
+      // Check if this verse is verse 1 and reciter includes Bismillah
+      let bismillahOffset = 0;
+      if (verseNum === 1 && surah.bismillah) {
+        bismillahOffset = getVerse1BismillahOffset(reciterIdRef.current, surahId);
+      }
+
+      const cTime = audio.currentTime;
+
+      // During Bismillah recitation, do not highlight any verse words
+      if (bismillahOffset > 0 && cTime < bismillahOffset) {
+        if (!isRecitingBismillahRef.current) {
+          isRecitingBismillahRef.current = true;
+          setIsRecitingBismillah(true);
+        }
+        if (currentWordIndexRef.current !== null) {
+          currentWordIndexRef.current = null;
+          setCurrentWordIndex(null);
+          const card = document.getElementById(`vc${verseNum}`);
+          if (card) {
+            card.querySelectorAll('.w-word.hl').forEach(w => w.classList.remove('hl'));
+          }
+        }
+        return;
+      }
+
+      // Past the Bismillah: verse recitation is active
+      if (isRecitingBismillahRef.current) {
+        isRecitingBismillahRef.current = false;
+        setIsRecitingBismillah(false);
+      }
+
       const weights = computeVerseWordWeights(verse.text);
       const thresholds = computeVerseWordThresholds(weights);
 
-      const progress = Math.max(0, Math.min(0.999, audio.currentTime / dur));
+      // Effective duration and elapsed time of verse words (excluding introductory Bismillah)
+      const effectiveDuration = Math.max(0.1, dur - bismillahOffset);
+      const effectiveCurrentTime = Math.max(0, cTime - bismillahOffset);
+
+      const progress = Math.max(0, Math.min(0.999, effectiveCurrentTime / effectiveDuration));
       let idx = thresholds.findIndex(t => progress <= t);
       if (idx === -1) idx = weights.length - 1;
 
@@ -327,6 +368,13 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       audioRef.current.pause();
       clearWordHighlight();
 
+      const currentSurahObj = getSurahById(surahId);
+      const isStartingBismillah = verseNumber === 1 && !!currentSurahObj?.bismillah;
+      isRecitingBismillahRef.current = isStartingBismillah;
+      setIsRecitingBismillah(isStartingBismillah);
+      currentWordIndexRef.current = null;
+      setCurrentWordIndex(null);
+
       const verseAudioUrl = getVerseAudioUrl(activeReciterId, surahId, verseNumber);
       audioRef.current.src = verseAudioUrl;
       audioRef.current.load();
@@ -420,16 +468,24 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const surah = getSurahById(surahId);
     const verse = surah?.verses[verseNumber - 1];
     if (verse) {
+      let bismillahOffset = 0;
+      if (verseNumber === 1 && surah.bismillah) {
+        bismillahOffset = getVerse1BismillahOffset(reciterIdRef.current, surahId);
+      }
+
       const weights = computeVerseWordWeights(verse.text);
       const thresholds = computeVerseWordThresholds(weights);
       const prevT = wordIdx === 0 ? 0 : thresholds[wordIdx - 1];
 
       if (audio.duration && Number.isFinite(audio.duration)) {
-        audio.currentTime = Math.max(0, (prevT + 0.005) * audio.duration);
+        const effectiveDur = Math.max(0.1, audio.duration - bismillahOffset);
+        audio.currentTime = Math.max(0, bismillahOffset + (prevT + 0.005) * effectiveDur);
         setCurrentTime(audio.currentTime);
       }
     }
 
+    isRecitingBismillahRef.current = false;
+    setIsRecitingBismillah(false);
     currentWordIndexRef.current = wordIdx;
     setCurrentWordIndex(wordIdx);
 
@@ -581,6 +637,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         isDownloading,
         currentVerseNumber,
         currentWordIndex,
+        isRecitingBismillah,
         isVerseMode,
         syncWordHighlight,
         playSurah,

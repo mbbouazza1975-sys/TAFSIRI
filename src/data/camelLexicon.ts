@@ -114,7 +114,7 @@ export const CAMEL_LEXICON_DATABASE: CamelLexiconEntry[] = [
     root: 'خ - س - ر (KH-S-R)',
     surahId: 103,
     surahName: 'Al-‘Asr',
-    verseNumber: 2,
+    verseNumber: 1,
     desertOriginalMeaning: 'La faillite irréversible de la caravane commerciale dont les marchandises ont péri dans les sables et dont le marchand rentre sans capital ni profit.',
     quranicElevation: 'La perdition de l’être humain qui a dilapidé son capital suprême (le temps imparti de sa vie).',
     mentalImage: 'Le marchand qui ouvre ses sacoches au retour du désert pour n’y trouver que du sable.',

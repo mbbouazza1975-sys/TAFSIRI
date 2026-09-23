@@ -27,7 +27,7 @@ export const CONTEMPORARY_YOUTH_EXEGESIS: Record<number, SurahYouthExegesis> = {
       "Entoure-toi d'au moins un ami qui te rappelle de faire le bien quand tu t'apprêtes à déraper.",
       "Avant chaque décision impulsive, prends 5 secondes de pause (Sabr) : est-ce que ça construit ton avenir ?"
     ],
-    noumanTakeaway: "Nouman Ali Khan rappelle que 'Al-'Asr' est le temps qui presse, comme le jus qu'on extrait d'un fruit jusqu'à la dernière goutte. Ne laisse pas le monde contemporain presser ton temps pour le vider de sa substance.",
+    noumanTakeaway: "L'analyse linguistique rappelle que 'Al-'Asr' est le temps qui presse, comme le jus qu'on extrait d'un fruit jusqu'à la dernière goutte. Ne laisse pas le monde contemporain presser ton temps pour le vider de sa substance.",
     versesAdos: {
       1: {
         titreAdo: "Le compte à rebours invisible",
@@ -58,7 +58,7 @@ export const CONTEMPORARY_YOUTH_EXEGESIS: Record<number, SurahYouthExegesis> = {
       "Ne juge jamais la valeur d'une personne à la marque de ses vêtements ou à son nombre d'abonnés.",
       "Si tu as blessé quelqu'un par une vanne ou un regard méprisant, excuse-toi le jour même sans fierté mal placée."
     ],
-    noumanTakeaway: "Dans l'analyse de Nouman Ali Khan, 'Humazah' désigne celui qui brise la dignité d'autrui par des gestes et mimiques, tandis que 'Lumazah' le poignarde avec la langue. C'est l'essence même du harcèlement moderne.",
+    noumanTakeaway: "Dans l'analyse linguistique fine, 'Humazah' désigne celui qui brise la dignité d'autrui par des gestes et mimiques, tandis que 'Lumazah' le poignarde avec la langue. C'est l'essence même du harcèlement moderne.",
     versesAdos: {
       1: {
         titreAdo: "Le poison du dénigrement",
@@ -84,7 +84,7 @@ export const CONTEMPORARY_YOUTH_EXEGESIS: Record<number, SurahYouthExegesis> = {
       "Ne deviens jamais toi-même le dominant ou l'arrogant dès que tu te trouves en position de force.",
       "Place ta confiance totale en Allah quand tu affrontes une épreuve qui dépasse tes capacités physiques."
     ],
-    noumanTakeaway: "Nouman Ali Khan souligne l'ironie divine : Abraha venait avec l'arme la plus lourde de l'époque (les éléphants), et Allah a répondu avec l'arme la plus légère (des petits oiseaux et des pierres d'argile). La force brute s'effondre toujours face à la justice.",
+    noumanTakeaway: "L'ironie divine est saisissante : Abraha venait avec l'arme la plus lourde de l'époque (les éléphants), et Allah a répondu avec l'arme la plus légère (des petits oiseaux et des pierres d'argile). La force brute s'effondre toujours face à la justice.",
     versesAdos: {
       1: {
         titreAdo: "L'illusion des invincibles",
@@ -126,7 +126,7 @@ export const CONTEMPORARY_YOUTH_EXEGESIS: Record<number, SurahYouthExegesis> = {
       "Ne repousse jamais sèchement quelqu'un qui te demande un service, un cours ou un coup de main.",
       "Purifie ton intention : n'accomplis pas tes prières ou tes bonnes actions pour être vu ou applaudi."
     ],
-    noumanTakeaway: "Pour Nouman Ali Khan, Al-Mâ'ûn est le test décisif de la sincérité : prêter un simple bol ou une pincée de sel révèle si ton cœur est vraiment doux ou s'il est endurci par l'hypocrisie.",
+    noumanTakeaway: "Al-Mâ'ûn est le test décisif de la sincérité : prêter un simple bol ou une pincée de sel révèle si ton cœur est vraiment doux ou s'il est endurci par l'hypocrisie.",
     versesAdos: {
       1: {
         titreAdo: "Démasquer l'incohérence",
@@ -231,7 +231,7 @@ export const CONTEMPORARY_YOUTH_EXEGESIS: Record<number, SurahYouthExegesis> = {
       "N'accorde à aucune créature (star, influenceur, idole) la place centrale réservée à Allah dans ton cœur.",
       "Récite Al-Ikhlas chaque soir en méditant sur la pureté absolue du Créateur."
     ],
-    noumanTakeaway: "Pour Nouman Ali Khan, 'As-Samad' est le roc inébranlable vers lequel tout le monde se tourne dans la tempête, alors que Lui-même n'a besoin de rien. C'est l'antidote ultime à la dépendance affective.",
+    noumanTakeaway: "Le terme 'As-Samad' désigne le roc inébranlable vers lequel tout le monde se tourne dans la tempête, alors que Lui-même n'a besoin de rien. C'est l'antidote ultime à la dépendance affective.",
     versesAdos: {
       2: {
         titreAdo: "As-Samad : Le Refuge Indestructible",
@@ -368,7 +368,7 @@ export function getYouthExegesisForSurah(surahId: number, surahName?: string): S
       "Applique un principe moral clé de cette sourate dans ta classe ou avec ta famille dès aujourd'hui.",
       "Fais de ta foi une force motrice pour exceller scolairement et humainement."
     ],
-    noumanTakeaway: `L'approche de Nouman Ali Khan nous invite à regarder chaque mot arabe comme une pépite linguistique qui répond directement aux questionnements de notre époque moderne.`
+    noumanTakeaway: `L'approche linguistique contemporaine nous invite à regarder chaque mot arabe comme une pépite de sagesse qui répond directement aux questionnements de notre époque moderne.`
   };
 }
 
