@@ -1,4 +1,4 @@
-// PWA Service Worker Registration on dedicated subpath /app-cache/ (Rule 4)
+// PWA : service worker servi à la racine (/sw.js)
 let swRegistration: ServiceWorkerRegistration | null = null;
 let refreshing = false;
 
@@ -16,9 +16,15 @@ export function registerAppServiceWorker() {
   });
 
   const register = () => {
-    // Attempt registration with scope '/' (supported via Service-Worker-Allowed header)
+    // Nettoyage : anciennes inscriptions sur /app-cache/ (elles ne contrôlaient aucune page)
     navigator.serviceWorker
-      .register('/app-cache/sw.js', { scope: '/' })
+      .getRegistrations()
+      .then(regs => regs.filter(r => r.scope.endsWith('/app-cache/')).forEach(r => r.unregister()))
+      .catch(() => {});
+
+    // Service worker à la racine : il contrôle tout le site (hors-ligne)
+    navigator.serviceWorker
+      .register('/sw.js', { scope: '/' })
       .then(reg => {
         swRegistration = reg;
         console.log('[PWA] Service Worker registered successfully with scope:', reg.scope);
@@ -32,17 +38,7 @@ export function registerAppServiceWorker() {
         });
       })
       .catch(err => {
-        console.warn('[PWA] Service Worker root registration error, trying default subpath scope:', err);
-        navigator.serviceWorker
-          .register('/app-cache/sw.js')
-          .then(fallbackReg => {
-            swRegistration = fallbackReg;
-            console.log('[PWA] Service Worker registered on subpath scope:', fallbackReg.scope);
-            fallbackReg.update().catch(() => {});
-          })
-          .catch(e => {
-            console.warn('[PWA] Service Worker registration unavailable in this context:', e);
-          });
+        console.warn('[PWA] Service Worker registration unavailable in this context:', err);
       });
   };
 
