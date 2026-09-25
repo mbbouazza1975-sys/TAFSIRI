@@ -28,7 +28,7 @@ import {
 import { Surah, QuizQuestion, QuizQuestionType } from '../types';
 import { ALL_SURAHS, getSurahById } from '../data/surahs';
 import { recordQuizResult } from '../services/storage';
-import { getSurahAudioUrl } from '../data/reciters';
+import { getVerseAudioUrl } from '../data/reciters';
 import { HISTORICAL_AND_MEANING_QUIZ } from '../data/historicalAndMeaningQuiz';
 
 interface QuizViewProps {
@@ -297,10 +297,10 @@ export const QuizView: React.FC<QuizViewProps> = ({ onPointsEarned }) => {
         surahName: audioSurah.nameTranslit,
         type: 'audio_identify_surah',
         prompt: 'Écoutez la récitation audio en style Warsh. De quelle sourate s’agit-il ?',
-        audioUrl: getSurahAudioUrl('husary_warsh', audioSurah.id),
+        audioUrl: getVerseAudioUrl('yasin', audioSurah.id, 1),
         options,
         correctIndex,
-        explanation: `Il s'agit de la sourate ${audioSurah.nameTranslit} (${audioSurah.nameArabic}), récitée par Cheikh Mahmoud Khalil Al-Hussary selon la lecture de Warsh.`
+        explanation: `Il s'agit de la sourate ${audioSurah.nameTranslit} (${audioSurah.nameArabic}), ici son premier verset récité par Yâsîn Al-Jazâ'irî (lecture Warsh).`
       });
     }
 

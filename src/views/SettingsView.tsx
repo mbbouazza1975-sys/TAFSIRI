@@ -273,7 +273,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
               Récitateur Warsh par Défaut
             </h2>
             <p className="text-xs text-stone-500">
-              Les 9 récitateurs vérifiés en transmission Warsh 'an Nâfi'.
+              Récitateurs Warsh 'an Nâfi' dont la voix est disponible verset par verset.
             </p>
           </div>
         </div>

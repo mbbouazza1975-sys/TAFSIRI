@@ -46,7 +46,7 @@ export default function App() {
   });
 
   const [settings, setSettings] = useState<UserSettings>({
-    preferredReciterId: 'hussary',
+    preferredReciterId: 'yasin',
     arabicFontSize: 32,
     theme: 'light',
     dailyGoalVerses: 5,

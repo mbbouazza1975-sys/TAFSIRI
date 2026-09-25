@@ -29,7 +29,7 @@ import {
 import { Surah, Verse } from '../types';
 import { ALL_SURAHS } from '../data/surahs';
 import { useAudio } from '../context/AudioContext';
-import { getVerseAudioUrl, WARSH_RECITERS } from '../data/reciters';
+import { getVerseAudioSegments, WARSH_RECITERS } from '../data/reciters';
 import { HISTORICAL_AND_MEANING_QUIZ, QuizItem } from '../data/historicalAndMeaningQuiz';
 
 interface SurahQuizTabProps {
@@ -118,19 +118,28 @@ export const SurahQuizTab: React.FC<SurahQuizTabProps> = ({
       }
     }
 
-    const audioUrl = getVerseAudioUrl(currentReciter.id, surah.id, verseNum);
-    const audio = new Audio(audioUrl);
+    const seg = getVerseAudioSegments(currentReciter.id, surah.id, verseNum)[0];
+    if (!seg) return;
+    const audio = new Audio(seg.url);
     audioSnippetRef.current = audio;
+    if (seg.startSec !== undefined) {
+      // Fichier sourate entière minuté : jouer uniquement la portion du verset
+      const start = seg.startSec;
+      const end = seg.endSec ?? Infinity;
+      audio.addEventListener('loadedmetadata', () => { audio.currentTime = start; }, { once: true });
+      audio.addEventListener('timeupdate', () => {
+        if (audio.currentTime >= end) {
+          audio.pause();
+          setIsPlayingAudio(false);
+        }
+      });
+    }
 
     audio.onplay = () => setIsPlayingAudio(true);
     audio.onended = () => setIsPlayingAudio(false);
     audio.onerror = () => {
-      // Fallback to Yâsîn if current reciter fails
-      const fallbackUrl = getVerseAudioUrl('yasin', surah.id, verseNum);
-      const fallbackAudio = new Audio(fallbackUrl);
-      audioSnippetRef.current = fallbackAudio;
-      fallbackAudio.onended = () => setIsPlayingAudio(false);
-      fallbackAudio.play().catch(() => setIsPlayingAudio(false));
+      // Pas de repli vers une autre voix : on arrête simplement
+      setIsPlayingAudio(false);
     };
 
     audio.play().catch(() => setIsPlayingAudio(false));

@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useRef, useEffect, useCallback } from 'react';
 import { Surah, Reciter } from '../types';
-import { WARSH_RECITERS, getSurahAudioUrl, getVerseAudioSegments, VerseAudioSegment } from '../data/reciters';
+import { WARSH_RECITERS, normalizeReciterId, getSurahAudioUrl, getVerseAudioSegments, VerseAudioSegment } from '../data/reciters';
 import { ALL_SURAHS, getSurahById } from '../data/surahs';
 import { getVerse1BismillahOffset } from '../data/bismillahTimings';
 import { getCachedAudioUrl, isSurahAudioCached, cacheSurahAudio } from '../services/storage';
@@ -43,7 +43,7 @@ const AudioContext = createContext<AudioContextType | null>(null);
 
 export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   // Read initial preferences from localStorage if available
-  const initialReciter = localStorage.getItem('warsh_reciter_id') || 'yasin';
+  const initialReciter = normalizeReciterId(localStorage.getItem('warsh_reciter_id'));
   const initialSpeed = parseFloat(localStorage.getItem('warsh_playback_speed') || '1') || 1;
   const initialRepeat = (localStorage.getItem('warsh_repeat_mode') as RepeatCountMode) || '1';
 
@@ -85,15 +85,32 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const currentSegment = (): VerseAudioSegment =>
     segmentsRef.current[segmentIdxRef.current] || { url: '', from: 0, to: 1, vFrom: 0, vTo: 1 };
 
+  /** Début / fin absolus (s) d'un segment ; fin = Infinity si le segment va jusqu'au bout du fichier. */
+  const segStartSec = (seg: VerseAudioSegment, dur: number) => seg.startSec ?? seg.from * dur;
+  const segEndSec = (seg: VerseAudioSegment, dur: number) => seg.endSec ?? (seg.to < 1 ? seg.to * dur : Infinity);
+  const segIsPartial = (seg: VerseAudioSegment | undefined) => !!seg && (seg.endSec !== undefined || seg.to < 1);
+
   /** Charge le segment i dans l'élément audio et se place au début de sa portion. */
   const loadSegment = (audio: HTMLAudioElement, i: number) => {
     const seg = segmentsRef.current[i];
     segmentIdxRef.current = i;
     segmentEndHandledRef.current = false;
-    audio.src = seg.url;
-    audio.load();
     audio.defaultPlaybackRate = playbackSpeedRef.current;
     audio.playbackRate = playbackSpeedRef.current;
+    if (seg.startSec !== undefined) {
+      // Fichier sourate entière minuté : si déjà chargé, simple déplacement (enchaînement sans coupure)
+      if (audio.src === seg.url && audio.readyState >= 1) {
+        audio.currentTime = seg.startSec;
+      } else {
+        audio.src = seg.url;
+        audio.load();
+        const start = seg.startSec;
+        audio.addEventListener('loadedmetadata', () => { audio.currentTime = start; }, { once: true });
+      }
+      return;
+    }
+    audio.src = seg.url;
+    audio.load();
     if (seg.from > 0) {
       const setStart = () => {
         if (audio.duration && Number.isFinite(audio.duration)) {
@@ -180,7 +197,10 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
       // Check if this verse is verse 1 and reciter includes Bismillah
       let bismillahOffset = 0;
-      if (verseNum === 1 && surah.bismillah && segmentIdxRef.current === 0 && currentSegment().from === 0) {
+      const segNow = currentSegment();
+      if (segNow.introSec !== undefined) {
+        bismillahOffset = segNow.introSec; // minutage officiel : début réel du verset 1
+      } else if (verseNum === 1 && surah.bismillah && segmentIdxRef.current === 0 && segNow.from === 0) {
         bismillahOffset = getVerse1BismillahOffset(reciterIdRef.current, surahId);
       }
 
@@ -188,7 +208,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
       // Fin d'un segment partiel (verset Warsh issu d'un verset Hafs scindé) : détection fine (30 ms)
       const activeSeg = segmentsRef.current[segmentIdxRef.current];
-      if (activeSeg && activeSeg.to < 1 && !segmentEndHandledRef.current && cTime >= activeSeg.to * dur) {
+      if (activeSeg && segIsPartial(activeSeg) && !segmentEndHandledRef.current && cTime >= segEndSec(activeSeg, dur)) {
         segmentEndHandledRef.current = true;
         segmentEndHandlerRef.current?.();
         return;
@@ -223,8 +243,8 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       // Effective duration and elapsed time of verse words (excluding introductory Bismillah)
       // Progression dans le verset Warsh, segment par segment
       const seg = currentSegment();
-      const segStart = seg.from * dur + bismillahOffset;
-      const segEnd = seg.to * dur;
+      const segStart = segStartSec(seg, dur) + bismillahOffset;
+      const segEnd = Math.min(dur, segEndSec(seg, dur));
       const local = Math.max(0, Math.min(1, (cTime - segStart) / Math.max(0.1, segEnd - segStart)));
       const progress = Math.max(0, Math.min(0.999, seg.vFrom + local * (seg.vTo - seg.vFrom)));
       let idx = thresholds.findIndex(t => progress <= t);
@@ -279,8 +299,8 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       setCurrentTime(audio.currentTime);
       const seg = segmentsRef.current[segmentIdxRef.current];
       if (
-        isVerseModeRef.current && seg && seg.to < 1 && audio.duration &&
-        !segmentEndHandledRef.current && audio.currentTime >= seg.to * audio.duration
+        isVerseModeRef.current && segIsPartial(seg) && audio.duration &&
+        !segmentEndHandledRef.current && audio.currentTime >= segEndSec(seg, audio.duration)
       ) {
         segmentEndHandledRef.current = true;
         handleSegmentEnd();
@@ -331,7 +351,8 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       if (mode === 'loop' || repeatCounterRef.current < targetRepeats) {
         const needsReload =
           isVerseModeRef.current &&
-          (segmentsRef.current.length > 1 || segmentIdxRef.current !== 0 || (segmentsRef.current[0]?.from ?? 0) > 0);
+          (segmentsRef.current.length > 1 || segmentIdxRef.current !== 0 || (segmentsRef.current[0]?.from ?? 0) > 0 ||
+            segmentsRef.current[0]?.startSec !== undefined);
         if (needsReload) {
           isTransitioningRef.current = true;
           loadSegment(audio, 0);

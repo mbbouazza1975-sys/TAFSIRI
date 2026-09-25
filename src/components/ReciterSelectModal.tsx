@@ -82,7 +82,7 @@ export const ReciterSelectModal: React.FC<ReciterSelectModalProps> = ({
               <h3 id="reciter-modal-title" className="font-extrabold text-base sm:text-lg flex items-center gap-1.5">
                 <span>Récitateurs Warsh 'an Nâfi'</span>
                 <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#C9A24B] text-[#14332A] font-bold font-mono">
-                  {WARSH_RECITERS.length}/9
+                  {WARSH_RECITERS.length}
                 </span>
               </h3>
               <p className="text-xs text-stone-500 dark:text-stone-400">
@@ -101,7 +101,7 @@ export const ReciterSelectModal: React.FC<ReciterSelectModalProps> = ({
           </button>
         </div>
 
-        {/* Reciters List - ALL 9 RECITERS */}
+        {/* Reciters List */}
         <div className="space-y-2 max-h-[60vh] overflow-y-auto pr-1">
           {WARSH_RECITERS.map(reciter => {
             const isSelected = reciter.id === selectedReciterId;
@@ -149,15 +149,6 @@ export const ReciterSelectModal: React.FC<ReciterSelectModalProps> = ({
                   >
                     {reciter.description}
                   </p>
-                  {reciter.verseAudioNote && (
-                    <p
-                      className={`mt-1 text-[10px] leading-snug font-semibold ${
-                        isSelected ? 'text-amber-300' : 'text-amber-700 dark:text-amber-400'
-                      }`}
-                    >
-                      {reciter.verseAudioNote}
-                    </p>
-                  )}
                 </div>
 
                 <div className="shrink-0 pt-0.5">

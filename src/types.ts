@@ -88,9 +88,10 @@ export interface Reciter {
   description: string;
   badge: string;
   serverUrl: string;
+  /** Dossier des fichiers verset par verset de CE récitateur (everyayah.com) */
   everyAyahBase?: string;
-  /** Précise quelle voix est utilisée en lecture verset par verset, si ce n'est pas celle du récitateur */
-  verseAudioNote?: string;
+  /** true : lecture verset par verset via le minutage officiel mp3quran du fichier sourate entière */
+  usesVerseTimings?: boolean;
   emoji?: string;
 }
 

@@ -1,103 +1,73 @@
 import { Reciter } from '../types';
+import { VERSE_TIMINGS } from './verseTimings';
 
 /**
- * 9 Récitateurs authentiques vérifiés en Riwâya Warsh 'an Nâfi'
- * Note : 'Abdul Bâsit 'Abdus-Samad a été retiré car ses enregistrements mondiaux
- * diffusés sur everyayah/serveurs sont en transmission Hafs 'an 'Asim.
- * Les 9 maîtres ci-dessous récitent rigoureusement en Warsh 'an Nâfi' (Tariq Al-Azraq).
+ * Récitateurs Warsh 'an Nâfi' — RÈGLE : un récitateur n'est listé que si l'app peut jouer
+ * SA propre voix verset par verset, soit :
+ *  - fichiers verset par verset everyayah.com (dossiers /warsh/) : Yâsîn, Ad-Dôsarî ;
+ *  - fichier sourate entière mp3quran.net + minutage officiel par verset (API ayat_timing,
+ *    numérotation Warsh vérifiée sur les 37 sourates) : Al-Husarî, Al-Qazâbrî, Al-Kûshî.
+ * Aucun repli vers une autre voix n'existe dans le code.
  */
 export const WARSH_RECITERS: Reciter[] = [
   {
     id: 'yasin',
     name: "Yâsîn Al-Jazâ'irî",
     subname: 'القارئ ياسين الجزائري',
-    description: "Récitation Warsh 'an Nâfi' d'une clarté exemplaire, référence absolue pour la mémorisation et la répétition mot à mot.",
+    description: "Récitation Warsh 'an Nâfi' claire et régulière, adaptée à la mémorisation et à la répétition.",
     badge: 'Idéal Hifz',
     emoji: '',
     serverUrl: 'https://server11.mp3quran.net/qari/',
     everyAyahBase: 'https://everyayah.com/data/warsh/warsh_yassin_al_jazaery_64kbps/'
   },
   {
-    id: 'hussary',
-    name: 'Mahmûd Khalîl Al-Husarî',
-    subname: 'محمود خليل الحصري (ورش)',
-    description: "L'enregistrement historique de référence mondiale en Riwâya Warsh 'an Nâfi'. Cadence lente, solennelle et rigueur de Tajwîd incomparable.",
-    badge: 'École du Hifz',
-    emoji: '',
-    serverUrl: 'https://server13.mp3quran.net/husr/Rewayat-Warsh-A-n-Nafi/',
-    verseAudioNote: "Verset par verset : voix de Yâsîn Al-Jazâ'irî (aucun enregistrement verset par verset de ce récitateur n'est disponible)."
-  },
-  {
     id: 'dosari',
     name: 'Ibrâhîm Ad-Dôsarî',
     subname: 'إبراهيم الدوسري',
-    description: "Récitation Warsh 'an Nâfi' posée et sereine, respectant scrupuleusement les temps de prolongation et d'amincissement.",
+    description: "Récitation Warsh 'an Nâfi' posée et sereine.",
     badge: 'Lecture posée',
     emoji: '',
     serverUrl: 'https://server10.mp3quran.net/ibrahim_dosri/Rewayat-Warsh-A-n-Nafi/',
     everyAyahBase: 'https://everyayah.com/data/warsh/warsh_ibrahim_aldosary_128kbps/'
   },
   {
+    id: 'hussary',
+    name: 'Mahmûd Khalîl Al-Husarî',
+    subname: 'محمود خليل الحصري (ورش)',
+    description: "Enregistrement Warsh 'an Nâfi' du grand maître égyptien : cadence lente et articulation très nette, excellente pour apprendre.",
+    badge: 'Cadence lente',
+    emoji: '',
+    serverUrl: 'https://server13.mp3quran.net/husr/Rewayat-Warsh-A-n-Nafi/',
+    usesVerseTimings: true
+  },
+  {
     id: 'qazabri',
     name: "'Umar Al-Qazâbrî",
     subname: 'عمر القزابري',
-    description: "L'illustre imam de la Grande Mosquée Hassan II de Casablanca, timbre marocain chaleureux et récitation Warsh mélodieuse.",
-    badge: 'Mosquée Hassan II',
+    description: "Imam marocain de la mosquée Hassan II de Casablanca, récitation Warsh mélodieuse.",
+    badge: 'Voix marocaine',
     emoji: '',
-    serverUrl: 'https://server9.mp3quran.net/omr/',
-    verseAudioNote: "Verset par verset : voix de Yâsîn Al-Jazâ'irî (aucun enregistrement verset par verset de ce récitateur n'est disponible)."
-  },
-  {
-    id: 'hudhaify',
-    name: "'Abdul Rahmân Al-Hudhayfî",
-    subname: 'علي بن عبد الرحمن الحذيفي (ورش)',
-    description: "Moushaf officiel enregistré au Complexe du Roi Fahd à Médine en Riwâya Warsh 'an Nâfi'. Récitation classique d'une précision académique.",
-    badge: 'Enregistrement Médine',
-    emoji: '',
-    serverUrl: 'https://server9.mp3quran.net/hthfi/Rewayat-Warsh-A-n-Nafi/',
-    verseAudioNote: "Verset par verset : voix de Yâsîn Al-Jazâ'irî (aucun enregistrement verset par verset de ce récitateur n'est disponible)."
+    serverUrl: 'https://server9.mp3quran.net/omar_warsh/',
+    usesVerseTimings: true
   },
   {
     id: 'kouchi',
-    name: 'Al-Ayyûn Al-Kûshî',
+    name: 'Al-ʿAyûn Al-Kûshî',
     subname: 'العيون الكوشي',
-    description: "Éminent récitateur marocain de la mosquée Al-Andalous de Casablanca, voix émouvante et respect absolu de la tradition de Nâfi'.",
-    badge: 'Voix émouvante',
+    description: "Récitateur marocain, lecture Warsh fluide au rythme soutenu.",
+    badge: 'Rythme fluide',
     emoji: '',
     serverUrl: 'https://server11.mp3quran.net/koshi/',
-    verseAudioNote: "Verset par verset : voix de Yâsîn Al-Jazâ'irî (aucun enregistrement verset par verset de ce récitateur n'est disponible)."
-  },
-  {
-    id: 'belalya',
-    name: 'Rachîd Belâlya',
-    subname: 'رشيد بلعالية',
-    description: "Voix chaleureuse d'Afrique du Nord, cadence régulière et apaisante pour accompagner le travail quotidien de mémorisation.",
-    badge: 'Voix chaleureuse',
-    emoji: '',
-    serverUrl: 'https://server6.mp3quran.net/bl3/Rewayat-Warsh-A-n-Nafi/',
-    verseAudioNote: "Verset par verset : voix de Yâsîn Al-Jazâ'irî (aucun enregistrement verset par verset de ce récitateur n'est disponible)."
-  },
-  {
-    id: 'gharbi',
-    name: 'Mustafa Gharbi',
-    subname: 'مصطفى غربي',
-    description: "Figure emblématique de la récitation Warsh marocaine, transmission orale authentique et ferveur spirituelle profonde.",
-    badge: 'Tradition marocaine',
-    emoji: '',
-    serverUrl: 'https://server8.mp3quran.net/gharbi/',
-    verseAudioNote: "Verset par verset : voix de Yâsîn Al-Jazâ'irî (aucun enregistrement verset par verset de ce récitateur n'est disponible)."
-  },
-  {
-    id: 'kantaoui',
-    name: 'Muhammad Al-Kantaoui',
-    subname: 'محمد الكنتاوي',
-    description: "Grand maître et enseignant des règles de Tajwîd maghrébin, récitation Warsh académique claire et didactique.",
-    badge: 'Maître Tajwîd',
-    emoji: '',
-    serverUrl: 'https://server11.mp3quran.net/ktawi/',
-    verseAudioNote: "Verset par verset : voix de Yâsîn Al-Jazâ'irî (aucun enregistrement verset par verset de ce récitateur n'est disponible)."
+    usesVerseTimings: true
   }
 ];
+
+export const DEFAULT_RECITER_ID = 'yasin';
+
+/** Renvoie un identifiant valide (les anciens récitateurs retirés sont ramenés au récitateur par défaut). */
+export function normalizeReciterId(id: string | null | undefined): string {
+  return id && WARSH_RECITERS.some(r => r.id === id) ? id : DEFAULT_RECITER_ID;
+}
 
 export function getSurahAudioUrl(reciterId: string, surahId: number): string {
   const reciter = WARSH_RECITERS.find(r => r.id === reciterId) || WARSH_RECITERS[0];
@@ -120,6 +90,11 @@ export interface VerseAudioSegment {
   to: number;
   vFrom: number;
   vTo: number;
+  /** Bornes absolues en secondes (fichier sourate entière minuté) — prioritaires sur from/to */
+  startSec?: number;
+  endSec?: number;
+  /** Durée d'introduction (isti'âdha/basmala) au début du segment, sans surlignage */
+  introSec?: number;
 }
 
 type SegSpec = { ayah: number; from?: number; to?: number; vFrom?: number; vTo?: number };
@@ -183,12 +158,21 @@ function getWarshSegmentSpecs(surahId: number, v: number): SegSpec[] {
   }
 }
 
-const YASSIN_EVERYAYAH = 'https://everyayah.com/data/warsh/warsh_yassin_al_jazaery_64kbps/';
-
 export function getVerseAudioSegments(reciterId: string, surahId: number, verseNumber: number): VerseAudioSegment[] {
   const reciter = WARSH_RECITERS.find(r => r.id === reciterId) || WARSH_RECITERS[0];
-  const base = reciter.everyAyahBase || YASSIN_EVERYAYAH;
   const padSurah = String(surahId).padStart(3, '0');
+  if (reciter.usesVerseTimings) {
+    const t = VERSE_TIMINGS[reciter.id]?.[String(surahId)]?.[verseNumber - 1];
+    if (t) {
+      const url = `${reciter.serverUrl}${padSurah}.mp3`;
+      // Verset 1 : on garde l'introduction (basmala) du fichier, comme les fichiers par verset
+      const startSec = verseNumber === 1 ? 0 : t[0] / 1000;
+      const introSec = verseNumber === 1 ? t[0] / 1000 : 0;
+      return [{ url, from: 0, to: 1, vFrom: 0, vTo: 1, startSec, endSec: t[1] / 1000, introSec }];
+    }
+    return [];
+  }
+  const base = reciter.everyAyahBase as string;
   return getWarshSegmentSpecs(surahId, verseNumber).map(spec => ({
     url: `${base}${padSurah}${String(spec.ayah).padStart(3, '0')}.mp3`,
     from: spec.from ?? 0,
@@ -200,5 +184,5 @@ export function getVerseAudioSegments(reciterId: string, surahId: number, verseN
 
 export function getVerseAudioUrl(reciterId: string, surahId: number, verseNumber: number): string {
   // Premier fichier du verset (utilisé par les quiz audio)
-  return getVerseAudioSegments(reciterId, surahId, verseNumber)[0].url;
+  return getVerseAudioSegments(reciterId, surahId, verseNumber)[0]?.url ?? '';
 }
