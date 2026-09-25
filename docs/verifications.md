@@ -26,6 +26,14 @@ Ce fichier trace ce qui a été vérifié, avec quelle source et quand. Chaque s
 - 712 gloses mot à mot et 661 entrées du dictionnaire contenaient de l'arabe non traduit (« Le / la ْجِبَالُ »). Toutes corrigées.
 - Base : traduction mot à mot de Quran.com (anglais), traduite en français selon le contexte du verset. Texte arabe inchangé (vérifié).
 
+### Interprétation pour notre époque (25 septembre 2026, après-midi)
+- Constat : 548 versets sur 566 affichaient la même phrase générique (« Ce verset t'invite à aligner tes intentions… ») et 22 sourates (79 à 92, 95 à 102) un bloc de présentation générique.
+- Correction : 548 interprétations propres à chaque verset + 22 blocs de sourate, dans `src/data/verseInsights.json` (numérotation Warsh vérifiée verset par verset sur la traduction de l'app).
+- Démarche : partir d'un mot ou d'une image du verset (sens de la racine, contexte) pour arriver à une application concrète pour un jeune. Inspirée de la méthode de Nouman Ali Khan, sans lui attribuer de propos.
+- Contrôle automatique : aucun verset manquant, aucune interprétation ni question en double.
+- Retirés à la relecture : un hadith faible cité en 95:8, une affirmation de « miracle scientifique » en 96:17.
+- Reste à faire : relecture par un enseignant, en priorité pour les sens de racines arabes cités.
+
 ### Reste à faire
 - Relecture par un imam ou un enseignant de lecture Warsh (priorité).
 - Certaines gloses anciennes du dictionnaire restent approximatives (reprises telles quelles, non créées par cette passe).

@@ -1,3 +1,11 @@
+import VERSE_INSIGHTS from './verseInsights.json';
+
+// Interprétations par verset et blocs de sourate rédigés le 25/09/2026 (voir docs/verifications.md).
+// Chaque entrée est propre à son verset (numérotation Warsh). Démarche inspirée de la méthode de
+// Nouman Ali Khan (partir du sens des mots pour arriver à la vie d'aujourd'hui), sans lui attribuer de propos.
+type VerseInsight = { titreAdo: string; impactAdo: string; questionIntrospection: string };
+const INSIGHTS = VERSE_INSIGHTS as unknown as Record<string, { surah?: Omit<SurahYouthExegesis, 'surahId' | 'versesAdos'>; verses?: Record<string, VerseInsight> }>;
+
 export interface SurahYouthExegesis {
   surahId: number;
   themeAdo: string;
@@ -354,6 +362,10 @@ export function getYouthExegesisForSurah(surahId: number, surahName?: string): S
   if (CONTEMPORARY_YOUTH_EXEGESIS[surahId]) {
     return CONTEMPORARY_YOUTH_EXEGESIS[surahId];
   }
+  const block = INSIGHTS[String(surahId)]?.surah;
+  if (block) {
+    return { surahId, ...block };
+  }
 
   // Smart dynamic contemporary youth analysis fallback
   return {
@@ -376,6 +388,10 @@ export function getVerseYouthInsight(surahId: number, verseNumber: number, verse
   const surahData = CONTEMPORARY_YOUTH_EXEGESIS[surahId];
   if (surahData?.versesAdos?.[verseNumber]) {
     return surahData.versesAdos[verseNumber];
+  }
+  const insight = INSIGHTS[String(surahId)]?.verses?.[String(verseNumber)];
+  if (insight) {
+    return insight;
   }
 
   // Dynamic fallback for individual verses
