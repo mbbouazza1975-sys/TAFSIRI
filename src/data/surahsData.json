@@ -3295,7 +3295,7 @@
       {
         "number": 35,
         "text": "يَوْمَ يَتَذَكَّرُ اُ۬لِانسَٰنُ مَا سَع۪ىٰ",
-        "translation": "le jour où l’homme se souviendra de ce tout ce qu’il s’est employé à accomplir,",
+        "translation": "le jour où l’homme se souviendra de tout ce qu’il s’est employé à accomplir,",
         "meaning": "le jour où l’homme se souviendra de ce tout ce qu’il s’est employé à accomplir,",
         "explanation": "Ce jour-là, l'homme se souviendra de tout — chaque acte, chaque parole, chaque intention. La mémoire sera parfaite.",
         "words": [
@@ -6388,7 +6388,7 @@
           },
           {
             "ar": "ذِے",
-            "simple": "doué",
+            "simple": "du Maître (Détenteur) de",
             "img": ""
           },
           {
@@ -8021,7 +8021,7 @@
           },
           {
             "ar": "يُكَذِّبُ",
-            "fr": "le dément"
+            "fr": "dément"
           },
           {
             "ar": "بِهِۦٓ",
@@ -8054,7 +8054,7 @@
           },
           {
             "ar": "يُكَذِّبُ",
-            "simple": "le dément",
+            "simple": "dément",
             "img": ""
           },
           {
@@ -9107,8 +9107,8 @@
             "img": ""
           },
           {
-            "ar": "اَ۪نقَلَبُوٓاْ",
-            "simple": "ils retournaient (chez eux)",
+            "ar": "اُ۪نقَلَبُواْ",
+            "simple": "ils retournaient",
             "img": ""
           },
           {
@@ -10860,7 +10860,7 @@
         "dico": [
           {
             "ar": "ذَاتِ ٱلۡوَقُود",
-            "simple": "alimentée de combustible",
+            "simple": "alimenté de combustible",
             "img": "Un feu de bois qu'on entretient en y ajoutant du bois — pour qu'il ne s'éteigne pas."
           }
         ]
@@ -13656,7 +13656,7 @@
         "words": [
           {
             "ar": "عَامِلَةٞ",
-            "fr": "harassés"
+            "fr": "peinant"
           },
           {
             "ar": "نَّاصِبَةٞ",
@@ -13668,7 +13668,7 @@
         "dico": [
           {
             "ar": "عَامِلَةٞ",
-            "simple": "harassés",
+            "simple": "peinant",
             "img": ""
           },
           {
@@ -13727,7 +13727,7 @@
         "words": [
           {
             "ar": "تُسْق۪ىٰ",
-            "fr": "abreuvés"
+            "fr": "on les abreuvera"
           },
           {
             "ar": "مِنْ",
@@ -13747,7 +13747,7 @@
         "dico": [
           {
             "ar": "تُسْق۪ىٰ",
-            "simple": "abreuvés",
+            "simple": "on les abreuvera",
             "img": ""
           },
           {
@@ -15432,13 +15432,7 @@
         ],
         "sens": "Il accuse Allah dans l'épreuve",
         "tafsir": "Dans la pauvreté ou la difficulté, il pense qu'Allah le punit ou le méprise. Les deux réactions sont fausses.",
-        "dico": [
-          {
-            "ar": "أَهَانَنِ",
-            "simple": "Il m'a humilié",
-            "img": "Quelqu'un qui perd son emploi et dit «Dieu m'abandonne» — sans comprendre que c'est peut-être une opportunité."
-          }
-        ]
+        "dico": []
       },
       {
         "number": 18,
@@ -15462,7 +15456,13 @@
         ],
         "sens": "Il accuse Allah dans l'épreuve",
         "tafsir": "Dans la pauvreté ou la difficulté, il pense qu'Allah le punit ou le méprise. Les deux réactions sont fausses.",
-        "dico": []
+        "dico": [
+          {
+            "ar": "أَهَٰنَنِۦ",
+            "simple": "Il m'a humilié",
+            "img": "Quelqu'un qui perd son emploi et dit «Dieu m'abandonne» — sans comprendre que c'est peut-être une opportunité."
+          }
+        ]
       },
       {
         "number": 19,
@@ -16315,7 +16315,7 @@
         "tafsir": "Allah honore le Prophète ف﹗ en mentionnant sa présence à La Mecque.",
         "dico": [
           {
-            "ar": "حِلْل",
+            "ar": "حِلُّۢ",
             "simple": "établi / chez soi",
             "img": "Quelqu’un dans sa maison — en sécurité, légitime."
           }
@@ -17218,7 +17218,7 @@
         "dico": [
           {
             "ar": "سَوَّاهَا",
-            "simple": "formée harmonieusement",
+            "simple": "Il l'a harmonisée",
             "img": "Un instrument parfaitement accordé."
           }
         ]
@@ -17975,7 +17975,7 @@
         "tafsir": "Les deux mondes appartiennent à Allah. C’est nous qui avons besoin de Lui.",
         "dico": [
           {
-            "ar": "ٱلْأَخِرَتَ / ٱلْأُولَى",
+            "ar": "ٱلْآخِرَة / ٱلْأُولَى",
             "simple": "l’au-delà / cette vie",
             "img": "Les deux faces d’une pièce — les deux appartiennent à Allah."
           }
@@ -18439,7 +18439,7 @@
         "tafsir": "L’au-delà sera meilleur. Pour nous aussi : les meilleurs jours arrivent toujours.",
         "dico": [
           {
-            "ar": "ٱلْأَخِرَة",
+            "ar": "ٱلْآخِرَة",
             "simple": "l’au-delà / la vie future",
             "img": "Une destination qui dépasse tout ce qu’on a connu."
           }
@@ -19229,7 +19229,7 @@
           },
           {
             "ar": "سَٰفِلِينَ",
-            "fr": "des bas"
+            "fr": "des plus bas"
           }
         ],
         "sens": "Mais on peut tomber très bas",
@@ -21002,7 +21002,7 @@
       {
         "number": 7,
         "text": "إِنَّ اَ۬لذِينَ ءَامَنُواْ وَعَمِلُواْ اُ۬لصَّٰلِحَٰتِ أُوْلَٰٓئِكَ هُمْ خَيْرُ اُ۬لْبَرِيَٓٔةِۖ",
-        "translation": "Ceux qui ont cru et accompli les bonnes œuvres, ceux là sont les meilleures de toutes les créatures.",
+        "translation": "Ceux qui ont cru et accompli les bonnes œuvres, ceux-là sont les meilleurs de toutes les créatures.",
         "meaning": "Ceux qui ont cru et accompli les bonnes œuvres, ceux là sont les meilleures de toutes les créatures",
         "explanation": "Contraste magnifique : les pires vs les meilleurs. Les meilleurs des créatures ne sont pas les plus riches ni les plus beaux — ce sont ceux qui croient et agissent bien.",
         "words": [
@@ -21036,7 +21036,7 @@
           },
           {
             "ar": "خَيْرُ",
-            "fr": "(sont) les meilleures"
+            "fr": "(sont) les meilleurs"
           },
           {
             "ar": "اُ۬لْبَرِيَٓٔةِ",
@@ -21616,7 +21616,7 @@
       {
         "number": 1,
         "text": "وَالْعَٰدِيَٰتِ ضَبْحاٗ",
-        "translation": "Par les coursiers haletant,",
+        "translation": "Par les coursiers haletants,",
         "meaning": "Par les coursiers haletant,",
         "explanation": "Allah jure par les chevaux au galop — leur souffle haletant, leur puissance, leur courage. Ces animaux obéissent fidèlement à leur cavalier.",
         "words": [
@@ -21730,7 +21730,7 @@
         "words": [
           {
             "ar": "فَوَسَطْنَ",
-            "fr": "et pénétrant"
+            "fr": "et pénétrant au milieu"
           },
           {
             "ar": "بِهِۦ",
@@ -21738,7 +21738,7 @@
           },
           {
             "ar": "جَمْعاً",
-            "fr": "au centre (d'une troupe)"
+            "fr": "d'une troupe (ennemie)"
           }
         ],
         "sens": "Le courage de plonger au cœur du danger",

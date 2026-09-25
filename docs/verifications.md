@@ -38,6 +38,7 @@ Ce fichier trace ce qui a été vérifié, avec quelle source et quand. Chaque s
 - Constat : de nombreuses gloses avaient été attribuées par mot arabe sans tenir compte du contexte. Exemples : « parmi les djinns » pour *al-janna* (le Paradis, 79:40 et 81:13), « les tortionnaires criminels de » pour *ashâb* (90:18-19), « des grains et céréales » pour *hubban* (amour, 89:22), « comment ton Seigneur Tout-Puissant a châtié » pour *kayfa* (88:17-20), « Prie donc humblement » pour *fasl* (86:13), « depuis / contre » pour *man / min*, « de ce qu' » pour la négation *mâ*.
 - Correction : les 2 308 gloses mot à mot ont été réécrites verset par verset (1 673 modifiées), alignées sur la traduction mot à mot de Quran.com (anglais) et sur le sens du verset. Les 708 entrées du dictionnaire qui recopiaient ces gloses ont suivi, et 23 entrées rédigées à part ont été corrigées (fautes de sens, d'accord ou de frappe).
 - Contrôles automatiques : même nombre de gloses que de mots dans chaque verset (2 308), texte arabe inchangé (versets, mots, dictionnaire), build OK.
+- Deuxième relecture indépendante (4 relecteurs, 2 308 lignes lues, toutes sourates) : aucun contresens grave ; 16 corrections mineures appliquées (83:12, 88:3, 88:5, 95:5, 98:7, 100:5, accords et graphies de 6 entrées du dictionnaire, 3 fautes dans les traductions 79:35, 98:7, 100:1).
 
 ### Reste à faire
 - Relecture par un imam ou un enseignant de lecture Warsh (priorité).
