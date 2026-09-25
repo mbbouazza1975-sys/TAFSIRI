@@ -463,7 +463,7 @@ export const QuizView: React.FC<QuizViewProps> = ({ onPointsEarned }) => {
         <div className="space-y-1">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#C9A24B] text-[#14332A] text-xs font-bold uppercase tracking-wider shadow-sm">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Ludique & Validé par les Spécialistes</span>
+            <span>Ludique & Pédagogique</span>
           </div>
           <h1 className="text-2xl sm:text-3xl font-black tracking-tight">
             Grand Quiz du Juz 'Amma

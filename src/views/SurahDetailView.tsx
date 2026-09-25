@@ -887,13 +887,14 @@ export const SurahDetailView: React.FC<SurahDetailViewProps> = ({
             </div>
           )}
 
-          {/* Section 7: Hadith Card */}
+          {/* Section 7: Hadith Card — références vérifiées sur sunnah.com (voir docs/verifications.md) */}
+          {surah.hadith?.text && (
           <div className="surface mt-5 p-4 rounded-2xl">
             <div className="flex items-start gap-2.5">
               <Scroll className="w-4 h-4 text-[#C9A24B] shrink-0 mt-0.5" />
               <div className="space-y-1">
                 <p className="text-xs leading-relaxed font-semibold">
-                  {surah.hadithText || surah.hadith?.text || "Deux compagnons du Messager de Dieu ﷺ ne se quittaient jamais sans que l'un d'eux ne récite à l'autre Sourate Al-'Asr jusqu'au bout."}
+                  {surah.hadith?.text}
                 </p>
                 {surah.hadith?.source && (
                   <p className="text-[10px] text-stone-500 dark:text-stone-400 font-bold">
@@ -903,6 +904,7 @@ export const SurahDetailView: React.FC<SurahDetailViewProps> = ({
               </div>
             </div>
           </div>
+          )}
 
           {/* Section 8: Big Memorization Button */}
           <button

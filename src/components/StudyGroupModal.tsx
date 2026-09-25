@@ -302,7 +302,7 @@ export const StudyGroupModal: React.FC<StudyGroupModalProps> = ({
                 </div>
                 <p className="text-xs text-stone-700 dark:text-stone-300 font-semibold leading-relaxed">
                   Cette application est conçue pour faciliter l'écoute, la mémorisation autonome et la découverte du vocabulaire du Coran chez soi ou en mobilité.
-                  Les rubriques contemporaines et d'éveil sont générées avec l'appui d'outils d'intelligence artificielle rigoureusement ancrés dans les sources classiques.
+                  Les explications, les rubriques contemporaines et le dictionnaire sont rédigés avec l'aide de l'intelligence artificielle, en s'inspirant des sources classiques (Ibn Kathîr, As-Sa'dî, Lisân al-'Arab). Ils n'ont pas encore été relus par un savant : en cas de doute, fiez-vous à votre enseignant. Les hadiths cités sont vérifiés sur sunnah.com, avec leur référence.
                 </p>
                 <div className="p-2.5 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-300 dark:border-amber-800 text-[11px] text-amber-900 dark:text-amber-200 font-bold leading-relaxed">
                   Important : Pour valider formellement une mémorisation (Hifz) et s'assurer de la parfaite prononciation des lettres arabes (Makhârij), rien ne remplace le suivi direct auprès d'un enseignant qualifié (Mou'allim ou Shaykh).
@@ -396,7 +396,7 @@ export const StudyGroupModal: React.FC<StudyGroupModalProps> = ({
           {activeTab === 'improvements' && (
             <div className="space-y-3">
               <h4 className="text-xs font-black uppercase tracking-wider text-stone-500 dark:text-stone-400">
-                Améliorations Validées & Déployées
+                Améliorations déployées
               </h4>
 
               {STUDY_GROUP_IMPROVEMENTS.map((imp) => (

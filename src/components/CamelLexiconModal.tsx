@@ -177,7 +177,7 @@ export const CamelLexiconModal: React.FC<CamelLexiconModalProps> = ({
                 <div className="pt-2 flex items-center justify-between text-[10px] text-stone-400 dark:text-stone-500 border-t border-stone-100 dark:border-stone-800">
                   <span className="flex items-center gap-1">
                     <ShieldCheck className="w-3 h-3 text-emerald-600" />
-                    Source : {entry.verifiedSource}
+                    Inspiré de : {entry.verifiedSource}
                   </span>
                   <span className="italic">Synthèse rédigée avec l'aide de l'IA</span>
                 </div>

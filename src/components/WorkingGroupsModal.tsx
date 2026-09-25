@@ -25,10 +25,10 @@ export const WorkingGroupsModal: React.FC<WorkingGroupsModalProps> = ({ isOpen, 
             </div>
             <div>
               <h2 className="text-base sm:text-lg font-extrabold tracking-tight text-[#14332A] dark:text-[#FAF6EC]">
-                Comités & Groupes de Travail Dédiés
+                Méthode & Sources d'inspiration
               </h2>
               <p className="text-xs text-stone-500 dark:text-stone-400">
-                Garantie d'excellence visuelle, philologique et spirituelle
+                Contenu rédigé avec l'aide de l'IA — non relu par un savant
               </p>
             </div>
           </div>
@@ -139,10 +139,10 @@ export const WorkingGroupsModal: React.FC<WorkingGroupsModalProps> = ({ isOpen, 
                 <ShieldCheck className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
                 <div>
                   <h3 className="font-bold text-[#14332A] dark:text-[#FAF6EC] text-sm">
-                    Mission du Groupe Philologique & Exégétique
+                    Démarche pour les explications et le dictionnaire
                   </h3>
                   <p className="text-stone-700 dark:text-stone-300 mt-1">
-                    Garantir la rectitude absolue des explications, la traçabilité des racines arabes et la fidélité des métaphores bédouines (« Dictionnaire du Chamelier ») aux sources classiques incontestées.
+                    Rester au plus près des sources classiques pour les explications et les racines arabes. Les images « du désert » sont des aides à la mémorisation, pas des définitions de dictionnaire.
                   </p>
                 </div>
               </div>
@@ -170,11 +170,11 @@ export const WorkingGroupsModal: React.FC<WorkingGroupsModalProps> = ({ isOpen, 
                   <div className="p-3.5 rounded-xl bg-white dark:bg-[#16261E] border border-stone-200 dark:border-stone-800">
                     <p className="font-bold text-[#14332A] dark:text-[#C9A24B]">Le Lexique du Chameau (معجم الإبل)</p>
                     <p className="text-[11px] text-stone-500 dark:text-stone-400 mt-0.5">
-                      Édité par l'Académie Mondiale du Roi Salmane (KSGAAL) pour l'encyclopédie du patrimoine bédouin.
+                      Vocabulaire lié au chameau et à la vie nomade (source d'inspiration).
                     </p>
                   </div>
                   <div className="p-3.5 rounded-xl bg-white dark:bg-[#16261E] border border-stone-200 dark:border-stone-800">
-                    <p className="font-bold text-[#14332A] dark:text-[#C9A24B]">Tafsîrs Authentiques d'Ibn Kathîr & As-Sa'dî</p>
+                    <p className="font-bold text-[#14332A] dark:text-[#C9A24B]">Tafsîrs d'Ibn Kathîr & As-Sa'dî</p>
                     <p className="text-[11px] text-stone-500 dark:text-stone-400 mt-0.5">
                       Vérification systématique du sens spirituel, du contexte de révélation (Asbâb an-Nuzûl) et des hadiths.
                     </p>
@@ -185,10 +185,10 @@ export const WorkingGroupsModal: React.FC<WorkingGroupsModalProps> = ({ isOpen, 
               {/* Protocol for the Camel Driver Dictionary */}
               <div className="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/30 space-y-2">
                 <h4 className="font-bold text-[#14332A] dark:text-amber-200">
-                  Protocole de Certification « Dictionnaire du Chamelier »
+                  Comment sont construites les fiches du dictionnaire
                 </h4>
                 <p className="text-stone-700 dark:text-stone-300">
-                  Chaque terme est décortiqué selon 4 paliers immuables :
+                  Chaque terme suit 4 étapes :
                 </p>
                 <ol className="list-decimal list-inside space-y-1 text-stone-600 dark:text-stone-300 text-xs sm:text-sm pl-2">
                   <li><strong>La Racine Trilitère</strong> (الجذر) extraite selon les règles de la morphologie arabe.</li>
@@ -205,7 +205,7 @@ export const WorkingGroupsModal: React.FC<WorkingGroupsModalProps> = ({ isOpen, 
         <div className="p-4 sm:p-5 border-t border-stone-200 dark:border-stone-800 bg-white/50 dark:bg-[#16261E]/50 flex items-center justify-between">
           <span className="text-[11px] text-stone-500 dark:text-stone-400 flex items-center gap-1.5">
             <ShieldCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-            Vérification continue par les deux comités
+            Une erreur ? Signalez-la pour correction
           </span>
           <button
             onClick={onClose}

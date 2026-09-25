@@ -504,17 +504,17 @@ export const HISTORICAL_AND_MEANING_QUIZ: QuizItem[] = [
     surahId: 113,
     surahName: 'Al-Falaq & An-Nâs (Les Protectrices)',
     difficulty: 'moyen',
-    question: 'Quel événement historique a motivé la descente conjointe des deux sourates protectrices (Al-Mu\'awwidhatayn) ?',
+    question: 'Selon Sahîh Al-Boukhârî (n° 5763), quelle épreuve le Prophète ﷺ a-t-il subie à Médine, souvent liée par les exégètes aux deux sourates protectrices ?',
     contextBanner: 'La guérison prophétique face au complot invisible',
     options: [
       'La morsure d\'un scorpion venimeux dans le désert',
-      'Un maléfice et ensorcellement orchestré par Labîd ibn al-A\'sam (avec 11 nœuds jetés dans le puits de Dharwân) ; l\'Ange Jibril révéla les 11 versets pour dénouer chaque nœud',
+      'Un ensorcellement par Labîd ibn Al-A\'sam, dont l\'objet fut caché dans le puits de Dharwân',
       'La famine qui toucha la ville de Médine la première année de l\'Hégire',
       'Une épidémie de peste venue de Syrie'
     ],
     correctIndex: 1,
-    explanation: 'Le Prophète ﷺ tomba malade suite à un sortilège lié à 11 nœuds cachés. Jibril lui apporta Al-Falaq (5 versets) et An-Nas (6 versets), totalisant 11 versets. À chaque verset récité, un nœud se déliait et le Prophète ﷺ retrouva sa pleine vigueur.',
-    sourceReference: 'Sahih Al-Bukhari (Hadith 5763) & Asbâb an-Nuzûl d\'Al-Wâhidî',
+    explanation: 'Al-Boukhârî rapporte (n° 5763, d\'après \'Aïcha) qu\'un homme nommé Labîd ibn Al-A\'sam ensorcela le Prophète ﷺ et que l\'objet du sortilège fut caché dans le puits de Dharwân ; Allah l\'en guérit. Le récit des « 11 nœuds déliés un par un par les 11 versets » vient d\'Al-Wâhidî, avec une chaîne jugée faible : il n\'est pas dans Al-Boukhârî.',
+    sourceReference: 'Sahîh Al-Boukhârî n° 5763 (le détail des 11 nœuds, rapporté par Al-Wâhidî, est faible)',
     modernReflection: 'La foi n\'empêche pas d\'être confronté à des épreuves : elle donne les boucliers spirituels pour en sortir.'
   },
   {
