@@ -3,6 +3,10 @@ import {createRoot} from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
 import { runDataMigrations } from './services/storage';
+import { checkWarshFont } from './fontCheck';
+
+// Active la police Warsh seulement si elle s'affiche vraiment sur l'appareil (sinon Amiri)
+checkWarshFont();
 
 // Renumérotation Warsh des données enregistrées (une seule fois), avant le premier rendu
 runDataMigrations().finally(() => {

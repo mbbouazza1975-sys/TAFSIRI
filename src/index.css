@@ -2,7 +2,10 @@
 
 /* Police officielle du Mushaf Warsh — Complexe Roi Fahd (KFGQPC Uthmanic Warsh v10).
    Limitée aux caractères arabes : le texte latin garde ses polices habituelles.
-   Mise en cache par le service worker après le premier chargement (hors-ligne). */
+   Utilisée UNIQUEMENT pour le texte coranique, et seulement après vérification que
+   l'appareil l'affiche réellement (classe html.warsh-font-ok posée par src/fontCheck.ts).
+   Sinon : Amiri Quran / Amiri (sur certains téléphones la police se charge mais ses lettres
+   restent invisibles). */
 @font-face {
   font-family: 'KFGQPC Warsh';
   src: url('https://cdn.jsdelivr.net/gh/thetruetruth/quran-data-kfgqpc@281dbbe8eed1370daa5a023b6cd81655cbfd6473/warsh/font/warsh.10.woff2') format('woff2');
@@ -35,7 +38,7 @@
   }
 
   html {
-    font-family: 'KFGQPC Warsh', 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
   }
@@ -81,12 +84,12 @@
 
 /* Custom Arabic Typography with robust system fallbacks (Rule 2) */
 .font-quran {
-  font-family: 'KFGQPC Warsh', 'Amiri Quran', 'Amiri', 'Scheherazade New', 'Traditional Arabic', 'Arial', serif;
+  font-family: 'Amiri Quran', 'Amiri', 'Scheherazade New', 'Traditional Arabic', 'Arial', serif;
   font-feature-settings: "cv01" on, "cv02" on;
 }
 
 .font-amiri {
-  font-family: 'KFGQPC Warsh', 'Amiri', 'Scheherazade New', 'Traditional Arabic', 'Arial', serif;
+  font-family: 'Amiri', 'Scheherazade New', 'Traditional Arabic', 'Arial', serif;
 }
 
 /* Custom Scrollbar */
@@ -224,7 +227,7 @@
 }
 
 .arabic {
-  font-family: 'KFGQPC Warsh', 'Amiri Quran', 'Amiri', 'Scheherazade New', serif;
+  font-family: 'Amiri Quran', 'Amiri', 'Scheherazade New', serif;
   direction: rtl;
   line-height: 2.3;
 }
@@ -315,4 +318,10 @@
   color: inherit !important;
   background: transparent !important;
   box-shadow: none !important;
+}
+
+/* Police Warsh activée seulement si l'appareil l'affiche vraiment (voir src/fontCheck.ts) */
+html.warsh-font-ok .font-quran,
+html.warsh-font-ok .arabic {
+  font-family: 'KFGQPC Warsh', 'Amiri Quran', 'Amiri', 'Scheherazade New', 'Traditional Arabic', 'Arial', serif;
 }
