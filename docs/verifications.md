@@ -34,6 +34,11 @@ Ce fichier trace ce qui a été vérifié, avec quelle source et quand. Chaque s
 - Retirés à la relecture : un hadith faible cité en 95:8, une affirmation de « miracle scientifique » en 96:17.
 - Reste à faire : relecture par un enseignant, en priorité pour les sens de racines arabes cités.
 
+### Mot à mot et dictionnaire — deuxième passe (25 septembre 2026, soir)
+- Constat : de nombreuses gloses avaient été attribuées par mot arabe sans tenir compte du contexte. Exemples : « parmi les djinns » pour *al-janna* (le Paradis, 79:40 et 81:13), « les tortionnaires criminels de » pour *ashâb* (90:18-19), « des grains et céréales » pour *hubban* (amour, 89:22), « comment ton Seigneur Tout-Puissant a châtié » pour *kayfa* (88:17-20), « Prie donc humblement » pour *fasl* (86:13), « depuis / contre » pour *man / min*, « de ce qu' » pour la négation *mâ*.
+- Correction : les 2 308 gloses mot à mot ont été réécrites verset par verset (1 673 modifiées), alignées sur la traduction mot à mot de Quran.com (anglais) et sur le sens du verset. Les 708 entrées du dictionnaire qui recopiaient ces gloses ont suivi, et 23 entrées rédigées à part ont été corrigées (fautes de sens, d'accord ou de frappe).
+- Contrôles automatiques : même nombre de gloses que de mots dans chaque verset (2 308), texte arabe inchangé (versets, mots, dictionnaire), build OK.
+
 ### Reste à faire
 - Relecture par un imam ou un enseignant de lecture Warsh (priorité).
-- Certaines gloses anciennes du dictionnaire restent approximatives (reprises telles quelles, non créées par cette passe).
+- Mot à mot : glose volontairement littérale ; quelques mots admettent plusieurs sens selon les exégètes (ex. 81:6 *sujjirat*, 81:17 *'as'asa*, 90:2 *hillun*), les deux sens sont alors indiqués.
