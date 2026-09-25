@@ -24,9 +24,19 @@ function inkPixels(font: string): number {
   return count;
 }
 
+// iPhone / iPad (tous les navigateurs iOS utilisent WebKit) et Safari sur Mac :
+// police Warsh signalée invisible sur iPhone → on garde Amiri, sans dépendre du test.
+function isAppleWebKit(): boolean {
+  const ua = navigator.userAgent;
+  const iOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const macSafari = /Safari/.test(ua) && !/Chrome|Chromium|CriOS|Edg|OPR|Firefox|FxiOS|Android/.test(ua);
+  return iOS || macSafari;
+}
+
 export async function checkWarshFont(): Promise<void> {
   const root = document.documentElement;
   try {
+    if (isAppleWebKit()) return; // Amiri sur iPhone/iPad/Safari
     if (!('fonts' in document)) return;
     const timeout = new Promise<never>((_, reject) => setTimeout(() => reject(new Error('timeout')), 8000));
     const faces = await Promise.race([document.fonts.load('48px "KFGQPC Warsh"', SAMPLE), timeout]);
