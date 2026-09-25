@@ -33,9 +33,16 @@ function isAppleWebKit(): boolean {
   return iOS || macSafari;
 }
 
+// Écriture orientale partout : qaf avec DEUX points au-dessus, fa avec UN point au-dessus.
+// La police KFGQPC Warsh dessine ces lettres à la maghrébine (qaf = 1 point au-dessus,
+// fa = 1 point en dessous) : un lecteur habitué à l'écriture orientale lit alors le qaf comme un fa.
+// Décision du 25/09/2026 : police Amiri pour tous les appareils. Mettre à true pour réactiver la police Warsh.
+const USE_MAGHREBI_WARSH_FONT = false;
+
 export async function checkWarshFont(): Promise<void> {
   const root = document.documentElement;
   try {
+    if (!USE_MAGHREBI_WARSH_FONT) return; // Amiri partout (points orientaux)
     if (isAppleWebKit()) return; // Amiri sur iPhone/iPad/Safari
     if (!('fonts' in document)) return;
     const timeout = new Promise<never>((_, reject) => setTimeout(() => reject(new Error('timeout')), 8000));
